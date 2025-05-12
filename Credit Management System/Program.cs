@@ -10,7 +10,7 @@ namespace Credit_Management_System
             builder.Services.RegisterServices(config);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             var app = builder.Build();
 
