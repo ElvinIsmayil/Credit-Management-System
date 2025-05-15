@@ -12,6 +12,7 @@ namespace Credit_Management_System.Models
         public Merchant Merchant { get; set; }
 
         public ICollection<Employee> Employees { get; set; } = new List<Employee>();
-        
+        public ICollection<Product> Products { get; set; } = new List<Product>();
+
     }
 }

@@ -1,0 +1,81 @@
+﻿@model List<MerchantVM>
+
+<h1 class="mt-4 mb-4 text-center text-primary font-weight-bold">Merchant List</h1>
+
+@if (!string.IsNullOrEmpty(ViewData["SearchTerm"]?.ToString()))
+{
+    <h4 class="text-center text-info">Showing results for "<strong>@ViewData["SearchTerm"]</strong>"</h4>
+}
+
+<div class="mb-4 d-flex justify-content-between">
+    <a class="btn btn-success btn-lg shadow-sm" asp-action="Create" asp-controller="Merchant" data-bs-toggle="tooltip" data-bs-placement="top" title="Create Merchant">
+        <i class="fa fa-plus-circle"></i> Add Merchant
+    </a>
+
+    <form asp-action="DeleteAll" asp-controller="Merchant" method="post" class="d-inline" id="delete-all-form">
+        <button id="delete-all-btn" type="submit" class="btn btn-danger btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete All">
+            <i class="fa-regular fa-trash-xmark"></i> Delete All
+        </button>
+    </form>
+
+    <form asp-action="ArchiveAll" asp-controller="Merchant" method="post" class="d-inline" id="archive-all-form">
+        <button id="archive-all-btn" type="submit" class="btn btn-secondary btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="Archive All">
+            <i class="fa-regular fa-box-archive"></i> Archive All
+        </button>
+    </form>
+</div>
+
+@if (Model != null && Model.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped shadow-sm rounded-3">
+            <thead class="bg-light">
+                <tr class="text-center">
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td class="text-center">@(@i + 1)</td>
+                        <td class="text-center">
+                            <img src="@Model[i].ImageUrl" alt="Merchant Image" class="img-fluid rounded-circle shadow-sm" style="height: 80px; width: 80px; object-fit: cover;" />
+                        </td>
+                        <td class="text-center">@Model[i].Name</td>
+                        <td class="text-center">@Model[i].Adress</td>
+                        <td class="text-center">@Model[i].PhoneNumber</td>
+                        <td class="text-center">@Model[i].Email</td>
+                        <td class="text-center">
+                            <form asp-action="Delete" asp-route-id="@Model[i].Id" method="post" class="d-inline action-form" data-name="@Model[i].Name">
+                                <button type="button" class="btn btn-danger delete-btn" data-action="delete">
+                                    <i class="fa fa-trash-alt"></i>
+                                </button>
+                            </form>
+                            
+                            <form asp-action="Archive" asp-controller="Merchant" asp-route-id="@Model[i].Id" method="post" class="d-inline archive-form" data-name="@Model[i].Name">
+                                <button type="submit" class="btn btn-secondary archive-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Archive Merchant">
+                                    <i class="fa-regular fa-box-archive"></i>
+                                </button>
+                            </form>
+
+                            <a asp-action="Detail" asp-controller="Merchant" asp-route-id="@Model[i].Id" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="View Merchant Details">
+                                <i class="fa fa-info-circle"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p class="text-center text-danger">No merchants found matching your search query.</p>
+}

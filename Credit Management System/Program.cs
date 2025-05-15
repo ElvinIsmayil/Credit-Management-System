@@ -1,3 +1,5 @@
+using Credit_Management_System.Profiles;
+
 namespace Credit_Management_System
 {
     public class Program
@@ -11,8 +13,10 @@ namespace Credit_Management_System
 
             // Add services to the container.
             builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            builder.Services.AddAutoMapper(typeof(CustomProfile).Assembly);
 
             var app = builder.Build();
+
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -30,8 +34,13 @@ namespace Credit_Management_System
             app.UseAuthorization();
 
             app.MapControllerRoute(
+                name: "areas",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+            app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
             app.Run();
         }

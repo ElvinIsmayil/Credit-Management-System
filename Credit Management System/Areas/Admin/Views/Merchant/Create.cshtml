@@ -1,0 +1,53 @@
+﻿@model MerchantCreateVM
+
+@{
+    ViewData["Title"] = "Create Merchant";
+}
+
+<h1 class="mt-4 mb-4 text-center text-primary">Create Merchant</h1>
+
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <form asp-action="Create" enctype="multipart/form-data">
+
+            <div asp-validation-summary="All" class="text-danger mb-4"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Name</label>
+                <input asp-for="Name" class="form-control" placeholder="Enter merchant name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Adress" class="control-label">Address</label>
+                <input asp-for="Adress" class="form-control" placeholder="Enter merchant address" />
+                <span asp-validation-for="Adress" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+                <input asp-for="PhoneNumber" class="form-control" placeholder="Enter phone number" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control" placeholder="Enter email address" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Image" class="control-label">Profile Image</label>
+                <input type="file" asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+
+            <div class="form-group text-center d-flex justify-content-between mt-4">
+                <a asp-action="Index" class="btn btn-secondary"><i class="fa-regular fa-turn-left"></i> Back to List</a>
+                <button type="submit" class="btn btn-success"><i class="fa-regular fa-plus"></i> Create</button>
+            </div>
+
+        </form>
+    </div>
+</div>

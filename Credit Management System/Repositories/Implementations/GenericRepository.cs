@@ -17,8 +17,7 @@ namespace Credit_Management_System.Repositories.Implementations
 
         public async Task<TModel> GetByIdAsync(int id)
         {
-            await _dbSet.FindAsync(id);
-            var model = await _dbSet.AsNoTracking().FirstOrDefaultAsync(m=>m.Id == id && !m.IsDeleted);
+            var model = await _dbSet.AsNoTracking().FirstOrDefaultAsync(m=> m.Id == id && !m.IsDeleted);
             return model;
         }
 
@@ -31,6 +30,7 @@ namespace Credit_Management_System.Repositories.Implementations
         public async Task<TModel> AddAsync(TModel model)
         {
             await _dbSet.AddAsync(model);
+
             await _context.SaveChangesAsync();
             return model;
         }
@@ -38,7 +38,9 @@ namespace Credit_Management_System.Repositories.Implementations
         public async Task<TModel> UpdateAsync(TModel model)
         {
             model.UpdatedDate = DateTime.UtcNow.AddHours(4);
+
             _dbSet.Update(model);
+
             await _context.SaveChangesAsync(); 
             return model;
 
@@ -46,7 +48,8 @@ namespace Credit_Management_System.Repositories.Implementations
 
         public async Task<bool> DeleteAsync(int id)
         {
-            var model = await _dbSet.FindAsync(id);
+            var model = await _dbSet.FirstOrDefaultAsync(m=>m.Id==id && !m.IsDeleted);
+
             if (model == null)
             {
                 return false;
@@ -54,6 +57,7 @@ namespace Credit_Management_System.Repositories.Implementations
 
             model.IsDeleted = true;
             _dbSet.Update(model);
+
             await _context.SaveChangesAsync();
             return true;
         }
