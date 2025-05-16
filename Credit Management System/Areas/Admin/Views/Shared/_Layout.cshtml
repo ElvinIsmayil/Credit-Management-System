@@ -1,111 +1,77 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
+﻿@*
+    File: Views/Shared/_Layout.cshtml
+*@
+<!DOCTYPE html>
+<html class="h-full" data-theme="true" data-theme-mode="light" dir="ltr" lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <title>@ViewData["Title"] - Metronic Tailwind</title>
 
-    <title>Library Management System</title>
+    <link rel="canonical" href="https://yourdomain.com" />
+    <meta name="description" content="@ViewData["Description"]" />
+    <meta name="robots" content="follow, index" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Metronic - Tailwind CSS" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="~/metronic/assets/media/app/og-image.png" />
+    <meta property="og:url" content="https://yourdomain.com" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Metronic - Tailwind CSS" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="~/metronic/assets/media/app/og-image.png" />
 
-    <!-- Custom fonts for this template-->
-    <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="~/https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/metronic/assets/media/app/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/metronic/assets/media/app/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/metronic/assets/media/app/favicon-16x16.png" />
+    <link rel="shortcut icon" href="~/metronic/assets/media/app/favicon.ico" />
 
+    <link href="~/metronic/assets/media/app/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="~/metronic/assets/media/app/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+    <link href="~/metronic/assets/media/app/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+    <link href="~/metronic/assets/media/app/favicon.ico" rel="shortcut icon" />
 
-    <!-- Custom styles for this template-->
-    <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="~/metronic/assets/vendors/apexcharts/apexcharts.css" rel="stylesheet" />
+    <link href="~/metronic/assets/vendors/keenicons/styles.bundle.css" rel="stylesheet" />
+    <link href="~/metronic/assets/css/styles.css" rel="stylesheet" />
 
-    <!--SweetAlert2-->
-    <link href="~/lib/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
-
-    <!--Toastr.JS-->
-    <link href="~/lib/toastr.js/toastr.min.css" rel="stylesheet" />
-
-    <!--FontAwesome-->
-    <link rel="stylesheet" href="~/lib/font-awesome/all.css" />
-
+    @RenderSection("Styles", required: false)
 </head>
-<body>
+<body class="antialiased flex h-full text-base text-gray-700 [--tw-page-bg:#fefefe] [--tw-page-bg-dark:var(--tw-coal-500)] demo1 sidebar-fixed header-fixed bg-[--tw-page-bg] dark:bg-[--tw-page-bg-dark]">
+    <div class="flex grow">
+    <!-- Sidebar -->
+    @await Html.PartialAsync("_Sidebar")
+    </div>
+    <div class="wrapper flex grow flex-col">
+    <!-- Header -->
+    @await Html.PartialAsync("_Header")
 
-    <div id="wrapper">
+    <!-- Main Content -->
+    <main class="grow content pt-5" id="content" role="content">
+        @RenderBody()
+    </main>
 
-        <partial name="_Sidebar" />
+    <!-- Footer -->
+       @await Html.PartialAsync("_Footer")
+    </div>
 
-        <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Scripts -->
 
-            <div id="content">
+    <script src="~/metronic/assets/js/core.bundle.js">
+    </script>
+    <script src="~/metronic/assets/vendors/apexcharts/apexcharts.min.js">
+    </script>
+    <script src="~/metronic/assets/js/widgets/general.js">
+    </script>
+    <script src="~/metronic/assets/js/layouts/demo1.js">
+    </script>
 
-                <partial name="_Topbar" />
+    <script src="~/js//site.js">
+    </script>
 
-
-                @RenderBody()
-
-
-                <partial name="_Footer" />
-
-
-            </div>
-
-        </div>
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bootstrap core JavaScript-->
-        <script src="~/vendor/jquery/jquery.min.js"></script>
-        <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-        <!--Toastr.JS-->
-        <script src="~/lib/toastr.js/toastr.min.js"></script>
-
-        <!--SweetAlert2-->
-        <script src="~/lib/sweetalert2/sweetalert2.min.js"></script>
-
-        <!-- Core plugin JavaScript-->
-        <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-        <!-- Custom scripts for all pages-->
-        <script src="~/js/sb-admin-2.min.js"></script>
-
-        <!-- Page level plugins -->
-        <script src="~/vendor/chart.js/Chart.min.js"></script>
-
-        <!-- Page level custom scripts -->
-        <script src="~/js/demo/chart-area-demo.js"></script>
-        <script src="~/js/demo/chart-pie-demo.js"></script>
-
-        <!--FontAwesome-->
-        <script src="~/lib/font-awesome/all.js"></script>
-
-        <partial name="_ToastrAlerts" />
-
-        <script src="~/js/site.js"> </script>
-
-        @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 
 </body>
 </html>
