@@ -240,17 +240,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Pb0TXW\u002BHaVf7gLiHG0CEv\u002BgeRJyDh7va8HuLJFFzJ4c="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1265"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Pb0TXW\u002BHaVf7gLiHG0CEv\u002BgeRJyDh7va8HuLJFFzJ4c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 23 Apr 2025 12:37:03 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Credit Management System/js/site.3r4b593esx.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3r4b593esx"},{"Name":"integrity","Value":"sha256-z4Uc5IXAmFkIVS19/ko1uR6tjk/ePPgf9sw8qFS/5CU="},{"Name":"label","Value":"_content/Credit Management System/js/site.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1715"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022z4Uc5IXAmFkIVS19/ko1uR6tjk/ePPgf9sw8qFS/5CU=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 20:34:07 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Credit Management System/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-D8FDxqN6PhFcizHU8JX1U92z5xUpCECNxCtIHNUL428="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3327"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022D8FDxqN6PhFcizHU8JX1U92z5xUpCECNxCtIHNUL428=\u0022"},{"Name":"Last-Modified","Value":"Tue, 13 May 2025 16:57:51 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Credit Management System/js/site.zjwlhyndfp.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zjwlhyndfp"},{"Name":"integrity","Value":"sha256-D8FDxqN6PhFcizHU8JX1U92z5xUpCECNxCtIHNUL428="},{"Name":"label","Value":"_content/Credit Management System/js/site.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3327"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022D8FDxqN6PhFcizHU8JX1U92z5xUpCECNxCtIHNUL428=\u0022"},{"Name":"Last-Modified","Value":"Tue, 13 May 2025 16:57:51 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-z4Uc5IXAmFkIVS19/ko1uR6tjk/ePPgf9sw8qFS/5CU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1715"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022z4Uc5IXAmFkIVS19/ko1uR6tjk/ePPgf9sw8qFS/5CU=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 20:34:07 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Credit Management System/lib/bootstrap/dist/css/bootstrap-grid.agp80tu62r.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.css'))</AssetFile>

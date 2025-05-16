@@ -30,6 +30,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(MerchantCreateVM merchantCreateVM)
         {
             var service = GetMerchantService<MerchantCreateVM>();
@@ -52,6 +53,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(MerchantUpdateVM merchantUpdateVM)
         {
             var service = GetMerchantService<MerchantUpdateVM>();
@@ -59,8 +61,8 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             service.UpdateAsync(merchantUpdateVM);
             return RedirectToAction("Index");
         }
-
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             var service = GetMerchantService<MerchantVM>();
@@ -68,11 +70,12 @@ namespace Credit_Management_System.Areas.Admin.Controllers
 
             if (!result)
             {
-                TempData["Error"] = "Delete failed. Item not found or already deleted.";
+                return Json(new { success = false, message = "Delete failed. Item not found or already deleted." });
             }
 
-            return RedirectToAction(nameof(Index));
+            return Json(new { success = true, message = "Item deleted successfully." });
         }
+
 
         [HttpGet]
         public async Task<IActionResult> Detail(int id)

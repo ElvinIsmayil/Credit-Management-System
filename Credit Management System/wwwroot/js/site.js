@@ -1,95 +1,44 @@
-﻿function handleActionConfirmation(form, action, name) {
-    // Show SweetAlert for confirmation
-    Swal.fire({
-        title: 'Are you sure?',
-        text: `You are about to ${action} ${name || 'all authors'}`,
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: `Yes, ${action}!`,
-        cancelButtonText: 'Cancel'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            console.log("clicked")
-            form.submit(); // Submit the form if confirmed
-        } else {
-            toastr.info(`${name || 'Action'} cancelled.`);
-        }
+﻿$(document).ready(function () {
+    $('.delete-btn').click(function (e) {
+        e.preventDefault();
+
+        const button = $(this);
+        const id = button.data('id');
+        const name = button.data('name');
+        const url = button.data('url');
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: `You are about to delete ${name}`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete!',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: {
+                        id: id,
+                        __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val() // Anti-forgery token
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            Swal.fire('Deleted!', response.message, 'success');
+                            // Remove the deleted item's row or element from UI
+                            button.closest('tr').fadeOut(500, function () {
+                                $(this).remove();
+                            });
+                        } else {
+                            Swal.fire('Error!', response.message, 'error');
+                        }
+                    },
+                    error: function () {
+                        Swal.fire('Error!', 'Something went wrong. Try again.', 'error');
+                    }
+                });
+            }
+        });
     });
-}
-
-// Individual delete action
-$('.delete-btn').click(function (e) {
-    e.preventDefault(); // Prevent form submission
-    const form = $(this).closest('form');
-    const authorName = form.data('name'); // Get the author's name
-    handleActionConfirmation(form, 'delete', authorName);function handleActionConfirmation(form, action, name) {
-    // Show SweetAlert for confirmation
-    Swal.fire({
-        title: 'Are you sure?',
-        text: `You are about to ${action} ${name || 'all authors'}`,
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: `Yes, ${action}!`,
-        cancelButtonText: 'Cancel'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            form.submit(); // Submit the form if confirmed
-        } else {
-            toastr.info(`${name || 'Action'} cancelled.`);
-        }
-    });
-}
-
-// Individual delete action
-$('.delete-btn').click(function (e) {
-    e.preventDefault(); // Prevent form submission
-    const form = $(this).closest('form');
-    const authorName = form.data('name'); // Get the author's name
-    handleActionConfirmation(form, 'delete', authorName);
-});
-
-// Delete all action
-$('#delete-all-btn').click(function (e) {
-    e.preventDefault(); // Prevent form submission
-    handleActionConfirmation($('#delete-all-form'), 'delete all');
-});
-
-// Individual archive action
-$('.archive-btn').click(function (e) {
-    e.preventDefault(); // Prevent form submission
-    const form = $(this).closest('form');
-    const authorName = form.data('name'); // Get the author's name
-    handleActionConfirmation(form, 'archive', authorName);
-});
-
-// Archive all action
-$('#archive-all-btn').click(function (e) {
-    e.preventDefault(); // Prevent form submission
-    handleActionConfirmation($('#archive-all-form'), 'archive all');
-});
-
-});
-
-// Delete all action
-$('#delete-all-btn').click(function (e) {
-    e.preventDefault(); // Prevent form submission
-    handleActionConfirmation($('#delete-all-form'), 'delete all');
-});
-
-// Individual archive action
-$('.archive-btn').click(function (e) {
-    e.preventDefault(); // Prevent form submission
-    const form = $(this).closest('form');
-    const authorName = form.data('name'); // Get the author's name
-    handleActionConfirmation(form, 'archive', authorName);
-});
-
-// Archive all action
-$('#archive-all-btn').click(function (e) {
-    e.preventDefault(); // Prevent form submission
-    handleActionConfirmation($('#archive-all-form'), 'archive all');
 });

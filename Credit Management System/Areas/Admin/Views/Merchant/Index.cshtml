@@ -53,11 +53,14 @@
                         <td class="text-center">@Model[i].PhoneNumber</td>
                         <td class="text-center">@Model[i].Email</td>
                         <td class="text-center">
-                            <form asp-action="Delete" asp-route-id="@Model[i].Id" method="post" class="d-inline action-form" data-name="@Model[i].Name">
-                                <button type="button" class="btn btn-danger delete-btn" data-action="delete">
-                                    <i class="fa fa-trash-alt"></i>
-                                </button>
-                            </form>
+
+                            <button type="button" class="btn btn-danger delete-btn"
+                                    data-id="@Model[i].Id"
+                                    data-name="@Model[i].Name"
+                                    data-url="@Url.Action("Delete", "Merchant")">
+                                <i class="fa fa-trash-alt"></i>
+                            </button>
+
                             
                             <form asp-action="Archive" asp-controller="Merchant" asp-route-id="@Model[i].Id" method="post" class="d-inline archive-form" data-name="@Model[i].Name">
                                 <button type="submit" class="btn btn-secondary archive-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Archive Merchant">
