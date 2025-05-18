@@ -353,7 +353,6 @@ C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\bin\Debug\net8.0\System.Composition.TypedParts.dll
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\bin\Debug\net8.0\System.Drawing.Common.dll
-C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\bin\Debug\net8.0\System.Formats.Asn1.dll
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\bin\Debug\net8.0\System.Runtime.Caching.dll
@@ -434,12 +433,6 @@ C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\staticwebassets\msbuild.Credit Management System.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\staticwebassets\msbuild.Credit Management System.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\staticwebassets\msbuild.build.Credit Management System.props
-C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Credit Management System.props
-C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Credit Management System.props
-C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\Credit M.6FF95EFD.Up2Date
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\Credit Management System.dll
@@ -1023,3 +1016,5 @@ C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\bin\Debug\net8.0\refs\System.Formats.Asn1.dll
+C:\Users\Elvin\Desktop\C#\MVC\Credit Management System\Credit Management System\obj\Debug\net8.0\staticwebassets.build.json.cache

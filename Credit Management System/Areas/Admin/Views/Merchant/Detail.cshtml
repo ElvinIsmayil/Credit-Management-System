@@ -4,44 +4,56 @@
     ViewData["Title"] = "Merchant Detail";
 }
 
-<h1 class="mt-4 mb-4 text-center text-primary font-weight-bold">Merchant Information</h1>
+<div class="content flex flex-col flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Page Header -->
+    <div class="py-6 border-b border-gray-200 dark:border-gray-700">
+        <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white">Merchant Information</h1>
+    </div>
 
-<div class="card shadow-lg border-0 mb-4">
-    <div class="card-body p-5">
-        <div class="row mb-4">
-            <div class="col-sm-4 d-flex justify-content-center align-items-center">
-                @if (!string.IsNullOrEmpty(Model.ImageUrl))
-                {
-                    <img src="@Model.ImageUrl" alt="Merchant Image" class="img-fluid rounded-circle shadow-lg border" style="max-width: 220px; border-width: 4px; border-color: #f1f1f1;" />
-                }
-                else
-                {
-                    <span class="text-muted">No image available</span>
-                }
-            </div>
-            <div class="col-sm-8">
-                <div class="row mb-3">
-                    <div class="col-sm-3 font-weight-bold text-dark">Name:</div>
-                    <div class="col-sm-9 text-muted">@Model.Name</div>
+    <!-- Card -->
+    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl border border-gray-200 dark:border-gray-700 mt-6 p-8 flex flex-col lg:flex-row gap-8 items-start">
+        <!-- Image -->
+        <div class="flex-shrink-0">
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Model.ImageUrl" alt="Merchant Image"
+                     class="w-20 h-20 rounded-full object-cover border-2 border-gray-300 dark:border-gray-600 shadow" />
+            }
+            else
+            {
+                <div class="w-20 h-20 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600">
+                    <span class="text-gray-400 dark:text-gray-500 italic text-sm">No image</span>
                 </div>
-                <div class="row mb-3">
-                    <div class="col-sm-3 font-weight-bold text-dark">Address:</div>
-                    <div class="col-sm-9 text-muted">@Model.Adress</div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-sm-3 font-weight-bold text-dark">Phone Number:</div>
-                    <div class="col-sm-9 text-muted">@Model.PhoneNumber</div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-sm-3 font-weight-bold text-dark">Email:</div>
-                    <div class="col-sm-9 text-muted">@Model.Email</div>
-                </div>
-            </div>
+            }
+        </div>
+
+        <!-- Info -->
+        <div class="flex-1 w-full max-w-xl text-gray-900 dark:text-gray-100">
+            <dl class="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-4">
+                <dt class="font-semibold">Name:</dt>
+                <dd class="sm:col-span-2 text-gray-700 dark:text-gray-300">@Model.Name</dd>
+
+                <dt class="font-semibold">Address:</dt>
+                <dd class="sm:col-span-2 text-gray-700 dark:text-gray-300">@Model.Adress</dd>
+
+                <dt class="font-semibold">Phone Number:</dt>
+                <dd class="sm:col-span-2 text-gray-700 dark:text-gray-300">@Model.PhoneNumber</dd>
+
+                <dt class="font-semibold">Email:</dt>
+                <dd class="sm:col-span-2 text-gray-700 dark:text-gray-300">@Model.Email</dd>
+            </dl>
         </div>
     </div>
-</div>
 
-<div class="d-flex justify-content-between mt-4">
-    <a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary btn-lg px-4 py-2 rounded-pill shadow-sm"><i class="fa-regular fa-pen-to-square"></i> Update</a>
-    <a asp-action="Index" class="btn btn-secondary btn-lg px-4 py-2 rounded-pill shadow-sm"><i class="fa-regular fa-turn-left"></i> Back</a>
+    <!-- Actions -->
+    <div class="flex flex-wrap gap-4 justify-start mt-8">
+        <a asp-action="Update" asp-route-id="@Model.Id"
+           class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white text-lg font-semibold px-8 py-3 rounded-full shadow transition">
+            <i class="fa-regular fa-pen-to-square text-xl"></i> Update
+        </a>
+        <a asp-action="Index"
+           class="inline-flex items-center gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-lg font-semibold px-8 py-3 rounded-full shadow transition">
+            <i class="fa-regular fa-turn-left text-xl"></i> Back
+        </a>
+    </div>
 </div>

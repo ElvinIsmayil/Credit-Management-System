@@ -4,50 +4,74 @@
     ViewData["Title"] = "Create Merchant";
 }
 
-<h1 class="mt-4 mb-4 text-center text-primary">Create Merchant</h1>
+<div class="content flex flex-col flex-grow max-w-lg mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="mb-8 text-center text-primary-600 dark:text-primary-400 font-extrabold text-3xl">@ViewData["Title"]</h1>
 
-<hr />
-<div class="row justify-content-center">
-    <div class="col-md-8 col-lg-6">
-        <form asp-action="Create" enctype="multipart/form-data">
+    <hr class="mb-8 border-gray-300 dark:border-gray-700" />
 
-            <div asp-validation-summary="All" class="text-danger mb-4"></div>
+    <form asp-action="Create" enctype="multipart/form-data" method="post" novalidate class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+        <div asp-validation-summary="All" class="mb-6 text-red-600 font-semibold"></div>
 
-            <div class="form-group">
-                <label asp-for="Name" class="control-label">Name</label>
-                <input asp-for="Name" class="form-control" placeholder="Enter merchant name" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+        <div class="mb-6">
+            <label asp-for="Name" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Name</label>
+            <input asp-for="Name"
+                   placeholder="Enter merchant name"
+                   class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100
+                          focus:outline-none focus:ring-2 focus:ring-primary-500" />
+            <span asp-validation-for="Name" class="text-red-500 text-sm mt-1 block"></span>
+        </div>
 
-            <div class="form-group">
-                <label asp-for="Adress" class="control-label">Address</label>
-                <input asp-for="Adress" class="form-control" placeholder="Enter merchant address" />
-                <span asp-validation-for="Adress" class="text-danger"></span>
-            </div>
+        <div class="mb-6">
+            <label asp-for="Adress" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Address</label>
+            <input asp-for="Adress"
+                   placeholder="Enter merchant address"
+                   class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100
+                          focus:outline-none focus:ring-2 focus:ring-primary-500" />
+            <span asp-validation-for="Adress" class="text-red-500 text-sm mt-1 block"></span>
+        </div>
 
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
-                <input asp-for="PhoneNumber" class="form-control" placeholder="Enter phone number" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
+        <div class="mb-6">
+            <label asp-for="PhoneNumber" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Phone Number</label>
+            <input asp-for="PhoneNumber"
+                   placeholder="Enter phone number"
+                   class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100
+                          focus:outline-none focus:ring-2 focus:ring-primary-500" />
+            <span asp-validation-for="PhoneNumber" class="text-red-500 text-sm mt-1 block"></span>
+        </div>
 
-            <div class="form-group">
-                <label asp-for="Email" class="control-label">Email</label>
-                <input asp-for="Email" class="form-control" placeholder="Enter email address" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
+        <div class="mb-6">
+            <label asp-for="Email" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Email</label>
+            <input asp-for="Email"
+                   placeholder="Enter email address"
+                   class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100
+                          focus:outline-none focus:ring-2 focus:ring-primary-500" />
+            <span asp-validation-for="Email" class="text-red-500 text-sm mt-1 block"></span>
+        </div>
 
-            <div class="form-group">
-                <label asp-for="Image" class="control-label">Profile Image</label>
-                <input type="file" asp-for="Image" class="form-control" />
-                <span asp-validation-for="Image" class="text-danger"></span>
-            </div>
+        <div class="mb-8">
+            <label asp-for="Image" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Profile Image</label>
+            <input asp-for="Image" type="file"
+                   class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2
+                          text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
+            <span asp-validation-for="Image" class="text-red-500 text-sm mt-1 block"></span>
+        </div>
 
-            <div class="form-group text-center d-flex justify-content-between mt-4">
-                <a asp-action="Index" class="btn btn-secondary"><i class="fa-regular fa-turn-left"></i> Back to List</a>
-                <button type="submit" class="btn btn-success"><i class="fa-regular fa-plus"></i> Create</button>
-            </div>
-
-        </form>
-    </div>
+        <div class="flex justify-between items-center">
+            <a asp-action="Index"
+               class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300
+                      hover:bg-gray-100 dark:hover:bg-gray-700 transition font-semibold">
+                <i class="fa-regular fa-turn-left"></i> Back to List
+            </a>
+            <button type="submit"
+                    class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-full shadow transition">
+                <i class="fa-regular fa-plus"></i> Create
+            </button>
+        </div>
+    </form>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

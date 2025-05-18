@@ -1,54 +1,67 @@
 ﻿@model Credit_Management_System.ViewModels.Merchant.MerchantUpdateVM
 
 @{
-    ViewData["Title"] = "Update";
+    ViewData["Title"] = "Update Merchant";
 }
 
-<h1>Update</h1>
+<div class="content flex flex-col flex-grow max-w-lg mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="mb-8 text-center text-primary-600 dark:text-primary-400 font-extrabold text-3xl">@ViewData["Title"]</h1>
 
-<h4>MerchantUpdateVM</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Update">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+        <form asp-action="Update" method="post" enctype="multipart/form-data" novalidate>
+            <div asp-validation-summary="ModelOnly" class="mb-6 text-red-600 font-semibold"></div>
+
+            <div class="mb-6">
+                <label asp-for="Name" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"></label>
+                <input asp-for="Name"
+                       class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
+                <span asp-validation-for="Name" class="text-red-500 text-sm mt-1 block"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Adress" class="control-label"></label>
-                <input asp-for="Adress" class="form-control" />
-                <span asp-validation-for="Adress" class="text-danger"></span>
+
+            <div class="mb-6">
+                <label asp-for="Adress" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"></label>
+                <input asp-for="Adress"
+                       class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
+                <span asp-validation-for="Adress" class="text-red-500 text-sm mt-1 block"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+            <div class="mb-6">
+                <label asp-for="PhoneNumber" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"></label>
+                <input asp-for="PhoneNumber"
+                       class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
+                <span asp-validation-for="PhoneNumber" class="text-red-500 text-sm mt-1 block"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+
+            <div class="mb-6">
+                <label asp-for="Email" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"></label>
+                <input asp-for="Email"
+                       class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
+                <span asp-validation-for="Email" class="text-red-500 text-sm mt-1 block"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ImageUrl" class="control-label"></label>
-                <input asp-for="ImageUrl" class="form-control" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+
+            <div class="mb-8">
+                <label asp-for="Image" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"></label>
+                <input asp-for="Image" type="file"
+                       class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
+                <span asp-validation-for="Image" class="text-red-500 text-sm mt-1 block"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+
+            <div class="flex justify-between items-center">
+                <a asp-action="Index"
+                   class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition font-semibold">
+                    <i class="fa fa-arrow-left"></i> Back to List
+                </a>
+                <button type="submit"
+                        class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-full shadow transition">
+                    <i class="fa fa-save"></i> Save
+                </button>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

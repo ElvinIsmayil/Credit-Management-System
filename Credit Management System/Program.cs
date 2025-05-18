@@ -41,7 +41,6 @@ namespace Credit_Management_System
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-
             app.Run();
         }
     }

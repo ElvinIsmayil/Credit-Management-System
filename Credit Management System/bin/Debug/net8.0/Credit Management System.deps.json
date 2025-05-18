@@ -218,6 +218,7 @@
           "System.Drawing": "4.0.0.0",
           "System.Drawing.Primitives": "8.0.0.0",
           "System.Dynamic.Runtime": "8.0.0.0",
+          "System.Formats.Asn1.Reference": "8.0.0.0",
           "System.Formats.Tar": "8.0.0.0",
           "System.Globalization.Calendars": "8.0.0.0",
           "System.Globalization": "8.0.0.0",
@@ -2322,17 +2323,7 @@
           "lib/net7.0/System.Drawing.Common.dll": {}
         }
       },
-      "System.Formats.Asn1/8.0.2": {
-        "runtime": {
-          "lib/net8.0/System.Formats.Asn1.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1325.6609"
-          }
-        },
-        "compile": {
-          "lib/net8.0/System.Formats.Asn1.dll": {}
-        }
-      },
+      "System.Formats.Asn1/8.0.2": {},
       "System.IdentityModel.Tokens.Jwt/6.35.0": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "6.35.0",
@@ -3549,6 +3540,12 @@
       "System.Dynamic.Runtime/8.0.0.0": {
         "compile": {
           "System.Dynamic.Runtime.dll": {}
+        },
+        "compileOnly": true
+      },
+      "System.Formats.Asn1.Reference/8.0.0.0": {
+        "compile": {
+          "System.Formats.Asn1.dll": {}
         },
         "compileOnly": true
       },
@@ -6308,6 +6305,11 @@
       "sha512": ""
     },
     "System.Dynamic.Runtime/8.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Formats.Asn1.Reference/8.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
