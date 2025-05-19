@@ -1,100 +1,72 @@
 ﻿<!DOCTYPE html>
-<html class="h-full" data-theme="true" data-theme-mode="light" dir="ltr" lang="en">
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
-    <title>@ViewData["Title"] - Metronic Tailwind</title>
-
-    <link rel="canonical" href="https://yourdomain.com" />
-    <meta name="description" content="@ViewData["Description"]" />
-    <meta name="robots" content="follow, index" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Metronic - Tailwind CSS" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="~/metronic/assets/media/app/og-image.png" />
-    <meta property="og:url" content="https://yourdomain.com" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Metronic - Tailwind CSS" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="~/metronic/assets/media/app/og-image.png" />
-
-    <link rel="apple-touch-icon" sizes="180x180" href="~/metronic/assets/media/app/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="~/metronic/assets/media/app/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="~/metronic/assets/media/app/favicon-16x16.png" />
-    <link rel="shortcut icon" href="~/metronic/assets/media/app/favicon.ico" />
-
-    <link href="~/metronic/assets/media/app/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
-    <link href="~/metronic/assets/media/app/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
-    <link href="~/metronic/assets/media/app/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
-    <link href="~/metronic/assets/media/app/favicon.ico" rel="shortcut icon" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="~/metronic/assets/vendors/apexcharts/apexcharts.css" rel="stylesheet" />
-    <link href="~/metronic/assets/vendors/keenicons/styles.bundle.css" rel="stylesheet" />
-    <link href="~/metronic/assets/css/styles.css" rel="stylesheet" />
-
-  
-
-    <link href="~/lib/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
-
-
-    <link rel="stylesheet" href="~/lib/toastr.js/toastr.min.css" />
-
-    <link rel="stylesheet" href="~/lib/font-awesome/all.css" />
-
-    @RenderSection("Styles", required: false)
+	<base href="">
+	<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>
+	<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
+	<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
+	<meta property="og:url" content="https://keenthemes.com/metronic" />
+	<meta property="og:site_name" content="Keenthemes | Metronic" />
+	<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+	<link rel="shortcut icon" href="~/media/logos/favicon.ico" />
+	<!--begin::Fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+	<!--end::Fonts-->
+	<!--begin::Page Vendor Stylesheets(used by this page)-->
+	<link href="~/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+	<!--end::Page Vendor Stylesheets-->
+	<!--begin::Global Stylesheets Bundle(used by all pages)-->
+	<link href="~/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="~/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<!--end::Global Stylesheets Bundle-->
 </head>
-<body class="antialiased flex h-full text-base text-gray-700 [--tw-page-bg:#fefefe] [--tw-page-bg-dark:var(--tw-coal-500)] demo1 sidebar-fixed header-fixed bg-[--tw-page-bg] dark:bg-[--tw-page-bg-dark]">
-    <div class="flex grow">
-    <!-- Sidebar -->
-    @await Html.PartialAsync("_Sidebar")
-    </div>
-    <div class="wrapper flex grow flex-col">
-    <!-- Header -->
-    @await Html.PartialAsync("_Header")
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">>
 
-    <!-- Main Content -->
-    <main class="grow content pt-5" id="content" role="content">
-        @RenderBody()
-    </main>
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Page-->
+		<div class="page d-flex flex-row flex-column-fluid">
+			<partial name="_Sidebar" />
+		</div>
+		<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+		<partial name="_Header" />
+		<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+			@RenderBody()
+		</div>
+		<partial name="_Footer" />
+		</div>
+		<partial name="_Drawers" />
+		<partial name="_Modals" />
+		<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+			<!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
+			<span class="svg-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+					<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="black" />
+					<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="black" />
+				</svg>
+			</span>
+			<!--end::Svg Icon-->
+		</div>
 
-    <!-- Footer -->
-       @await Html.PartialAsync("_Footer")
-    </div>
+
+	</div>
 
 
-    <!-- Scripts -->
-	<script src="~/lib/jquery/dist/jquery.js"></script>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-    
-    <script src="~/lib/toastr.js/toastr.min.js"></script>
-    
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    
-    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <script src="~/lib/sweetalert2/sweetalert2.min.js"> </script>
-
-    <script src="~/metronic/assets/js/core.bundle.js">
-    </script>
-    <script src="~/metronic/assets/vendors/apexcharts/apexcharts.min.js">
-    </script>
-    <script src="~/metronic/assets/js/widgets/general.js">
-    </script>
-    <script src="~/metronic/assets/js/layouts/demo1.js">
-    </script>
-    <script src="~/lib/font-awesome/all.js"></script>
-
-    <script src="~/js/site.js">
-    </script>
-
-    @await Html.PartialAsync("_ToastrAlerts")
-
-    @RenderSection("Scripts", required: false)
+	<script src="~/plugins/global/plugins.bundle.js"></script>
+	<script src="~/js/scripts.bundle.js"></script>
+	<!--end::Global Javascript Bundle-->
+	<!--begin::Page Vendors Javascript(used by this page)-->
+	<script src="~/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+	<!--end::Page Vendors Javascript-->
+	<!--begin::Page Custom Javascript(used by this page)-->
+	<script src="~/js/custom/widgets.js"></script>
+	<script src="~/js/custom/apps/chat/chat.js"></script>
+	<script src="~/js/custom/modals/create-app.js"></script>
+	<script src="~/js/custom/modals/upgrade-plan.js"></script>
 
 </body>
 </html>
