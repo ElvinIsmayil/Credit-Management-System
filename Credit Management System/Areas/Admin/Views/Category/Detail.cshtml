@@ -1,0 +1,32 @@
+﻿@model CategoryDetailVM
+
+@{
+    ViewData["Title"] = "Category Detail";
+}
+
+<div class="content flex flex-col flex-grow max-w-lg mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="mb-8 text-center text-primary-600 dark:text-primary-400 font-extrabold text-3xl">@ViewData["Title"]</h1>
+
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+        <div class="mb-4">
+            <strong class="text-lg">Name:</strong> @Model.Name
+        </div>
+        <div class="mb-4">
+            <strong class="text-lg">Description:</strong> @Model.Description
+        </div>
+        <div class="mb-4">
+            <strong class="text-lg">Parent Category:</strong> @Model.ParentCategoryName
+        </div>
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <div class="mb-4">
+                <strong class="text-lg">Image:</strong>
+                <img src="@Model.ImageUrl" alt="Category Image" class="mt-2 rounded-lg w-full" />
+            </div>
+        }
+    </div>
+
+    <div class="flex justify-center mt-8">
+        <a asp-action="Index" class="px-6 py-3 bg-primary-600 text-white font-semibold rounded-full shadow hover:bg-primary-700">Back to List</a>
+    </div>
+</div>

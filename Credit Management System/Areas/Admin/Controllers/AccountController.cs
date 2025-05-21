@@ -3,6 +3,7 @@ using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Runtime.CompilerServices;
 
 namespace Credit_Management_System.Areas.Admin.Controllers
@@ -83,7 +84,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             var result = await _userManager.CreateAsync(user, signUpVM.Password);
             if (result.Succeeded)
             {
-               var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                 var confirmationLink = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, token }, Request.Scheme);
                 await _emailSender.SendEmailAsync(user.Email, "Confirm your email", $"Please confirm your account by <a href='{confirmationLink}'>clicking here</a>.");
                 return RedirectToAction("SignIn");
@@ -101,9 +102,15 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Lockout()
+        public async Task<IActionResult> Lockout(string userId)
         {
-            return View();
+            var existUser = await _userManager
+                .Users
+                .Where(u=>u.Id == userId)
+                .FirstOrDefaultAsync();
+            if (existUser is not null)
+                existUser.LockoutEnabled = true;
+            return View(existUser);
         }
 
         [HttpGet]
