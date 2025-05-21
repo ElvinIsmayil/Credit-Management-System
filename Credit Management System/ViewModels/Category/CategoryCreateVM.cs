@@ -13,8 +13,14 @@ namespace Credit_Management_System.ViewModels.Category
 
         [StringLength(255, ErrorMessage = "Image URL cannot exceed 255 characters.")]
         [Url(ErrorMessage = "ImageUrl must be a valid URL.")]
-        public string ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
+
+        public IFormFile? Image { get; set; }
 
         public int? ParentCategoryId { get; set; }
+
+        public List<CategoryCreateVM> SubCategories { get; set; } = new List<CategoryCreateVM>();  
+
+        public IEnumerable<CategoryVM> ParentCategories { get; set; } 
     }
 }

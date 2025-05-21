@@ -6,10 +6,10 @@
 
         public string Name { get; set; }
 
-        public int? ParentCategoryId { get; set; }
+        public ParentCategoryVM ParentCategory { get; set; }
 
-        public string ParentCategoryName { get; set; } // optional for display
+        public int ProductCount { get; set; }
 
-        public int ProductCount { get; set; } // count of products, for example
+        public ICollection<SubCategoryVM> SubCategories { get; set; } = new List<SubCategoryVM>();
     }
 }

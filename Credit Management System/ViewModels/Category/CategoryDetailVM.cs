@@ -10,14 +10,14 @@ namespace Credit_Management_System.ViewModels.Category
 
         public string Description { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
         public int? ParentCategoryId { get; set; }
 
-        public string ParentCategoryName { get; set; }
+        public ICollection<string> ParentCategoryNames { get; set; }
 
-        public List<CategoryVM> SubCategories { get; set; } = new List<CategoryVM>();
+        public ICollection<CategoryVM> SubCategories { get; set; } = new List<CategoryVM>();
 
-        public List<ProductVM> Products { get; set; } = new List<ProductVM>();
+        public ICollection<ProductVM> Products { get; set; } = new List<ProductVM>();
     }
 }

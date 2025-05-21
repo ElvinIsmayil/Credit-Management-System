@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1rP2AaIpugo=",
+  "dgSpecHash": "HamhXshlhUs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elvinei\\Desktop\\sad\\Credit-Management-System\\Credit Management System\\Credit Management System.csproj",
+  "projectFilePath": "C:\\Users\\Elvinei\\Desktop\\asd\\Credit-Management-System\\Credit Management System\\Credit Management System.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elvinei\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\Elvinei\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

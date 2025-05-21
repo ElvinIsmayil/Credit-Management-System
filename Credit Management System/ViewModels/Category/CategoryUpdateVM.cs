@@ -5,7 +5,7 @@ namespace Credit_Management_System.ViewModels.Category
     public class CategoryUpdateVM
     {
         [Required]
-        public int Id { get; set; }  // Id is required for update
+        public int Id { get; set; }  
 
         [Required(ErrorMessage = "Name is required.")]
         [StringLength(150, ErrorMessage = "Name cannot exceed 150 characters.")]
@@ -18,6 +18,10 @@ namespace Credit_Management_System.ViewModels.Category
         [Url(ErrorMessage = "ImageUrl must be a valid URL.")]
         public string ImageUrl { get; set; }
 
+        public IFormFile? Image { get; set; }
+
         public int? ParentCategoryId { get; set; }
+
+        public List<CategoryVM> ParentCategories { get; set; }
     }
 }

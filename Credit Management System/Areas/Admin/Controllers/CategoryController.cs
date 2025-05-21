@@ -1,5 +1,6 @@
 ﻿using Credit_Management_System.Models;
 using Credit_Management_System.Services.Implementations;
+using Credit_Management_System.ViewModels;
 using Credit_Management_System.ViewModels.Category;
 using Credit_Management_System.ViewModels.Merchant;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,8 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         {
             _serviceProvider = serviceProvider;
         }
+
+        // Index - List of Categories
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -23,26 +26,48 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             return View(categories);
         }
 
+        // Create - Show the Create Form
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            return View();
+            // Fetch parent categories to display in the dropdown
+            var service = GetCategoryService<CategoryCreateVM>();
+            var parentCategories = await service.GetParentCategoriesAsync(); // assuming you have a method to fetch parent categories
+
+            var categoryCreateVM = new CategoryCreateVM
+            {
+                ParentCategories = parentCategories
+            };
+
+            return View(categoryCreateVM);
         }
+
+        // Create - Handle the Post request for creating a category
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(CategoryCreateVM categoryCreateVM)
+        public async Task<IActionResult> Create(CategoryCreateVM categoryCreateVM)
         {
             try
             {
                 if (!ModelState.IsValid)
                     return View(categoryCreateVM);
+
+                // Ensure SubCategories is not null before mapping
+                if (categoryCreateVM.SubCategories == null)
+                {
+                    categoryCreateVM.SubCategories = new List<SubCategoryVM>();
+                }
+
+                // Add the category
                 var service = GetCategoryService<CategoryCreateVM>();
-                var data = service.AddAsync(categoryCreateVM);
+                var data = await service.AddAsync(categoryCreateVM);
+
                 if (data == null)
                 {
                     ModelState.AddModelError(string.Empty, "Failed to create category.");
                     return View(categoryCreateVM);
                 }
+
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -51,6 +76,8 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                 return View(categoryCreateVM);
             }
         }
+
+        // Update - Show the Update Form
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
@@ -58,8 +85,17 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             var category = await service.GetByIdAsync(id);
             if (category == null)
                 return NotFound();
+
+            // Fetch parent categories to display in the dropdown
+            var parentCategoriesService = GetCategoryService<CategoryCreateVM>();
+            var parentCategories = await parentCategoriesService.GetParentCategoriesAsync();
+
+            category.ParentCategories = parentCategories;
+
             return View(category);
         }
+
+        // Update - Handle the Post request for updating the category
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(CategoryUpdateVM categoryUpdateVM)
@@ -68,13 +104,16 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             {
                 if (!ModelState.IsValid)
                     return View(categoryUpdateVM);
+
                 var service = GetCategoryService<CategoryUpdateVM>();
                 var data = await service.UpdateAsync(categoryUpdateVM);
+
                 if (data == null)
                 {
                     ModelState.AddModelError(string.Empty, "Failed to update category.");
                     return View(categoryUpdateVM);
                 }
+
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -84,6 +123,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             }
         }
 
+        // Detail - Show details of a category
         [HttpGet]
         public async Task<IActionResult> Detail(int id)
         {
@@ -94,6 +134,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             return View(category);
         }
 
+        // Delete - Handle category deletion
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
@@ -116,6 +157,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             }
         }
 
+        // Helper method to get the appropriate service
         private IGenericService<TViewModel, Category> GetCategoryService<TViewModel>() where TViewModel : class
         {
             return _serviceProvider.GetRequiredService<IGenericService<TViewModel, Category>>();

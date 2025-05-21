@@ -1,11 +1,13 @@
-﻿@model CategoryCreateVM
+﻿@model Credit_Management_System.ViewModels.Category.CategoryCreateVM
 
 @{
     ViewData["Title"] = "Create Category";
 }
 
-<div class="content flex flex-col flex-grow max-w-lg mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <h1 class="mb-8 text-center text-primary-600 dark:text-primary-400 font-extrabold text-3xl">@ViewData["Title"]</h1>
+<div class="content flex flex-col flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="mb-8 text-center text-primary-600 dark:text-primary-400 font-extrabold text-3xl">
+        @ViewData["Title"]
+    </h1>
 
     <hr class="mb-8 border-gray-300 dark:border-gray-700" />
 
@@ -33,12 +35,11 @@
             <span asp-validation-for="Image" class="text-red-500 text-sm mt-1 block"></span>
         </div>
 
-        <!-- Parent Category (Optional) -->
+        <!-- Parent Category -->
         <div class="mb-6">
             <label asp-for="ParentCategoryId" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Parent Category</label>
             <select asp-for="ParentCategoryId" class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500">
                 <option value="">-- Select Parent Category --</option>
-                <!-- Populate with Parent Categories -->
                 @foreach (var category in Model.ParentCategories)
                 {
                     <option value="@category.Id">@category.Name</option>
@@ -47,18 +48,67 @@
             <span asp-validation-for="ParentCategoryId" class="text-red-500 text-sm mt-1 block"></span>
         </div>
 
-        <!-- Submit and Cancel -->
-        <div class="flex justify-between items-center">
-            <a asp-action="Index" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition font-semibold">
-                <i class="fa-regular fa-turn-left"></i> Back to List
-            </a>
-            <button type="submit" class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-full shadow transition">
-                <i class="fa-regular fa-plus"></i> Create Category
+        <!-- Dynamic Subcategories Section -->
+        <div id="subcategoriesSection">
+            <h3 class="text-xl mb-4 font-semibold text-gray-700 dark:text-gray-300">Subcategories</h3>
+
+            <div class="subcategoriesContainer">
+                @for (int i = 0; i < Model.SubCategories.Count; i++)
+                {
+                    <div class="subcategoryRow flex gap-4 mb-4">
+                        <input type="text" name="SubCategories[@i].Name" placeholder="Subcategory Name" value="@Model.SubCategories[i].Name" class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
+
+                        <button type="button" class="removeSubCategoryBtn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md">
+                            Remove
+                        </button>
+                    </div>
+                }
+            </div>
+
+            <button type="button" id="addSubCategoryBtn" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md mt-4">
+                Add Subcategory
+            </button>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex justify-end mt-6">
+            <button type="submit" class="px-6 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                Create Category
             </button>
         </div>
     </form>
 </div>
 
 @section Scripts {
-    @await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    <script>
+        // JavaScript for adding/removing subcategories dynamically
+        document.getElementById('addSubCategoryBtn').addEventListener('click', function() {
+            var container = document.querySelector('.subcategoriesContainer');
+            var newSubCategory = document.createElement('div');
+            newSubCategory.classList.add('subcategoryRow', 'flex', 'gap-4', 'mb-4');
+
+            // Create the input field for the subcategory name
+            var subCategoryInput = document.createElement('input');
+            subCategoryInput.type = 'text';
+            subCategoryInput.name = 'SubCategories[][Name]';
+            subCategoryInput.placeholder = 'Subcategory Name';
+            subCategoryInput.classList.add('w-full', 'rounded-md', 'border', 'border-gray-300', 'dark:border-gray-600', 'bg-white', 'dark:bg-gray-700', 'px-4', 'py-2', 'text-gray-900', 'dark:text-gray-100', 'focus:outline-none', 'focus:ring-2', 'focus:ring-primary-500');
+
+            // Create the remove button
+            var removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.textContent = 'Remove';
+            removeButton.classList.add('removeSubCategoryBtn', 'bg-red-600', 'hover:bg-red-700', 'text-white', 'px-4', 'py-2', 'rounded-md');
+
+            // Append elements to the row
+            newSubCategory.appendChild(subCategoryInput);
+            newSubCategory.appendChild(removeButton);
+            container.appendChild(newSubCategory);
+
+            // Add event listener to the remove button
+            removeButton.addEventListener('click', function() {
+                newSubCategory.remove();
+            });
+        });
+    </script>
 }

@@ -338,6 +338,8 @@ wwwroot\js\custom\widgets.js
 wwwroot\js\custom\widgets.js.map
 wwwroot\js\scripts.bundle.js
 wwwroot\js\scripts.bundle.js.map
+wwwroot\js\site.js
+wwwroot\js\site.js.map
 wwwroot\media\avatars\150-1.jpg
 wwwroot\media\avatars\150-10.jpg
 wwwroot\media\avatars\150-11.jpg
@@ -2089,3 +2091,4 @@ wwwroot\plugins\global\plugins.dark.bundle.css.map
 wwwroot\plugins\global\plugins.dark.bundle.js
 wwwroot\plugins\global\plugins.dark.bundle.js.map
 wwwroot\plugins\global\plugins.dark.bundle.rtl.css
+wwwroot\uploads\merchants\8ed7b81b-0519-4e72-98ca-867369f2e513.jpg

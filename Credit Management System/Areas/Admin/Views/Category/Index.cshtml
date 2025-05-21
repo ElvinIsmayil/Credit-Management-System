@@ -1,39 +1,145 @@
-﻿@model CategoryIndexVM
+﻿@model List<CategoryVM>
 
-@{
-    ViewData["Title"] = "Categories List";
-}
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Toolbar-->
+    <div class="toolbar py-5 py-lg-7" id="kt_toolbar">
+        <div id="kt_toolbar_container" class="container d-flex flex-stack flex-wrap">
+            <!--begin::Title-->
+            <h1 class="text-dark fw-bold fs-2qx me-5 mb-0">Category List</h1>
+            <!--end::Title-->
+            <!--begin::Actions-->
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+                <a asp-controller="Category" asp-action="Create" class="btn btn-primary btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="Create Category">
+                    <i class="fa fa-plus-circle fs-3 me-2"></i> Add Category
+                </a>
 
-<div class="content flex flex-col flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <h1 class="mb-8 text-center text-primary-600 dark:text-primary-400 font-extrabold text-3xl">@ViewData["Title"]</h1>
+                <form asp-controller="Category" asp-action="DeleteAll" method="post" class="m-0">
+                    <button type="submit" class="btn btn-danger btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete All">
+                        <i class="fa-regular fa-trash-xmark fs-3 me-2"></i> Delete All
+                    </button>
+                </form>
 
-    <div class="flex justify-end mb-6">
-        <a asp-action="Create" class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-full shadow transition">
-            <i class="fa-regular fa-plus"></i> Create New Category
-        </a>
+                <form asp-controller="Category" asp-action="ArchiveAll" method="post" class="m-0">
+                    <button type="submit" class="btn btn-secondary btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="Archive All">
+                        <i class="fa-regular fa-box-archive fs-3 me-2"></i> Archive All
+                    </button>
+                </form>
+            </div>
+            <!--end::Actions-->
+        </div>
     </div>
-
-    <table class="min-w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg">
-        <thead>
-            <tr>
-                <th class="text-left px-6 py-4">Name</th>
-                <th class="text-left px-6 py-4">Description</th>
-                <th class="text-center px-6 py-4">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var category in Model.Categories)
+    <!--end::Toolbar-->
+    <!--begin::Post-->
+    <div class="post d-flex flex-column-fluid" id="kt_post">
+        <div id="kt_content_container" class="container">
+            @if (!string.IsNullOrEmpty(ViewData["SearchTerm"]?.ToString()))
             {
-                <tr>
-                    <td class="px-6 py-4">@category.Name</td>
-                    <td class="px-6 py-4">@category.Description</td>
-                    <td class="text-center px-6 py-4">
-                        <a asp-action="Detail" asp-route-id="@category.Id" class="text-blue-600 hover:text-blue-800">View</a> |
-                        <a asp-action="Update" asp-route-id="@category.Id" class="text-yellow-600 hover:text-yellow-800">Edit</a> |
-                        <a asp-action="Delete" asp-route-id="@category.Id" class="text-red-600 hover:text-red-800">Delete</a>
-                    </td>
-                </tr>
+                <div class="alert alert-info d-flex align-items-center mb-6" role="alert">
+                    <i class="fa fa-search fs-2hx me-3"></i>
+                    <div>
+                        Showing results for <strong>"@ViewData["SearchTerm"]"</strong>
+                    </div>
+                </div>
             }
-        </tbody>
-    </table>
+
+            @if (Model != null && Model.Any())
+            {
+                <!--begin::Card-->
+                <div class="card shadow-sm">
+                    <!--begin::Card header-->
+                    <div class="card-header border-0 pt-6 pb-0">
+                        <div class="card-title">
+                            <!-- You can add search input here if needed -->
+                        </div>
+                    </div>
+                    <!--end::Card header-->
+                    <!--begin::Card body-->
+                    <div class="card-body pt-0">
+                        <div class="table-responsive">
+                            <table class="table align-middle table-row-dashed fs-6 gy-5 mb-0">
+                                <thead>
+                                    <tr class="text-gray-400 text-uppercase fw-semibold fs-7 text-center">
+                                        <th style="width: 5%;">#</th>
+                                        <th style="width: 10%;">Image</th>
+                                        <th style="width: 20%;">Category Name</th>
+                                        <th style="width: 25%;">Description</th>
+                                        <th style="width: 15%;">Parent Category</th>
+                                        <th style="width: 15%;">Operations</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="fw-bold text-gray-600 text-center">
+                                    @for (int i = 0; i < Model.Count; i++)
+                                    {
+                                        <tr>
+                                            <td>@(i + 1)</td>
+                                            <td>
+                                                <div class="symbol symbol-circle symbol-70px overflow-hidden me-3">
+                                                    <img src="@Model[i].ImageUrl" alt="Category Image" class="object-fit-cover" />
+                                                </div>
+                                            </td>
+                                            <td class="text-start fw-semibold">@Model[i].Name</td>
+                                            <td class="text-start">@Model[i].Description</td>
+                                            <td class="text-start">
+                                                @if (Model[i].ParentCategoryId != null)
+                                                {
+                                                    @Model[i].ParentCategory?.Name
+                                                }
+                                                else
+                                                {
+                                                    <span class="text-muted">No Parent</span>
+                                                }
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <!-- Delete Button (with modal trigger) -->
+                                                    <button type="button" class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm delete-btn"
+                                                            data-id="@Model[i].Id"
+                                                            data-name="@Model[i].Name"
+                                                            data-url="@Url.Action("Delete", "Category")"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Category">
+                                                        <i class="fa fa-trash-alt fs-5"></i>
+                                                    </button>
+
+                                                    <!-- Archive Form -->
+                                                    <form asp-action="Archive" asp-controller="Category" asp-route-id="@Model[i].Id" method="post" class="m-0">
+                                                        <button type="submit" class="btn btn-icon btn-bg-light btn-active-color-secondary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Archive Category">
+                                                            <i class="fa-regular fa-box-archive fs-5"></i>
+                                                        </button>
+                                                    </form>
+
+                                                    <!-- Details Link -->
+                                                    <a asp-action="Detail" asp-controller="Category" asp-route-id="@Model[i].Id" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="View Details">
+                                                        <i class="fa fa-info-circle fs-5"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::Card-->
+            }
+            else
+            {
+                <div class="alert alert-danger text-center fs-5" role="alert">
+                    No categories found matching your search query.
+                </div>
+            }
+        </div>
+    </div>
+    <!--end::Post-->
 </div>
+
+@section Scripts {
+    <script>
+        // Initialize Bootstrap 5 tooltips for Metronic
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+}
