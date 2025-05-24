@@ -1,63 +1,113 @@
 ﻿@model Credit_Management_System.ViewModels.Merchant.MerchantUpdateVM
 
 @{
-    ViewData["Title"] = "Update Merchant";
+    ViewData["Title"] = "Edit Merchant";
 }
 
-<div class="content flex flex-col flex-grow max-w-lg mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <h1 class="mb-8 text-center text-primary-600 dark:text-primary-400 font-extrabold text-3xl">@ViewData["Title"]</h1>
-
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-        <form asp-action="Update" method="post" enctype="multipart/form-data" novalidate>
-            <div asp-validation-summary="ModelOnly" class="mb-6 text-red-600 font-semibold"></div>
-
-            <div class="mb-6">
-                <label asp-for="Name" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"></label>
-                <input asp-for="Name"
-                       class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
-                <span asp-validation-for="Name" class="text-red-500 text-sm mt-1 block"></span>
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Toolbar-->
+    <div class="toolbar mb-5" id="kt_toolbar">
+        <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+            <div class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Edit Merchant</h1>
+                <span class="h-20px border-gray-300 border-start mx-4"></span>
+                <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+                    <li class="breadcrumb-item text-muted">
+                        <a asp-controller="Dashboard" asp-action="Index" class="text-muted text-hover-primary">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-300 w-5px h-2px"></span>
+                    </li>
+                    <li class="breadcrumb-item text-muted">
+                        <a asp-controller="Merchant" asp-action="Index" class="text-muted text-hover-primary">Merchants</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-300 w-5px h-2px"></span>
+                    </li>
+                    <li class="breadcrumb-item text-dark">Edit</li>
+                </ul>
             </div>
 
-            <div class="mb-6">
-                <label asp-for="Adress" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"></label>
-                <input asp-for="Adress"
-                       class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
-                <span asp-validation-for="Adress" class="text-red-500 text-sm mt-1 block"></span>
-            </div>
-
-            <div class="mb-6">
-                <label asp-for="PhoneNumber" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"></label>
-                <input asp-for="PhoneNumber"
-                       class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
-                <span asp-validation-for="PhoneNumber" class="text-red-500 text-sm mt-1 block"></span>
-            </div>
-
-            <div class="mb-6">
-                <label asp-for="Email" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"></label>
-                <input asp-for="Email"
-                       class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
-                <span asp-validation-for="Email" class="text-red-500 text-sm mt-1 block"></span>
-            </div>
-
-            <div class="mb-8">
-                <label asp-for="Image" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"></label>
-                <input asp-for="Image" type="file"
-                       class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
-                <span asp-validation-for="Image" class="text-red-500 text-sm mt-1 block"></span>
-            </div>
-
-            <div class="flex justify-between items-center">
-                <a asp-action="Index"
-                   class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition font-semibold">
-                    <i class="fa fa-arrow-left"></i> Back to List
+            <div class="d-flex align-items-center gap-3">
+                <a asp-action="Index" class="btn btn-lg btn-light fw-bold px-6">
+                    <i class="ki-outline ki-arrow-left fs-4 me-2"></i> Back to List
                 </a>
-                <button type="submit"
-                        class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-full shadow transition">
-                    <i class="fa fa-save"></i> Save
-                </button>
             </div>
-        </form>
+        </div>
     </div>
+    <!--end::Toolbar-->
+    <!--begin::Post-->
+    <div class="post d-flex flex-column-fluid" id="kt_post">
+        <div class="container-xxl">
+            <div class="card shadow-sm">
+                <div class="card-body p-10">
+                    <form asp-action="Update" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="row">
+                            <!--begin::Image Section-->
+                            <div class="col-lg-4 mb-10">
+                                <div class="card bg-light border-0 shadow-sm h-100 d-flex flex-column align-items-center justify-content-center p-10">
+                                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                                    {
+                                        <div class="symbol symbol-150px symbol-lg-180px mb-4">
+                                            <img src="@Model.ImageUrl" class="rounded shadow" style="object-fit: cover;" alt="Merchant Image" />
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="symbol symbol-150px symbol-lg-180px bg-secondary d-flex align-items-center justify-content-center text-white fs-3 fw-bold rounded mb-4">
+                                            No Image
+                                        </div>
+                                    }
+
+                                    <input asp-for="Image" type="file" class="form-control form-control-lg form-control-solid" />
+                                    <span asp-validation-for="Image" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <!--end::Image Section-->
+                            <!--begin::Form Section-->
+                            <div class="col-lg-8">
+                                <div class="row mb-6">
+                                    <div class="col-lg-6">
+                                        <label asp-for="Name" class="form-label fw-bold fs-6 text-dark"></label>
+                                        <input asp-for="Name" class="form-control form-control-lg form-control-solid" />
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label asp-for="Adress" class="form-label fw-bold fs-6 text-dark"></label>
+                                        <input asp-for="Adress" class="form-control form-control-lg form-control-solid" />
+                                        <span asp-validation-for="Adress" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-6">
+                                    <div class="col-lg-6">
+                                        <label asp-for="PhoneNumber" class="form-label fw-bold fs-6 text-dark"></label>
+                                        <input asp-for="PhoneNumber" class="form-control form-control-lg form-control-solid" />
+                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label asp-for="Email" class="form-label fw-bold fs-6 text-dark"></label>
+                                        <input asp-for="Email" class="form-control form-control-lg form-control-solid" />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-10 text-end">
+                                    <button type="submit" class="btn btn-lg btn-primary fw-bold px-6">
+                                        <i class="ki-outline ki-save fs-4 me-2"></i> Save Changes
+                                    </button>
+                                </div>
+                            </div>
+                            <!--end::Form Section-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end::Post-->
 </div>
 
 @section Scripts {

@@ -1,15 +1,14 @@
-﻿namespace Credit_Management_System.ViewModels.Category
+﻿public class CategoryVM
 {
-    public class CategoryVM
-    {
-        public int Id { get; set; }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string? Description { get; set; }
+    public string? ImageUrl { get; set; }
 
-        public string Name { get; set; }
+    public int? ParentCategoryId { get; set; }
+    public string? ParentCategoryName { get; set; }
 
-        public ParentCategoryVM ParentCategory { get; set; }
-
-        public int ProductCount { get; set; }
-
-        public ICollection<SubCategoryVM> SubCategories { get; set; } = new List<SubCategoryVM>();
-    }
+    public int ProductCount { get; set; }
+    public bool HasChildren { get; set; }  
+    public ICollection<CategoryVM> SubCategories { get; set; } = new List<CategoryVM>();
 }

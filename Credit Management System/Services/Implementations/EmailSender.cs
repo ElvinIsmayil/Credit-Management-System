@@ -1,29 +1,51 @@
-﻿using Credit_Management_System.Services.Interfaces;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using System.Net;
+﻿using System.Net;
 using System.Net.Mail;
 using IEmailSender = Credit_Management_System.Services.Interfaces.IEmailSender;
 
 
 namespace Credit_Management_System.Services.Implementations
 {
-    public class EmailSender : IEmailSender
+
+    public sealed class EmailSender : IEmailSender
     {
-        public async Task SendEmailAsync(string email, string subject, string htmlMessage)
+        private readonly string _smtpHost;
+        private readonly int _smtpPort;
+        private readonly string _smtpUser;
+        private readonly string _smtpPass;
+        private readonly bool _enableSsl;
+
+        public EmailSender(string smtpHost, int smtpPort, string smtpUser, string smtpPass, bool enableSsl = true)
         {
-            using var smtp = new SmtpClient("smtp.yourserver.com")
+            _smtpHost = smtpHost ?? throw new ArgumentNullException(nameof(smtpHost));
+            _smtpPort = smtpPort;
+            _smtpUser = smtpUser ?? throw new ArgumentNullException(nameof(smtpUser));
+            _smtpPass = smtpPass ?? throw new ArgumentNullException(nameof(smtpPass));
+            _enableSsl = enableSsl;
+        }
+
+        public async Task SendEmailAsync(string email, string subject, string htmlMessage, CancellationToken cancellationToken = default)
+        {
+            using var smtp = new SmtpClient(_smtpHost)
             {
-                Port = 587,
-                Credentials = new NetworkCredential("you@domain.com", "your-password"),
-                EnableSsl = true
+                Port = _smtpPort,
+                Credentials = new NetworkCredential(_smtpUser, _smtpPass),
+                EnableSsl = _enableSsl
             };
 
-            var mail = new MailMessage("you@domain.com", email, subject, htmlMessage)
+            using var mail = new MailMessage(_smtpUser, email, subject, htmlMessage)
             {
                 IsBodyHtml = true
             };
 
-            await smtp.SendMailAsync(mail);
+            try
+            {
+                await smtp.SendMailAsync(mail, cancellationToken);
+            }
+            catch (SmtpException ex)
+            {
+                throw new InvalidOperationException("Failed to send email.", ex);
+            }
         }
     }
+
 }

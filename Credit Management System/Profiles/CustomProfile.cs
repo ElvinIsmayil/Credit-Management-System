@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Credit_Management_System.Models;
+using Credit_Management_System.ViewModels;
 using Credit_Management_System.ViewModels.Branch;
 using Credit_Management_System.ViewModels.Category;
 using Credit_Management_System.ViewModels.Merchant;
@@ -16,12 +17,26 @@ namespace Credit_Management_System.Profiles
             CreateMap<Merchant, MerchantUpdateVM>().ReverseMap();
             CreateMap<Merchant, MerchantDetailVM>().ReverseMap();
 
-            CreateMap<Branch, BranchVM>().ReverseMap();
-            CreateMap<Branch, BranchCreateVM>().ReverseMap();
-            CreateMap<Branch, BranchUpdateVM>().ReverseMap();
-            CreateMap<Branch, BranchDetailVM>().ReverseMap();
+            CreateMap<Branch, BranchVM>()
+      .ForMember(dest => dest.MerchantName, opt => opt.MapFrom(src => src.Merchant != null ? src.Merchant.Name : string.Empty));
 
-            CreateMap<Category, CategoryVM>().ReverseMap();
+
+            CreateMap<Branch, BranchCreateVM>().ReverseMap();
+
+            CreateMap<Branch, BranchUpdateVM>().ReverseMap();
+
+            CreateMap<Branch, BranchDetailVM>()
+                .ForMember(dest => dest.MerchantName, opt => opt.MapFrom(src => src.Merchant != null ? src.Merchant.Name : string.Empty))
+                .ReverseMap();
+
+
+
+
+            CreateMap<Category, ParentCategoryVM>();
+
+            CreateMap<Category, CategoryVM>()
+                .ForMember(dest => dest.SubCategories, opt => opt.MapFrom(src => src.SubCategories));
+
             CreateMap<Category, CategoryCreateVM>().ReverseMap();
             CreateMap<Category, CategoryUpdateVM>().ReverseMap();
             CreateMap<Category, CategoryDetailVM>().ReverseMap();
@@ -30,6 +45,7 @@ namespace Credit_Management_System.Profiles
             CreateMap<Product, ProductCreateVM>().ReverseMap();
             CreateMap<Product, ProductUpdateVM>().ReverseMap();
             CreateMap<Product, ProductDetailVM>().ReverseMap();
+
         }
     }
 }

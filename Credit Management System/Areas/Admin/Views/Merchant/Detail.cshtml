@@ -1,59 +1,127 @@
-﻿@model MerchantDetailVM
+﻿@model Credit_Management_System.ViewModels.Merchant.MerchantDetailVM
 
-@{
-    ViewData["Title"] = "Merchant Detail";
-}
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Toolbar-->
+    <div class="toolbar mb-5" id="kt_toolbar">
+        <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+            <div class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Merchant Details</h1>
+                <span class="h-20px border-gray-300 border-start mx-4"></span>
+                <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+                    <li class="breadcrumb-item text-muted">
+                        <a asp-controller="Dashboard" asp-action="Index" class="text-muted text-hover-primary">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-300 w-5px h-2px"></span>
+                    </li>
+                    <li class="breadcrumb-item text-muted">
+                        <a asp-controller="Merchant" asp-action="Index" class="text-muted text-hover-primary">Merchants</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-300 w-5px h-2px"></span>
+                    </li>
+                    <li class="breadcrumb-item text-dark">Detail</li>
+                </ul>
+            </div>
 
-<div class="content flex flex-col flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Page Header -->
-    <div class="py-6 border-b border-gray-200 dark:border-gray-700">
-        <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white">Merchant Information</h1>
+            <div class="d-flex align-items-center gap-3">
+                <a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-lg btn-primary fw-bold px-6">
+                    <i class="ki-outline ki-pencil fs-4 me-2"></i> Edit Merchant
+                </a>
+                <a asp-action="Index" class="btn btn-lg btn-light fw-bold px-6">
+                    <i class="ki-outline ki-arrow-left fs-4 me-2"></i> Back to List
+                </a>
+            </div>
+
+        </div>
     </div>
+    <!--end::Toolbar-->
+    <!--begin::Content-->
+    <div class="post d-flex flex-column-fluid" id="kt_post">
+        <div class="container-xxl">
+            <div class="card shadow-sm">
+                <div class="card-body p-10">
+                    <div class="row align-items-center">
+                        <!--begin::Avatar-->
+                        <div class="col-md-3 text-center mb-10 mb-md-0">
+                            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                            {
+                                <div class="symbol symbol-150px symbol-lg-160px symbol-fixed position-relative mx-auto">
+                                    <img src="@Model.ImageUrl" alt="Merchant Image" class="rounded shadow-sm" style="object-fit: cover;" />
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="symbol symbol-150px symbol-lg-160px symbol-fixed bg-light mx-auto d-flex align-items-center justify-content-center">
+                                    <span class="text-muted fw-bold">No Image</span>
+                                </div>
+                            }
+                        </div>
+                        <!--end::Avatar-->
+                        <!--begin::Info-->
+                        <div class="col-md-9">
+                            <div class="row mb-5">
+                                <div class="col-sm-4 text-muted fw-bold fs-6">Name:</div>
+                                <div class="col-sm-8 text-dark fs-6 fw-semibold">@Model.Name</div>
+                            </div>
+                            <div class="row mb-5">
+                                <div class="col-sm-4 text-muted fw-bold fs-6">Address:</div>
+                                <div class="col-sm-8 text-dark fs-6">@Model.Adress</div>
+                            </div>
+                            <div class="row mb-5">
+                                <div class="col-sm-4 text-muted fw-bold fs-6">Phone Number:</div>
+                                <div class="col-sm-8 text-dark fs-6">@Model.PhoneNumber</div>
+                            </div>
+                            <div class="row mb-5">
+                                <div class="col-sm-4 text-muted fw-bold fs-6">Email Address:</div>
+                                <div class="col-sm-8 text-dark fs-6">@Model.Email</div>
+                            </div>
+                        </div>
+                        <!--end::Info-->
+                        @if (Model.Branches != null && Model.Branches.Any())
+                        {
+                            <div class="card mt-10">
+                                <div class="card-header">
+                                    <h3 class="card-title fw-bold text-gray-800">Branches</h3>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="table-responsive">
+                                        <table class="table align-middle table-row-dashed fs-6 gy-4">
+                                            <thead>
+                                                <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
+                                                    <th class="min-w-150px">Branch Name</th>
+                                                    <th class="min-w-250px">Address</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-gray-700 fw-semibold">
+                                                @foreach (var branch in Model.Branches)
+                                                {
+                                                    <tr>
+                                                        <td>@branch.Name</td>
+                                                        <td>@branch.Address</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-warning d-flex align-items-center p-5 mt-10">
+                                <i class="ki-outline ki-information-5 fs-2hx text-warning me-4"></i>
+                                <div class="d-flex flex-column">
+                                    <h4 class="mb-1 text-warning">No Branches Found</h4>
+                                    <span>You haven’t added any branches to this merchant yet.</span>
+                                </div>
+                            </div>
+                        }
 
-    <!-- Card -->
-    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl border border-gray-200 dark:border-gray-700 mt-6 p-8 flex flex-col lg:flex-row gap-8 items-start">
-        <!-- Image -->
-        <div class="flex-shrink-0">
-            @if (!string.IsNullOrEmpty(Model.ImageUrl))
-            {
-                <img src="@Model.ImageUrl" alt="Merchant Image"
-                     class="w-20 h-20 rounded-full object-cover border-2 border-gray-300 dark:border-gray-600 shadow" />
-            }
-            else
-            {
-                <div class="w-20 h-20 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600">
-                    <span class="text-gray-400 dark:text-gray-500 italic text-sm">No image</span>
+                    </div>
                 </div>
-            }
-        </div>
-
-        <!-- Info -->
-        <div class="flex-1 w-full max-w-xl text-gray-900 dark:text-gray-100">
-            <dl class="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-4">
-                <dt class="font-semibold">Name:</dt>
-                <dd class="sm:col-span-2 text-gray-700 dark:text-gray-300">@Model.Name</dd>
-
-                <dt class="font-semibold">Address:</dt>
-                <dd class="sm:col-span-2 text-gray-700 dark:text-gray-300">@Model.Adress</dd>
-
-                <dt class="font-semibold">Phone Number:</dt>
-                <dd class="sm:col-span-2 text-gray-700 dark:text-gray-300">@Model.PhoneNumber</dd>
-
-                <dt class="font-semibold">Email:</dt>
-                <dd class="sm:col-span-2 text-gray-700 dark:text-gray-300">@Model.Email</dd>
-            </dl>
+            </div>
         </div>
     </div>
-
-    <!-- Actions -->
-    <div class="flex flex-wrap gap-4 justify-start mt-8">
-        <a asp-action="Update" asp-route-id="@Model.Id"
-           class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white text-lg font-semibold px-8 py-3 rounded-full shadow transition">
-            <i class="fa-regular fa-pen-to-square text-xl"></i> Update
-        </a>
-        <a asp-action="Index"
-           class="inline-flex items-center gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-lg font-semibold px-8 py-3 rounded-full shadow transition">
-            <i class="fa-regular fa-turn-left text-xl"></i> Back
-        </a>
-    </div>
+    <!--end::Content-->
 </div>

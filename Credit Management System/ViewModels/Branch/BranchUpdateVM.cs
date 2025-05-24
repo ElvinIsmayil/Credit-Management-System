@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace Credit_Management_System.ViewModels.Branch
 {
@@ -22,5 +23,6 @@ namespace Credit_Management_System.ViewModels.Branch
 
         [Required(ErrorMessage = "MerchantId is required.")]
         public int MerchantId { get; set; }
+        public List<SelectListItem> Merchants { get; set; } = new List<SelectListItem>();
     }
 }

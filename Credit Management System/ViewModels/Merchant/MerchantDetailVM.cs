@@ -1,4 +1,6 @@
-﻿namespace Credit_Management_System.ViewModels.Merchant
+﻿using Credit_Management_System.ViewModels.Branch;
+
+namespace Credit_Management_System.ViewModels.Merchant
 {
     public class MerchantDetailVM
     {
@@ -8,5 +10,6 @@
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string? ImageUrl { get; set; }
+        public List<BranchVM> Branches { get; set; } = new List<BranchVM>();
     }
 }

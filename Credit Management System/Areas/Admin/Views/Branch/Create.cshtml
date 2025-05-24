@@ -1,5 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model BranchCreateVM
+
 @{
+    ViewData["Title"] = "Create Branch";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Create New Branch</h3>
+    </div>
+    <div class="card-body">
+        <form asp-area="Admin" asp-controller="Branch" asp-action="Create" method="post" enctype="multipart/form-data">
+            <div class="mb-10">
+                <label asp-for="Name" class="form-label fw-bold">Branch Name</label>
+                <input asp-for="Name" class="form-control form-control-solid" placeholder="Enter branch name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="mb-10">
+                <label asp-for="Address" class="form-label fw-bold">Address</label>
+                <textarea asp-for="Address" class="form-control form-control-solid" rows="3" placeholder="Enter address"></textarea>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+
+            <div class="mb-10">
+                <label asp-for="PhoneNumber" class="form-label fw-bold">Phone Number</label>
+                <input asp-for="PhoneNumber" class="form-control form-control-solid" placeholder="Enter phone number" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MerchantId" class="form-label fw-bold">Select Merchant</label>
+                <select asp-for="MerchantId" asp-items="Model.Merchants" class="form-select form-select-solid">
+                    <option value="">Select Merchant</option>
+                </select>
+                <span asp-validation-for="MerchantId" class="text-danger"></span>
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary">Create Branch</button>
+                <a asp-action="Index" class="btn btn-light">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }
