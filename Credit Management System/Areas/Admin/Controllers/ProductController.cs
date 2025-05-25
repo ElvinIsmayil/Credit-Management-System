@@ -1,5 +1,6 @@
 ﻿using Credit_Management_System.Models;
 using Credit_Management_System.Services.Implementations;
+using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Merchant;
 using Credit_Management_System.ViewModels.Product;
 using Microsoft.AspNetCore.Mvc;
@@ -9,18 +10,17 @@ namespace Credit_Management_System.Areas.Admin.Controllers
     [Area("Admin")]
     public class ProductController : Controller
     {
-        private readonly IServiceProvider _serviceProvider;
-
-        public ProductController(IServiceProvider serviceProvider)
+        private readonly IProductService _productService;
+        public ProductController(IProductService productService)
         {
-            _serviceProvider = serviceProvider;
+            _productService = productService;
         }
+
 
         [HttpGet]   
         public IActionResult Index()
         {
-            var service = GetProductService<ProductVM>();
-            var products = service.GetAllAsync();
+            var products = _productService.GetAllAsync();
             if (products == null)
                 return NotFound();
             return View(products);
@@ -39,8 +39,8 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             {
                 if (!ModelState.IsValid)
                     return View(productCreateVM);
-                var service = GetProductService<ProductCreateVM>();
-                var data = service.AddAsync(productCreateVM);
+
+                var data = _productService.AddAsync(productCreateVM);
                 if (data == null)
                 {
                     ModelState.AddModelError(string.Empty, "Failed to create product.");
@@ -58,8 +58,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
-            var service = GetProductService<ProductUpdateVM>();
-            var product = await service.GetByIdAsync(id);
+            var product = await _productService.GetUpdateByIdAsync(id);
             if (product == null)
                 return NotFound();
             return View(product);
@@ -73,8 +72,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             {
                 if (!ModelState.IsValid)
                     return View(productUpdateVM);
-                var service = GetProductService<ProductUpdateVM>();
-                var data = await service.UpdateAsync(productUpdateVM);
+                var data = await _productService.UpdateAsync(productUpdateVM);
                 if (data == null)
                 {
                     ModelState.AddModelError(string.Empty, "Failed to update product.");
@@ -92,8 +90,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int id)
         {
-            var service = GetProductService<ProductDetailVM>();
-            var product = await service.GetByIdAsync(id);
+            var product = await _productService.GetDetailByIdAsync(id);
             if (product == null)
                 return NotFound();
             return View(product);
@@ -105,8 +102,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         {
             try
             {
-                var service = GetProductService<ProductVM>();
-                var result = await service.DeleteAsync(id);
+                var result = await _productService.DeleteAsync(id);
 
                 if (!result)
                 {
@@ -122,9 +118,6 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         }
 
 
-        private IGenericService<TViewModel, Product> GetProductService<TViewModel>() where TViewModel : class
-        {
-            return _serviceProvider.GetRequiredService<IGenericService<TViewModel, Product>>();
-        }
+        
     }
 }

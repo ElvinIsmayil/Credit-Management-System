@@ -1,114 +1,119 @@
-﻿@model Credit_Management_System.ViewModels.Category.CategoryCreateVM
+﻿@model CategoryCreateVM
 
 @{
     ViewData["Title"] = "Create Category";
 }
 
-<div class="content flex flex-col flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <h1 class="mb-8 text-center text-primary-600 dark:text-primary-400 font-extrabold text-3xl">
-        @ViewData["Title"]
-    </h1>
+<!-- Card Wrapper -->
+<div class="card card-flush shadow-sm">
+    <div class="card-header">
+        <h3 class="card-title text-dark fw-bold">@ViewData["Title"]</h3>
+    </div>
 
-    <hr class="mb-8 border-gray-300 dark:border-gray-700" />
+    <div class="card-body pt-0">
+        <form asp-action="Create" enctype="multipart/form-data" method="post" class="form" novalidate>
+            <div asp-validation-summary="All" class="alert alert-danger"></div>
 
-    <form asp-action="Create" enctype="multipart/form-data" method="post" novalidate class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-        <div asp-validation-summary="All" class="mb-6 text-red-600 font-semibold"></div>
-
-        <!-- Name -->
-        <div class="mb-6">
-            <label asp-for="Name" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Category Name</label>
-            <input asp-for="Name" class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
-            <span asp-validation-for="Name" class="text-red-500 text-sm mt-1 block"></span>
-        </div>
-
-        <!-- Description -->
-        <div class="mb-6">
-            <label asp-for="Description" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Description</label>
-            <textarea asp-for="Description" rows="3" class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"></textarea>
-            <span asp-validation-for="Description" class="text-red-500 text-sm mt-1 block"></span>
-        </div>
-
-        <!-- Image -->
-        <div class="mb-6">
-            <label asp-for="Image" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Category Image</label>
-            <input asp-for="Image" type="file" class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
-            <span asp-validation-for="Image" class="text-red-500 text-sm mt-1 block"></span>
-        </div>
-
-        <!-- Parent Category -->
-        <div class="mb-6">
-            <label asp-for="ParentCategoryId" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Parent Category</label>
-            <select asp-for="ParentCategoryId" class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500">
-                <option value="">-- Select Parent Category --</option>
-                @foreach (var category in Model.ParentCategories)
-                {
-                    <option value="@category.Id">@category.Name</option>
-                }
-            </select>
-            <span asp-validation-for="ParentCategoryId" class="text-red-500 text-sm mt-1 block"></span>
-        </div>
-
-        <!-- Dynamic Subcategories Section -->
-        <div id="subcategoriesSection">
-            <h3 class="text-xl mb-4 font-semibold text-gray-700 dark:text-gray-300">Subcategories</h3>
-
-            <div class="subcategoriesContainer">
-                @for (int i = 0; i < Model.SubCategories.Count; i++)
-                {
-                    <div class="subcategoryRow flex gap-4 mb-4">
-                        <input type="text" name="SubCategories[@i].Name" placeholder="Subcategory Name" value="@Model.SubCategories[i].Name" class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500" />
-
-                        <button type="button" class="removeSubCategoryBtn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md">
-                            Remove
-                        </button>
-                    </div>
-                }
+            <!-- Category Name -->
+            <div class="fv-row mb-7">
+                <label asp-for="Name" class="required fw-semibold fs-6 mb-2">Category Name</label>
+                <input asp-for="Name" class="form-control form-control-solid" />
+                <span asp-validation-for="Name" class="text-danger small"></span>
             </div>
 
-            <button type="button" id="addSubCategoryBtn" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md mt-4">
-                Add Subcategory
-            </button>
-        </div>
+            <!-- Description -->
+            <div class="fv-row mb-7">
+                <label asp-for="Description" class="fw-semibold fs-6 mb-2">Description</label>
+                <textarea asp-for="Description" rows="3" class="form-control form-control-solid"></textarea>
+                <span asp-validation-for="Description" class="text-danger small"></span>
+            </div>
 
-        <!-- Submit Button -->
-        <div class="flex justify-end mt-6">
-            <button type="submit" class="px-6 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
-                Create Category
-            </button>
-        </div>
-    </form>
+            <!-- Image Upload -->
+            <div class="fv-row mb-7">
+                <label asp-for="Image" class="fw-semibold fs-6 mb-2">Category Image</label>
+                <input asp-for="Image" type="file" class="form-control form-control-solid" />
+                <span asp-validation-for="Image" class="text-danger small"></span>
+            </div>
+
+            <!-- Parent Category Dropdown -->
+            <div class="fv-row mb-7">
+                <label asp-for="ParentCategoryId" class="fw-semibold fs-6 mb-2">Parent Category</label>
+                <select asp-for="ParentCategoryId" class="form-select form-select-solid">
+                    <option value="">-- Select Parent Category --</option>
+                    @foreach (var category in Model.ParentCategories)
+                    {
+                        <option value="@category.Id">@category.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="ParentCategoryId" class="text-danger small"></span>
+            </div>
+
+            <!-- Subcategories -->
+            <div class="card card-flush border mb-7">
+                <div class="card-header">
+                    <h4 class="card-title fw-bold text-gray-700">Subcategories</h4>
+                </div>
+                <div class="card-body">
+                    <div class="subcategoriesContainer">
+                        @for (int i = 0; i < Model.SubCategories.Count; i++)
+                        {
+                            <div class="d-flex gap-4 align-items-center mb-4 subcategoryRow">
+                                <input type="text" name="SubCategories[@i].Name" placeholder="Subcategory Name"
+                                       value="@Model.SubCategories[i].Name"
+                                       class="form-control form-control-solid flex-grow-1" />
+                                <button type="button" class="btn btn-danger removeSubCategoryBtn">
+                                    <i class="bi bi-trash-fill"></i>
+                                </button>
+                            </div>
+                        }
+                    </div>
+
+                    <button type="button" id="addSubCategoryBtn" class="btn btn-light-primary">
+                        <i class="bi bi-plus-lg me-2"></i>Add Subcategory
+                    </button>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-check-lg me-2"></i>Create Category
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
 
+<!-- Scripts -->
 @section Scripts {
     <script>
-        // JavaScript for adding/removing subcategories dynamically
-        document.getElementById('addSubCategoryBtn').addEventListener('click', function() {
+        let subcategoryIndex = @Model.SubCategories.Count;
+
+        document.getElementById('addSubCategoryBtn').addEventListener('click', function () {
             var container = document.querySelector('.subcategoriesContainer');
             var newSubCategory = document.createElement('div');
-            newSubCategory.classList.add('subcategoryRow', 'flex', 'gap-4', 'mb-4');
+            newSubCategory.classList.add('d-flex', 'gap-4', 'align-items-center', 'mb-4', 'subcategoryRow');
 
-            // Create the input field for the subcategory name
             var subCategoryInput = document.createElement('input');
             subCategoryInput.type = 'text';
-            subCategoryInput.name = 'SubCategories[][Name]';
+            subCategoryInput.name = `SubCategories[${subcategoryIndex}].Name`;
             subCategoryInput.placeholder = 'Subcategory Name';
-            subCategoryInput.classList.add('w-full', 'rounded-md', 'border', 'border-gray-300', 'dark:border-gray-600', 'bg-white', 'dark:bg-gray-700', 'px-4', 'py-2', 'text-gray-900', 'dark:text-gray-100', 'focus:outline-none', 'focus:ring-2', 'focus:ring-primary-500');
+            subCategoryInput.classList.add('form-control', 'form-control-solid', 'flex-grow-1');
 
-            // Create the remove button
             var removeButton = document.createElement('button');
             removeButton.type = 'button';
-            removeButton.textContent = 'Remove';
-            removeButton.classList.add('removeSubCategoryBtn', 'bg-red-600', 'hover:bg-red-700', 'text-white', 'px-4', 'py-2', 'rounded-md');
+            removeButton.classList.add('btn', 'btn-danger', 'removeSubCategoryBtn');
+            removeButton.innerHTML = '<i class="bi bi-trash-fill"></i>';
 
-            // Append elements to the row
+            removeButton.addEventListener('click', function () {
+                newSubCategory.remove();
+            });
+
             newSubCategory.appendChild(subCategoryInput);
             newSubCategory.appendChild(removeButton);
             container.appendChild(newSubCategory);
 
-            // Add event listener to the remove button
-            removeButton.addEventListener('click', function() {
-                newSubCategory.remove();
-            });
+            subcategoryIndex++;
         });
     </script>
 }

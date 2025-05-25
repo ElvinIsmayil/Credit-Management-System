@@ -4,9 +4,6 @@ using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Branch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Credit_Management_System.Areas.Admin.Controllers
 {
@@ -15,34 +12,24 @@ namespace Credit_Management_System.Areas.Admin.Controllers
     {
         private readonly IBranchService _branchService;
         private readonly IMerchantService _merchantService;
-        private readonly IServiceProvider _serviceProvider;
 
-        public BranchController(
-            IBranchService branchService,
-            IMerchantService merchantService,
-            IServiceProvider serviceProvider)
+        public BranchController(IBranchService branchService, IMerchantService merchantService)
         {
             _branchService = branchService;
             _merchantService = merchantService;
-            _serviceProvider = serviceProvider;
-        }
-
-        private IGenericService<TViewModel, Branch> GetBranchService<TViewModel>() where TViewModel : class
-        {
-            return _serviceProvider.GetRequiredService<IGenericService<TViewModel, Branch>>();
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var branches = await _branchService.GetAllBranchesAsync(); // returns List<BranchVM>
+            var branches = await _branchService.GetAllBranchesAsync();
             return View(branches);
         }
 
         [HttpGet]
         public async Task<IActionResult> Detail(int id)
         {
-            var branchDetailVM = await _branchService.GetBranchDetailByIdAsync(id); // returns BranchDetailVM
+            var branchDetailVM = await _branchService.GetDetailByIdAsync(id);
             if (branchDetailVM == null)
                 return NotFound();
 
@@ -80,8 +67,8 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                 if (!ModelState.IsValid)
                     return View(branchCreateVM);
 
-                var service = GetBranchService<BranchCreateVM>();
-                var data = await service.AddAsync(branchCreateVM);
+                
+                var data = await _branchService.AddAsync(branchCreateVM);
 
                 if (data == null)
                 {
@@ -101,8 +88,8 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
-            var service = GetBranchService<BranchUpdateVM>();   
-            var branchUpdateVM = await service.GetByIdAsync(id);
+            
+            var branchUpdateVM = await _branchService.GetUpdateByIdAsync(id);
             if (branchUpdateVM == null)
                 return NotFound();
 
@@ -132,8 +119,8 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                 if (!ModelState.IsValid)
                     return View(branchUpdateVM);
 
-                var service = GetBranchService<BranchUpdateVM>();
-                var data = await service.UpdateAsync(branchUpdateVM);
+               
+                var data = await _branchService.UpdateAsync(branchUpdateVM);
 
                 if (data == null)
                 {

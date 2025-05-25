@@ -1,6 +1,7 @@
 ﻿using Credit_Management_System.Extensions;
 using Credit_Management_System.Models;
 using Credit_Management_System.Services.Implementations;
+using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Merchant;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,18 +10,16 @@ namespace Credit_Management_System.Areas.Admin.Controllers
     [Area("Admin")]
     public class MerchantController : Controller
     {
-        private readonly IServiceProvider _serviceProvider;
-
-        public MerchantController(IServiceProvider serviceProvider)
+        private readonly IMerchantService _merchantService;
+        public MerchantController(IMerchantService merchantService)
         {
-            _serviceProvider = serviceProvider;
+            _merchantService = merchantService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var service = GetMerchantService<MerchantVM>();
-            var merchants = await service.GetAllAsync();
+            var merchants = await _merchantService.GetAllAsync();
             return View(merchants);
         }
 
@@ -53,8 +52,8 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                     merchantCreateVM.ImageUrl = await merchantCreateVM.Image.SaveImageAsync("merchants");
                 }
 
-                var service = GetMerchantService<MerchantCreateVM>();
-                var data = await service.AddAsync(merchantCreateVM);
+                var data = await _merchantService.AddAsync(merchantCreateVM);
+
                 if (data == null)
                 {
                     ModelState.AddModelError(string.Empty, "Failed to create merchant.");
@@ -73,8 +72,10 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
-            var service = GetMerchantService<MerchantUpdateVM>();
-            var merchant = await service.GetByIdAsync(id);
+            var merchant = await _merchantService.GetUpdateByIdAsync(id);
+            if (merchant == null)
+                return NotFound();
+
             return View(merchant);
         }
 
@@ -87,7 +88,6 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                 if (!ModelState.IsValid)
                     return View(merchantUpdateVM);
 
-                var service = GetMerchantService<MerchantUpdateVM>();
                 if (merchantUpdateVM.Image != null)
                 {
                     var validationErrors = merchantUpdateVM.Image.ValidateFileType().ToList();
@@ -104,7 +104,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
 
                     merchantUpdateVM.ImageUrl = await merchantUpdateVM.Image.SaveImageAsync("merchants");
                 }
-                await service.UpdateAsync(merchantUpdateVM);
+                await _merchantService.UpdateAsync(merchantUpdateVM);
                 return RedirectToAction("Index");
             }
             catch
@@ -120,13 +120,10 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         {
             try
             {
-                var service = GetMerchantService<MerchantVM>();
-                var result = await service.DeleteAsync(id);
+                var result = await _merchantService.DeleteAsync(id);
 
                 if (!result)
-                {
                     return Json(new { success = false, message = "Delete failed. Item not found or already deleted." });
-                }
 
                 return Json(new { success = true, message = "Item deleted successfully." });
             }
@@ -139,14 +136,8 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int id)
         {
-            var service = GetMerchantService<MerchantDetailVM>();
-            var merchant = await service.GetByIdAsync(id);
+            var merchant = await _merchantService.GetDetailByIdAsync(id);
             return View(merchant);
-        }
-
-        private IGenericService<TViewModel, Merchant> GetMerchantService<TViewModel>() where TViewModel : class
-        {
-            return _serviceProvider.GetRequiredService<IGenericService<TViewModel, Merchant>>();
         }
     }
 }

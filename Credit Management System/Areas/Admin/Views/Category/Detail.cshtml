@@ -1,32 +1,132 @@
-﻿@model CategoryDetailVM
+﻿@model Credit_Management_System.ViewModels.Category.CategoryDetailVM
 
-@{
-    ViewData["Title"] = "Category Detail";
-}
-
-<div class="content flex flex-col flex-grow max-w-lg mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <h1 class="mb-8 text-center text-primary-600 dark:text-primary-400 font-extrabold text-3xl">@ViewData["Title"]</h1>
-
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-        <div class="mb-4">
-            <strong class="text-lg">Name:</strong> @Model.Name
-        </div>
-        <div class="mb-4">
-            <strong class="text-lg">Description:</strong> @Model.Description
-        </div>
-        <div class="mb-4">
-            <strong class="text-lg">Parent Category:</strong> @Model.ParentCategoryNames
-        </div>
-        @if (!string.IsNullOrEmpty(Model.ImageUrl))
-        {
-            <div class="mb-4">
-                <strong class="text-lg">Image:</strong>
-                <img src="@Model.ImageUrl" alt="Category Image" class="mt-2 rounded-lg w-full" />
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!-- Toolbar -->
+    <div class="toolbar mb-5" id="kt_toolbar">
+        <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+            <div class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Category Details</h1>
+                <span class="h-20px border-gray-300 border-start mx-4"></span>
+                <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+                    <li class="breadcrumb-item text-muted">
+                        <a asp-controller="Dashboard" asp-action="Index" class="text-muted text-hover-primary">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-300 w-5px h-2px"></span>
+                    </li>
+                    <li class="breadcrumb-item text-muted">
+                        <a asp-controller="Category" asp-action="Index" class="text-muted text-hover-primary">Categories</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-300 w-5px h-2px"></span>
+                    </li>
+                    <li class="breadcrumb-item text-dark">Detail</li>
+                </ul>
             </div>
-        }
+
+            <div class="d-flex align-items-center gap-3">
+                <a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-lg btn-primary fw-bold px-6">
+                    <i class="ki-outline ki-pencil fs-4 me-2"></i> Edit Category
+                </a>
+                <a asp-action="Index" class="btn btn-lg btn-light fw-bold px-6">
+                    <i class="ki-outline ki-arrow-left fs-4 me-2"></i> Back to List
+                </a>
+            </div>
+        </div>
     </div>
 
-    <div class="flex justify-center mt-8">
-        <a asp-action="Index" class="px-6 py-3 bg-primary-600 text-white font-semibold rounded-full shadow hover:bg-primary-700">Back to List</a>
-    </div>
+    <!-- Content -->
+    <div class="post d-flex flex-column-fluid" id="kt_post">
+        <div class="container-xxl">
+            <div class="card shadow-sm">
+                <div class="card-body p-10">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="row mb-5">
+                                <div class="col-sm-4 text-muted fw-bold fs-6">Category Name:</div>
+                                <div class="col-sm-8 text-dark fs-6 fw-semibold">@Model.Name</div>
+                            </div>
+
+                            <div class="row mb-5">
+                                <div class="col-sm-4 text-muted fw-bold fs-6">Description:</div>
+                                <div class="col-sm-8 text-dark fs-6">@Model.Description</div>
+                            </div>
+
+                            <div class="row mb-5">
+                                <div class="col-sm-4 text-muted fw-bold fs-6">Image:</div>
+                                <div class="col-sm-8">
+                                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                                    {
+                                        <img src="@Model.ImageUrl" alt="Category Image" class="img-fluid rounded" style="max-height: 150px;" />
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">No image available</span>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="row mb-5">
+                                <div class="col-sm-4 text-muted fw-bold fs-6">Parent Categories:</div>
+                                <div class="col-sm-8 text-dark fs-6">
+                                    @if (Model.ParentCategoryNames?.Any() == true)
+                                    {
+                                        <ul class="mb-0">
+                                            @foreach (var parentName in Model.ParentCategoryNames)
+                                            {
+                                                <li>@parentName</li>
+                                            }
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">None</span>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="row mb-5">
+                                <div class="col-sm-4 text-muted fw-bold fs-6">Subcategories:</div>
+                                <div class="col-sm-8 text-dark fs-6">
+                                    @if (Model.SubCategories.Any())
+                                    {
+                                        <ul class="mb-0">
+                                            @foreach (var sub in Model.SubCategories)
+                                            {
+                                                <li>@sub.Name</li>
+                                            }
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">No subcategories</span>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="row mb-5">
+                                <div class="col-sm-4 text-muted fw-bold fs-6">Products:</div>
+                                <div class="col-sm-8 text-dark fs-6">
+                                    @if (Model.Products.Any())
+                                    {
+                                        <ul class="mb-0">
+                                            @foreach (var product in Model.Products)
+                                            {
+                                                <li>@product.Name</li>
+                                            }
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">No products in this category</span>
+                                    }
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end Content -->
 </div>

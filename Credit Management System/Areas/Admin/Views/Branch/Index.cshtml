@@ -40,9 +40,9 @@
                         </tr>
                     </thead>
                     <tbody class="text-gray-600 fw-bold">
-                        @if (Model != null && Model.Count > 0)
-                        {
-                            foreach (var branch in Model)
+                       @*  @if (Model != null && Model.Count > 0)
+                        { *@
+                           @foreach (var branch in Model)
                             {
                                 <tr>
                                     <td>
@@ -68,25 +68,29 @@
                                             <div class="menu-item px-3">
                                                 <a asp-action="Update" asp-route-id="@branch.Id" class="menu-link px-3">Edit</a>
                                             </div>
-                                            <button class="btn btn-link p-0 m-0 align-baseline menu-link px-3 delete-btn"
-                                                    data-id="@branch.Id"
-                                                    data-name="@branch.Name"
-                                                    data-url="@Url.Action("Delete", "Branch", new { area = "Admin" })"
-                                                    type="button">
-                                                Delete
-                                            </button>
+                                            <div class="menu-item px-3">
+                                                <a href="javascript:;"
+                                                   class="menu-link px-3 delete-btn"
+                                                   data-id="@branch.Id"
+                                                   data-name="@branch.Name"
+                                                   data-url="@Url.Action("Delete", "Branch", new { area = "Admin" })">
+                                                    Delete
+                                                </a>
+                                            </div>
+
+
 
                                         </div>
                                     </td>
                                 </tr>
                             }
-                        }
+                      @*   }
                         else
                         {
                             <tr>
                                 <td colspan="6" class="text-center">No branches found.</td>
                             </tr>
-                        }
+                        } *@
                     </tbody>
                 </table>
             </div>

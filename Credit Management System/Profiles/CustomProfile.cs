@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Credit_Management_System.Areas.Admin.ViewModels.User;
 using Credit_Management_System.Models;
 using Credit_Management_System.ViewModels;
 using Credit_Management_System.ViewModels.Branch;
@@ -45,6 +46,13 @@ namespace Credit_Management_System.Profiles
             CreateMap<Product, ProductCreateVM>().ReverseMap();
             CreateMap<Product, ProductUpdateVM>().ReverseMap();
             CreateMap<Product, ProductDetailVM>().ReverseMap();
+
+            CreateMap<AppUser, UserVM>().ReverseMap();
+            CreateMap<AppUser, UserCreateVM>().ReverseMap();
+            CreateMap<AppUser, UserUpdateVM>().ReverseMap();
+            CreateMap<AppUser, UserDetailVM>().ReverseMap();
+
+
 
         }
     }

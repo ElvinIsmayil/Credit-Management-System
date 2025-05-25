@@ -1,13 +1,11 @@
 ﻿using Credit_Management_System.Areas.Admin.ViewModels.Account;
 using Credit_Management_System.Helpers;
+using Credit_Management_System.Infrastructure.Interfaces;
 using Credit_Management_System.Models;
-using Credit_Management_System.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Web;
 
 namespace Credit_Management_System.Areas.Admin.Controllers

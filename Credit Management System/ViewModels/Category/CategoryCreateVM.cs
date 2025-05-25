@@ -10,17 +10,13 @@ namespace Credit_Management_System.ViewModels.Category
 
         [StringLength(1000, ErrorMessage = "Description cannot exceed 1000 characters.")]
         public string Description { get; set; }
-
-        [StringLength(255, ErrorMessage = "Image URL cannot exceed 255 characters.")]
-        [Url(ErrorMessage = "ImageUrl must be a valid URL.")]
-        public string? ImageUrl { get; set; }
-
         public IFormFile? Image { get; set; }
+        public string? ImageUrl { get; set; }
 
         public int? ParentCategoryId { get; set; }
 
-        public List<CategoryCreateVM> SubCategories { get; set; } = new List<CategoryCreateVM>();  
+        public List<SubCategoryVM> SubCategories { get; set; } = new List<SubCategoryVM>();  
 
-        public IEnumerable<CategoryVM> ParentCategories { get; set; } 
+        public IEnumerable<CategoryVM> ParentCategories { get; set; } = new List<CategoryVM>();
     }
 }
