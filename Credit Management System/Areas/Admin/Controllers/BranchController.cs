@@ -1,4 +1,5 @@
-﻿using Credit_Management_System.Models;
+﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
+using Credit_Management_System.Models;
 using Credit_Management_System.Services.Implementations;
 using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Branch;
@@ -8,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Credit_Management_System.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class BranchController : Controller
+    public class BranchController : BaseAdminController
     {
         private readonly IBranchService _branchService;
         private readonly IMerchantService _merchantService;

@@ -1,4 +1,5 @@
-﻿using Credit_Management_System.Models;
+﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
+using Credit_Management_System.Models;
 using Credit_Management_System.Services.Implementations;
 using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Merchant;
@@ -8,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Credit_Management_System.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class ProductController : Controller
+    public class ProductController : BaseAdminController
     {
         private readonly IProductService _productService;
         public ProductController(IProductService productService)

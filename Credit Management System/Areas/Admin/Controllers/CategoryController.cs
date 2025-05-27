@@ -1,4 +1,5 @@
-﻿using Credit_Management_System.Extensions;
+﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
+using Credit_Management_System.Extensions;
 using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Category;
 using Microsoft.AspNetCore.Authorization;
@@ -7,8 +8,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
 {
 
     [Area("Admin")]
-    [Authorize] 
-    public class CategoryController : Controller
+    public class CategoryController : BaseAdminController
     {
         private readonly ICategoryService _categoryService;
         private const string ImageFolder = "categories";
@@ -220,18 +220,6 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         }
 
 
-        [HttpGet]
-        public async Task<IActionResult> GetSubCategories(int parentId)
-        {
-            try
-            {
-                var subCategories = await _categoryService.GetSubCategoriesAsync(parentId);
-                return Json(subCategories);
-            }
-            catch (Exception ex)
-            {
-                return Json(new { error = "An error occurred while retrieving subcategories." });
-            }
-        }
+
     }
 }

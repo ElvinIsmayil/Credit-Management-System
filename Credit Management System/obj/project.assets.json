@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {
+    "net9.0": {
       "AutoMapper/14.0.0": {
         "type": "package",
         "dependencies": {
@@ -7860,7 +7860,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0": [
+    "net9.0": [
       "AutoMapper >= 14.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.15",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 8.0.15",
@@ -7872,36 +7872,29 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Elvin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/teymurdevv/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Credit Management System.csproj",
+      "projectUniqueName": "/Users/teymurdevv/Desktop/Credit-Management-System/Credit Management System/Credit Management System.csproj",
       "projectName": "Credit Management System",
-      "projectPath": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Credit Management System.csproj",
-      "packagesPath": "C:\\Users\\Elvin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\obj\\",
+      "projectPath": "/Users/teymurdevv/Desktop/Credit-Management-System/Credit Management System/Credit Management System.csproj",
+      "packagesPath": "/Users/teymurdevv/.nuget/packages/",
+      "outputPath": "/Users/teymurdevv/Desktop/Credit-Management-System/Credit Management System/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Elvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/teymurdevv/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net8.0"
+        "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "projectReferences": {}
         }
       },
@@ -7915,11 +7908,11 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
+      "net9.0": {
+        "targetAlias": "net9.0",
         "dependencies": {
           "AutoMapper": {
             "target": "Package",
@@ -7977,7 +7970,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

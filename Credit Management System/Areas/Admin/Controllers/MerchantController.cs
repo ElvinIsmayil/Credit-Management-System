@@ -1,4 +1,5 @@
-﻿using Credit_Management_System.Extensions;
+﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
+using Credit_Management_System.Extensions;
 using Credit_Management_System.Models;
 using Credit_Management_System.Services.Implementations;
 using Credit_Management_System.Services.Interfaces;
@@ -8,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Credit_Management_System.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class MerchantController : Controller
+    public class MerchantController : BaseAdminController
     {
         private readonly IMerchantService _merchantService;
         public MerchantController(IMerchantService merchantService)

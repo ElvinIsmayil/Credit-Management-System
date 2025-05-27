@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Credit_Management_System.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class EmployeeController : Controller
+    public class EmployeeController : BaseAdminController
     {
         public IActionResult Index()
         {

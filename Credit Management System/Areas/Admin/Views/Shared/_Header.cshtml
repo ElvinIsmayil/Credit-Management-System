@@ -26,8 +26,7 @@
 		<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
 
 			<partial name="_Navbar" />
-			<partial name="_Topbar" />
-
+			@await Component.InvokeAsync("Header")
 		</div>
 		<!--end::Wrapper-->
 	</div>

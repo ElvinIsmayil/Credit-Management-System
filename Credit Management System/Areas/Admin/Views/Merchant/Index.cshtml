@@ -1,4 +1,4 @@
-﻿@model List<MerchantVM>
+﻿@model IEnumerable<MerchantVM>
 
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 	<!--begin::Toolbar-->
@@ -201,11 +201,11 @@
 										<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_subscriptions_table .form-check-input" value="1" />
 									</div>
 								</th>
-								<th class="min-w-125px">@Html.DisplayNameFor(model => model[0].ImageUrl)</th>
-								<th class="min-w-125px">@Html.DisplayNameFor(model => model[0].Name)</th>
-								<th class="min-w-125px">@Html.DisplayNameFor(model => model[0].Adress)</th>
-								<th class="min-w-125px">@Html.DisplayNameFor(model => model[0].PhoneNumber)</th>
-								<th class="min-w-125px">@Html.DisplayNameFor(model => model[0].Email)</th>
+								<th class="min-w-125px">Image</th>
+								<th class="min-w-125px">Name</th>
+								<th class="min-w-125px">Address</th>
+								<th class="min-w-125px">Phone Number</th>
+								<th class="min-w-125px">Email</th>
 								<th class="text-end min-w-70px">Actions</th>
 							</tr>
 						</thead>
