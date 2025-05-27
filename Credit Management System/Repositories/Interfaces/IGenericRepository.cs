@@ -10,6 +10,5 @@ namespace Credit_Management_System.Repositories.Interfaces
         Task<TModel> UpdateAsync(TModel entity);
         Task<bool> DeleteAsync(int id);
 
-
     }
 }

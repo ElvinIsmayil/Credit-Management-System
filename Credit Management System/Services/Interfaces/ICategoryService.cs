@@ -14,8 +14,6 @@ namespace Credit_Management_System.Services.Interfaces
         Task<CategoryDetailVM> GetDetailByIdAsync(int id);
         Task<CategoryUpdateVM> GetUpdateByIdAsync(int id);
 
-        Task<List<CategoryVM>> GetCategoryTreeAsync();
-        Task<List<CategoryVM>> GetTopLevelCategoriesAsync();
-        Task<List<CategoryVM>> GetSubCategoriesAsync(int parentId);
+    
     }
 }

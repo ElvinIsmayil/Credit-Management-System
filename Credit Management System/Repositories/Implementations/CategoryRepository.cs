@@ -1,5 +1,6 @@
 ﻿using Credit_Management_System.Models;
 using Credit_Management_System.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -9,31 +10,29 @@ namespace Credit_Management_System.Repositories.Implementations
     {
         public CategoryRepository(CreditManagementSystemDbContext context) : base(context) { }
 
-        public async Task<List<Category>> GetAllCategoriesWithRelatedAsync()
+
+        public async Task<IEnumerable<Category>> GetTopLevelCategoriesAsync()
         {
-            return await _context.Categories
-                .Include(c => c.ParentCategory)
-                .Include(c => c.Products)
-                .Where(c => !c.IsDeleted)
+            var categories = await _context.Categories
+                .Where(c => c.ParentCategoryId == null && !c.IsDeleted)
+                .Include(c => c.SubCategories)
                 .ToListAsync();
+            return categories;
         }
 
-        public async Task<List<Category>> GetAllAsync(Expression<Func<Category, bool>> predicate, params string[] includes)
+        public async Task<IEnumerable<Category>> GetSubCategoriesAsync(int parentCategoryId)
         {
-            IQueryable<Category> query = _context.Categories.Where(c => !c.IsDeleted).Where(predicate);
-
-            foreach (var include in includes)
-            {
-                query = query.Include(include);
-            }
-
-            return await query.ToListAsync();
+            var subCategories = await _context.Categories
+                .Include(c=> c.SubCategories)
+                .Where(c => c.ParentCategoryId == parentCategoryId && !c.IsDeleted)
+                .ToListAsync();
+            return subCategories;
         }
 
-        public async Task<bool> AnyAsync(Expression<Func<Category, bool>> predicate)
-        {
-            return await _context.Categories.AnyAsync(c => !c.IsDeleted && predicate.Compile().Invoke(c));
-        }
+
+
+
+
     }
 }
 

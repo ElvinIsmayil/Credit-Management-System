@@ -1,8 +1,5 @@
 ﻿using Credit_Management_System.Models;
 using Credit_Management_System.Repositories.Interfaces;
-using Credit_Management_System.ViewModels.Branch;
-using Credit_Management_System.ViewModels.Merchant;
-using Microsoft.CodeAnalysis.Operations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Credit_Management_System.Repositories.Implementations
@@ -26,9 +23,9 @@ namespace Credit_Management_System.Repositories.Implementations
         public async Task<Branch> GetBranchWithDetailsByIdAsync(int id)
         {
             return await _context.Set<Branch>()
-                .Include(b => b.Merchant)      // Include Merchant navigation property
-                .Include(b => b.Employees)     // Include Employees navigation property
-                .Include(b => b.Products)      // Include Products navigation property
+                .Include(b => b.Merchant)      
+                .Include(b => b.Employees)     
+                .Include(b => b.Products)      
                 .FirstOrDefaultAsync(b => b.Id == id);
         }
     }
