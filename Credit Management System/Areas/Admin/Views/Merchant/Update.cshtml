@@ -5,47 +5,50 @@
 }
 
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-    <!--begin::Toolbar-->
-    <div class="toolbar mb-5" id="kt_toolbar">
+    <div class="toolbar" id="kt_toolbar">
         <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
-            <div class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+            <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Edit Merchant</h1>
-                <span class="h-20px border-gray-300 border-start mx-4"></span>
+                <span class="h-20px border-gray-200 border-start mx-4"></span>
                 <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
                     <li class="breadcrumb-item text-muted">
                         <a asp-controller="Dashboard" asp-action="Index" class="text-muted text-hover-primary">Home</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <span class="bullet bg-gray-300 w-5px h-2px"></span>
+                        <span class="bullet bg-gray-200 w-5px h-2px"></span>
                     </li>
                     <li class="breadcrumb-item text-muted">
                         <a asp-controller="Merchant" asp-action="Index" class="text-muted text-hover-primary">Merchants</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <span class="bullet bg-gray-300 w-5px h-2px"></span>
+                        <span class="bullet bg-gray-200 w-5px h-2px"></span>
                     </li>
                     <li class="breadcrumb-item text-dark">Edit</li>
                 </ul>
             </div>
 
             <div class="d-flex align-items-center gap-3">
-                <a asp-action="Index" class="btn btn-lg btn-light fw-bold px-6">
+                <a asp-action="Index" class="btn btn-sm btn-light-primary fw-bold px-6">
                     <i class="ki-outline ki-arrow-left fs-4 me-2"></i> Back to List
                 </a>
             </div>
         </div>
     </div>
-    <!--end::Toolbar-->
-    <!--begin::Post-->
     <div class="post d-flex flex-column-fluid" id="kt_post">
-        <div class="container-xxl">
-            <div class="card shadow-sm">
-                <div class="card-body p-10">
+        <div id="kt_content_container" class="container-xxl">
+            <div class="card">
+                <div class="card-header border-0 pt-6">
+                    <div class="card-title">
+                        <h3 class="card-label">Update Merchant Details</h3>
+                    </div>
+                </div>
+                <div class="card-body pt-0">
                     <form asp-action="Update" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken() @* Add Anti-Forgery Token for safety *@
                         <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="ImageUrl" /> @* Keep existing image URL if not updated *@
 
                         <div class="row">
-                            <!--begin::Image Section-->
                             <div class="col-lg-4 mb-10">
                                 <div class="card bg-light border-0 shadow-sm h-100 d-flex flex-column align-items-center justify-content-center p-10">
                                     @if (!string.IsNullOrEmpty(Model.ImageUrl))
@@ -61,53 +64,47 @@
                                         </div>
                                     }
 
-                                    <input asp-for="Image" type="file" class="form-control form-control-lg form-control-solid" />
+                                    <label asp-for="Image" class="form-label fw-bold">Update Merchant Image</label>
+                                    <input asp-for="Image" type="file" class="form-control form-control-solid" />
                                     <span asp-validation-for="Image" class="text-danger"></span>
                                 </div>
                             </div>
-                            <!--end::Image Section-->
-                            <!--begin::Form Section-->
                             <div class="col-lg-8">
-                                <div class="row mb-6">
-                                    <div class="col-lg-6">
-                                        <label asp-for="Name" class="form-label fw-bold fs-6 text-dark"></label>
-                                        <input asp-for="Name" class="form-control form-control-lg form-control-solid" />
-                                        <span asp-validation-for="Name" class="text-danger"></span>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label asp-for="Adress" class="form-label fw-bold fs-6 text-dark"></label>
-                                        <input asp-for="Adress" class="form-control form-control-lg form-control-solid" />
-                                        <span asp-validation-for="Adress" class="text-danger"></span>
-                                    </div>
+                                <div class="mb-10">
+                                    <label asp-for="Name" class="form-label fw-bold">Name</label>
+                                    <input asp-for="Name" class="form-control form-control-solid" placeholder="Enter merchant name" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
                                 </div>
 
-                                <div class="row mb-6">
-                                    <div class="col-lg-6">
-                                        <label asp-for="PhoneNumber" class="form-label fw-bold fs-6 text-dark"></label>
-                                        <input asp-for="PhoneNumber" class="form-control form-control-lg form-control-solid" />
-                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label asp-for="Email" class="form-label fw-bold fs-6 text-dark"></label>
-                                        <input asp-for="Email" class="form-control form-control-lg form-control-solid" />
-                                        <span asp-validation-for="Email" class="text-danger"></span>
-                                    </div>
+                                <div class="mb-10">
+                                    <label asp-for="Email" class="form-label fw-bold">Email</label>
+                                    <input asp-for="Email" type="email" class="form-control form-control-solid" placeholder="Enter email address" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
 
-                                <div class="mt-10 text-end">
-                                    <button type="submit" class="btn btn-lg btn-primary fw-bold px-6">
-                                        <i class="ki-outline ki-save fs-4 me-2"></i> Save Changes
-                                    </button>
+                                <div class="mb-10">
+                                    <label asp-for="PhoneNumber" class="form-label fw-bold">Phone Number</label>
+                                    <input asp-for="PhoneNumber" class="form-control form-control-solid" placeholder="Enter phone number" />
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                </div>
+
+                                <div class="mb-10">
+                                    <label asp-for="Address" class="form-label fw-bold">Address</label>
+                                    <textarea asp-for="Address" class="form-control form-control-solid" rows="3" placeholder="Enter address"></textarea>
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                </div>
+
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    <a asp-action="Index" class="btn btn-light">Cancel</a>
                                 </div>
                             </div>
-                            <!--end::Form Section-->
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <!--end::Post-->
 </div>
 
 @section Scripts {

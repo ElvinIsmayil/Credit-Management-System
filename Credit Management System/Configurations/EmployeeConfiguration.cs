@@ -13,10 +13,7 @@ namespace Credit_Management_System.Configurations
             new PersonConfiguration<Employee>().Configure(builder);
 
             // Configure Position enum stored as string for readability
-            builder.Property(e => e.Position)
-                .IsRequired()
-                .HasConversion<string>();
-
+            
             // Salary configuration
             builder.Property(e => e.Salary)
                 .IsRequired()

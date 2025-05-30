@@ -16,9 +16,9 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly IEmailSender _emailSender;
+        private readonly IEmailService _emailSender;
 
-        public AccountController(RoleManager<IdentityRole> roleManager, SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, IEmailSender emailSender)
+        public AccountController(RoleManager<IdentityRole> roleManager, SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, IEmailService emailSender)
         {
             _roleManager = roleManager;
             _signInManager = signInManager;

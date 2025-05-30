@@ -8,13 +8,13 @@ namespace Credit_Management_System.Repositories.Implementations
     {
         public CategoryRepository(CreditManagementSystemDbContext context) : base(context) { }
 
-        public async Task<Category> GetCategoryDetailByIdAsync(int id)
+        public async Task<Category> GetDetailByIdAsync(int id)
         {
             var category = await _context.Categories
                 .AsNoTracking()
                 .Include(c => c.ParentCategory)
                 .Include(c => c.SubCategories)
-                .FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted);
+                .FirstOrDefaultAsync(c => c.Id == id);
             return category;
         }
 
@@ -22,7 +22,7 @@ namespace Credit_Management_System.Repositories.Implementations
         {
             var categories = await _context.Categories
                 .AsNoTracking()
-                .Where(c => c.ParentCategoryId == null && !c.IsDeleted)
+                .Where(c => c.ParentCategoryId == null)
                 .ToListAsync();
             return categories;
         }
@@ -31,7 +31,7 @@ namespace Credit_Management_System.Repositories.Implementations
         {
             var subCategories = await _context.Categories
                 .AsNoTracking()
-                .Where(c => c.ParentCategoryId == parentCategoryId && !c.IsDeleted)
+                .Where(c => c.ParentCategoryId == parentCategoryId)
                 .ToListAsync();
             return subCategories;
         }

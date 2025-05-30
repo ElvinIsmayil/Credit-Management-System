@@ -4,7 +4,6 @@ namespace Credit_Management_System.Models
 {
     public class Employee : Person
     {
-        public EmployeePosition Position { get; set; }
         public decimal Salary { get; set; }
 
         public int BranchId { get; set; }

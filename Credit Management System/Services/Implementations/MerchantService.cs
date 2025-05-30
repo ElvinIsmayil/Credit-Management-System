@@ -3,14 +3,15 @@ using Credit_Management_System.Models;
 using Credit_Management_System.Repositories.Interfaces;
 using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Merchant;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Credit_Management_System.Services.Implementations
 {
     public class MerchantService : IMerchantService
     {
-        private readonly IGenericRepository<Merchant> _repository;
+        private readonly IMerchantRepository _repository;
         private readonly IMapper _mapper;
-        public MerchantService(IGenericRepository<Merchant> repository, IMapper mapper)
+        public MerchantService(IMerchantRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -66,6 +67,13 @@ namespace Credit_Management_System.Services.Implementations
 
             var merchantUpdateVM = _mapper.Map<MerchantUpdateVM>(merchant);
             return merchantUpdateVM;
+        }
+
+        public async Task<IEnumerable<MerchantVM>> SearchMerchantAsync(string searchTerm)
+        {
+            var merchants = await _repository.SearchMerchantAsync(searchTerm);
+            var merchantVMs = _mapper.Map<IEnumerable<MerchantVM>>(merchants);
+            return merchantVMs;
         }
     }
 }

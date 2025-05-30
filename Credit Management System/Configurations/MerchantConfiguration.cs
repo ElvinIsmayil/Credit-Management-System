@@ -16,7 +16,7 @@ namespace Credit_Management_System.Configurations
                 .IsRequired()
                 .HasMaxLength(150);
 
-            builder.Property(m => m.Adress)
+            builder.Property(m => m.Address)
                 .IsRequired()
                 .HasMaxLength(250);
 

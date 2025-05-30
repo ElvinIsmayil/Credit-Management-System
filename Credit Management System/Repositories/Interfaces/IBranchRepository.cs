@@ -4,8 +4,8 @@ namespace Credit_Management_System.Repositories.Interfaces
 {
     public interface IBranchRepository : IGenericRepository<Branch>
     {
-        Task<List<Branch>> GetBranchesWithMerchantsAsync();
-        Task<Branch> GetBranchWithDetailsByIdAsync(int id);
+        Task<IEnumerable<Branch>> GetAllWithMerchantsAsync();
+        Task<Branch> GetDetailByIdAsync(int id);
 
     }
 }

@@ -9,10 +9,11 @@ namespace Credit_Management_System.Services.Interfaces
         Task<bool> DeleteAsync(int id);
         Task<BranchVM> GetByIdAsync(int id);
         Task<IEnumerable<BranchVM>> GetAllAsync();
+
         Task<BranchDetailVM> GetDetailByIdAsync(int id);
         Task<BranchUpdateVM> GetUpdateByIdAsync(int id);
 
-        Task<List<BranchVM>> GetAllBranchesAsync();
+        Task<List<BranchVM>> GetAllWithMerchantsAsync();
 
 
     }

@@ -14,7 +14,7 @@ namespace Credit_Management_System.ViewModels.Merchant
 
         [Required(ErrorMessage = "Address is required.")]
         [StringLength(250, MinimumLength = 1, ErrorMessage = "Address must be between 1 and 250 characters.")]
-        public string Adress { get; set; }
+        public string Address { get; set; }
 
         [Required(ErrorMessage = "Phone number is required.")]
         [StringLength(20, MinimumLength = 1, ErrorMessage = "Phone number must be between 1 and 20 characters.")]

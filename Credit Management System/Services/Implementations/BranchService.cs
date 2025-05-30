@@ -38,21 +38,11 @@ namespace Credit_Management_System.Services.Implementations
             return branchVMs;
         }
 
-        public async Task<List<BranchVM>> GetAllBranchesAsync()
+        public async Task<List<BranchVM>> GetAllWithMerchantsAsync()
         {
-            var branches = await _branchRepository.GetBranchesWithMerchantsAsync();
+            var branches = await _branchRepository.GetAllWithMerchantsAsync();
             var branchVMs = _mapper.Map<List<BranchVM>>(branches);
             return branchVMs;
-        }
-
-        public async Task<BranchDetailVM> GetBranchDetailByIdAsync(int id)
-        {
-            var branch = await _branchRepository.GetBranchWithDetailsByIdAsync(id);
-
-            if (branch == null) return null;
-
-            var branchDetailVM = _mapper.Map<BranchDetailVM>(branch);
-            return branchDetailVM;
         }
 
         public async Task<BranchVM> GetByIdAsync(int id)
@@ -66,7 +56,7 @@ namespace Credit_Management_System.Services.Implementations
 
         public async Task<BranchDetailVM> GetDetailByIdAsync(int id)
         {
-            var branch = await _branchRepository.GetBranchWithDetailsByIdAsync(id);
+            var branch = await _branchRepository.GetDetailByIdAsync(id);
             if (branch is null) return null;
 
             var branchDetailVM = _mapper.Map<BranchDetailVM>(branch);

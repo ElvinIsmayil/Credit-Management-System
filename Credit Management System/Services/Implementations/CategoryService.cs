@@ -59,7 +59,7 @@ namespace Credit_Management_System.Services.Implementations
 
         public async Task<CategoryDetailVM> GetDetailByIdAsync(int id)
         {
-            var category = await _categoryRepository.GetCategoryDetailByIdAsync(id);
+            var category = await _categoryRepository.GetDetailByIdAsync(id);
             if (category is null) return null;
 
             var categoryDetailVM = _mapper.Map<CategoryDetailVM>(category);

@@ -9,6 +9,7 @@ namespace Credit_Management_System.Services.Interfaces
         Task<bool> DeleteAsync(int id);
         Task<CategoryVM> GetByIdAsync(int id);
         Task<IEnumerable<CategoryVM>> GetAllAsync();
+
         Task<CategoryDetailVM> GetDetailByIdAsync(int id);
         Task<CategoryUpdateVM> GetUpdateByIdAsync(int id);
         Task<IEnumerable<CategoryVM>> GetSubCategoriesAsync(int parentCategoryId);

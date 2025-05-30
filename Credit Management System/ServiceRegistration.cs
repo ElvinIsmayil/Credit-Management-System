@@ -18,7 +18,9 @@ namespace Credit_Management_System
             services.AddDbContext<CreditManagementSystemDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
+
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IMerchantRepository, MerchantRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IBranchRepository, BranchRepository>();
 
@@ -29,6 +31,7 @@ namespace Credit_Management_System
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IUserService, UserService>();
 
+            services.AddScoped<IImageService, ImageService>();
 
 
 
@@ -38,7 +41,7 @@ namespace Credit_Management_System
                 options.User.RequireUniqueEmail = true;
 
             }).AddEntityFrameworkStores<CreditManagementSystemDbContext>()
-    .AddDefaultTokenProviders();
+            .AddDefaultTokenProviders();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(options =>
@@ -47,10 +50,10 @@ namespace Credit_Management_System
                 options.AccessDeniedPath = "/Account/AccessDenied";
             });
 
-            services.AddSingleton<IEmailSender>(sp =>
+            services.AddSingleton<IEmailService>(sp =>
             {
                 var config = sp.GetRequiredService<IConfiguration>().GetSection("SmtpSettings");
-                return new EmailSender(
+                return new EmailService(
                     config["Host"],
                     int.Parse(config["Port"]),
                     config["Username"],

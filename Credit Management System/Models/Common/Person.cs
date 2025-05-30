@@ -10,7 +10,6 @@ namespace Credit_Management_System.Models.Common
         public string ImageUrl { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public Gender Gender { get; set; }
         public string? Address { get; set; }
 
     }

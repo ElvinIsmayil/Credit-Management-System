@@ -35,9 +35,6 @@ namespace Credit_Management_System.Configurations.Common
                 .IsRequired()
                 .HasMaxLength(20);
 
-            builder.Property(p => p.Gender)
-                .HasMaxLength(10);
-
             builder.Property(p => p.Address)
                 .HasMaxLength(250);
         }
