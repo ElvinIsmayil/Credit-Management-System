@@ -1,8 +1,5 @@
 ﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
-using Credit_Management_System.Models;
-using Credit_Management_System.Services.Implementations;
 using Credit_Management_System.Services.Interfaces;
-using Credit_Management_System.ViewModels.Merchant;
 using Credit_Management_System.ViewModels.Product;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +15,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         }
 
 
-        [HttpGet]   
+        [HttpGet]
         public IActionResult Index()
         {
             var products = _productService.GetAllAsync();
@@ -119,6 +116,6 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         }
 
 
-        
+
     }
 }

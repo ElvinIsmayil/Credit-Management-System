@@ -1,4 +1,4 @@
-    $(document).ready(function () {
+$(document).ready(function () {
         $('.delete-btn').click(function (e) {
             e.preventDefault();
 
@@ -42,7 +42,7 @@
                 }
             });
         });
-    });
+});
 
 
 const defaultThemeMode = 'light'; // light|dark|system

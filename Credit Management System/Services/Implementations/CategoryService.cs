@@ -3,8 +3,6 @@ using Credit_Management_System.Models;
 using Credit_Management_System.Repositories.Interfaces;
 using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Category;
-using Microsoft.AspNetCore.DataProtection.KeyManagement.Internal;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Credit_Management_System.Services.Implementations
 {
@@ -19,7 +17,7 @@ namespace Credit_Management_System.Services.Implementations
             _mapper = mapper;
         }
 
-       
+
         public async Task<CategoryVM> AddAsync(CategoryCreateVM viewModel)
         {
             var category = _mapper.Map<Category>(viewModel);
@@ -61,7 +59,7 @@ namespace Credit_Management_System.Services.Implementations
 
         public async Task<CategoryDetailVM> GetDetailByIdAsync(int id)
         {
-            var category = await _categoryRepository.GetByIdAsync(id);
+            var category = await _categoryRepository.GetCategoryDetailByIdAsync(id);
             if (category is null) return null;
 
             var categoryDetailVM = _mapper.Map<CategoryDetailVM>(category);
@@ -75,6 +73,20 @@ namespace Credit_Management_System.Services.Implementations
 
             var categoryUpdateVM = _mapper.Map<CategoryUpdateVM>(category);
             return categoryUpdateVM;
+        }
+
+        public async Task<IEnumerable<CategoryVM>> GetSubCategoriesAsync(int parentCategoryId)
+        {
+            var subCategories = await _categoryRepository.GetSubCategoriesAsync(parentCategoryId);
+            var subCategoryVMs = _mapper.Map<IEnumerable<CategoryVM>>(subCategories);
+            return subCategoryVMs;
+        }
+
+        public async Task<IEnumerable<CategoryVM>> GetTopLevelCategoriesAsync()
+        {
+            var categories = await _categoryRepository.GetTopLevelCategoriesAsync();
+            var categoryVMs = _mapper.Map<IEnumerable<CategoryVM>>(categories);
+            return categoryVMs;
         }
     }
 }

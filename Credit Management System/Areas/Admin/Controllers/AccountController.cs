@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Web;
-using Credit_Management_System.Areas.Admin.Controllers.Common;
 
 namespace Credit_Management_System.Areas.Admin.Controllers
 {
@@ -140,7 +139,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             TempData["AlertType"] = "toastr";
             TempData["Email"] = user.Email;
             await _userManager.AddToRoleAsync(user, "admin");
-            
+
 
             return RedirectToAction("EmailVerification");
         }

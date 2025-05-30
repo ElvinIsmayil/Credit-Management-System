@@ -1,7 +1,5 @@
 ﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
 using Credit_Management_System.Extensions;
-using Credit_Management_System.Models;
-using Credit_Management_System.Services.Implementations;
 using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Merchant;
 using Microsoft.AspNetCore.Mvc;
@@ -121,6 +119,16 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         {
             try
             {
+                var merchant = await _merchantService.GetByIdAsync(id);
+                if (merchant == null)
+                {
+                    return Json(new { success = false, message = "Merchant not found." });
+                }
+                if (!string.IsNullOrEmpty(merchant.ImageUrl))
+                {
+                    merchant.ImageUrl.DeleteImageFromLocal();
+                }
+
                 var result = await _merchantService.DeleteAsync(id);
 
                 if (!result)

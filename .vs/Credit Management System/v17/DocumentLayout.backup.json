@@ -3,12 +3,132 @@
   "WorkspaceRootPath": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\credit management system.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\credit management system.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\merchantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\merchantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\services\\implementations\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\services\\implementations\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\repositories\\implementations\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\repositories\\implementations\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\viewmodels\\category\\categorycreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\viewmodels\\category\\categorycreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\branch\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\branch\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\merchant\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\merchant\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\shared\\_alertmessages.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\shared\\_alertmessages.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\category\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\category\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\viewmodels\\category\\categoryupdatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\viewmodels\\category\\categoryupdatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\extensions\\imageextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\extensions\\imageextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\helpers\\alerthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\helpers\\alerthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\branchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\branchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\repositories\\implementations\\branchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\repositories\\implementations\\branchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\repositories\\interfaces\\ibranchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\repositories\\interfaces\\ibranchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\repositories\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\repositories\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\repositories\\interfaces\\imerchantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\repositories\\interfaces\\imerchantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\services\\implementations\\merchantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\services\\implementations\\merchantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\services\\interfaces\\ibranchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\services\\interfaces\\ibranchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\services\\implementations\\branchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\services\\implementations\\branchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\profiles\\customprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\profiles\\customprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,92 +139,192 @@
       "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\repositories\\implementations\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\repositories\\implementations\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\repositories\\implementations\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\services\\interfaces\\iprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\services\\interfaces\\iprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\services\\implementations\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\services\\implementations\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\services\\implementations\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\services\\implementations\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\repositories\\implementations\\branchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\repositories\\implementations\\branchrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewcomponents\\profileviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewcomponents\\profileviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewmodels\\user\\uservm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewmodels\\user\\uservm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\shared\\components\\profile\\employeeprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\shared\\components\\profile\\employeeprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\shared\\components\\profile\\adminprofie.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\shared\\components\\profile\\adminprofie.cshtml||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\viewmodels\\category\\categorycreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\viewmodels\\category\\categorycreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\viewmodels\\category\\subcategoryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\viewmodels\\category\\subcategoryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewmodels\\profile\\employeeprofilevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewmodels\\profile\\employeeprofilevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewmodels\\profile\\baseprofilevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewmodels\\profile\\baseprofilevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\models\\common\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\models\\common\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewmodels\\profile\\adminprofilevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewmodels\\profile\\adminprofilevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewmodels\\user\\usercreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewmodels\\user\\usercreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewmodels\\user\\userdetailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewmodels\\user\\userdetailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewmodels\\user\\userupdatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewmodels\\user\\userupdatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\shared\\components\\header\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\shared\\components\\header\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewmodels\\role\\rolevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewmodels\\role\\rolevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewmodels\\role\\rolecreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewmodels\\role\\rolecreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\profile\\settings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\profile\\settings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\user\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\user\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\helpers\\alerthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\helpers\\alerthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewcomponents\\headerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewcomponents\\headerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewmodels\\role\\assignrolevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewmodels\\role\\assignrolevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\role\\assignrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\role\\assignrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\loancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\loancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\common\\baseadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\common\\baseadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewmodels\\role\\userinrolevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewmodels\\role\\userinrolevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\role\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\role\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\viewmodels\\role\\roledetailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\viewmodels\\role\\roledetailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\role\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\role\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\enums\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\enums\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\viewmodels\\category\\subcategoryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\viewmodels\\category\\subcategoryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\controllers\\branchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\controllers\\branchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\branch\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|solutionrelative:credit management system\\areas\\admin\\views\\branch\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E5C219FA-F4CC-4F0B-846A-6734CBB6B842}|Credit Management System\\Credit Management System.csproj|c:\\users\\elvin\\desktop\\credit-management-system\\credit management system\\areas\\admin\\views\\employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -118,45 +338,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IGenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\IGenericRepository.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Repositories\\Interfaces\\IGenericRepository.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\IGenericRepository.cs",
-              "RelativeToolTip": "Credit Management System\\Repositories\\Interfaces\\IGenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T20:54:37.366Z",
+              "DocumentIndex": 0,
+              "Title": "Credit Management System",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Credit Management System.csproj",
+              "RelativeDocumentMoniker": "Credit Management System\\Credit Management System.csproj",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Credit Management System.csproj",
+              "RelativeToolTip": "Credit Management System\\Credit Management System.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-30T08:58:23.307Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Models\\Category.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Models\\Category.cs",
-              "RelativeToolTip": "Credit Management System\\Models\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Title": "CategoryCreateVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\ViewModels\\Category\\CategoryCreateVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\ViewModels\\Category\\CategoryCreateVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\ViewModels\\Category\\CategoryCreateVM.cs",
+              "RelativeToolTip": "Credit Management System\\ViewModels\\Category\\CategoryCreateVM.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAewAgAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T20:52:22.849Z",
+              "WhenOpened": "2025-05-25T19:27:47.105Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IMerchantRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\IMerchantRepository.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Repositories\\Interfaces\\IMerchantRepository.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\IMerchantRepository.cs",
-              "RelativeToolTip": "Credit Management System\\Repositories\\Interfaces\\IMerchantRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Implementations\\CategoryService.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Services\\Implementations\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Implementations\\CategoryService.cs",
+              "RelativeToolTip": "Credit Management System\\Services\\Implementations\\CategoryService.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAewC4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T20:41:12.255Z",
+              "WhenOpened": "2025-05-25T20:33:33.838Z",
               "EditorCaption": ""
             },
             {
@@ -167,53 +386,258 @@
               "RelativeDocumentMoniker": "Credit Management System\\Repositories\\Implementations\\CategoryRepository.cs",
               "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Implementations\\CategoryRepository.cs",
               "RelativeToolTip": "Credit Management System\\Repositories\\Implementations\\CategoryRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAIwBEAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T20:36:34.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ICategoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\ICategoryRepository.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Repositories\\Interfaces\\ICategoryRepository.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\ICategoryRepository.cs",
-              "RelativeToolTip": "Credit Management System\\Repositories\\Interfaces\\ICategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "MerchantController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\MerchantController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\MerchantController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\MerchantController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\MerchantController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAewBkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T20:38:57.643Z",
+              "WhenOpened": "2025-05-27T19:08:48.8Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Implementations\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Repositories\\Implementations\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Implementations\\GenericRepository.cs",
-              "RelativeToolTip": "Credit Management System\\Repositories\\Implementations\\GenericRepository.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAkwBIAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAnwCcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T20:40:58.631Z",
+              "WhenOpened": "2025-05-25T14:59:10.116Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ICategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Interfaces\\ICategoryService.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Services\\Interfaces\\ICategoryService.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Interfaces\\ICategoryService.cs",
-              "RelativeToolTip": "Credit Management System\\Services\\Interfaces\\ICategoryService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T20:46:51.632Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\User\\Index.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\User\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\User\\Index.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\User\\Index.cshtml",
+              "ViewState": "AgIAACkBAAAAAAAAAAAnwDIBAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T15:00:31.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Sidebar.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\_Sidebar.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Shared\\_Sidebar.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\_Sidebar.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Shared\\_Sidebar.cshtml",
+              "ViewState": "AgIAAIUBAAAAAAAAAAAnwI4BAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T14:03:39.661Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "Credit Management System\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "Credit Management System\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-30T08:47:03.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Branch\\Index.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Branch\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Branch\\Index.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Branch\\Index.cshtml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAYwEcAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T13:56:38.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Merchant\\Index.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Merchant\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Merchant\\Index.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Merchant\\Index.cshtml",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAAAP0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T08:39:17.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_AlertMessages.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\_AlertMessages.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Shared\\_AlertMessages.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\_AlertMessages.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Shared\\_AlertMessages.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T08:09:48.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T14:02:24.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "ViewState": "AgIAAEIBAAAAAAAAAAAqwFQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T19:27:15.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Update.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Category\\Update.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Category\\Update.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Category\\Update.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Category\\Update.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T07:26:13.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CategoryUpdateVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\ViewModels\\Category\\CategoryUpdateVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\ViewModels\\Category\\CategoryUpdateVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\ViewModels\\Category\\CategoryUpdateVM.cs",
+              "RelativeToolTip": "Credit Management System\\ViewModels\\Category\\CategoryUpdateVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T07:27:39.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ImageExtension.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Extensions\\ImageExtension.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Extensions\\ImageExtension.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Extensions\\ImageExtension.cs",
+              "RelativeToolTip": "Credit Management System\\Extensions\\ImageExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T07:59:14.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "BranchController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\BranchController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\BranchController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\BranchController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\BranchController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T13:56:51.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AlertHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Helpers\\AlertHelper.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Helpers\\AlertHelper.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Helpers\\AlertHelper.cs",
+              "RelativeToolTip": "Credit Management System\\Helpers\\AlertHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T15:09:14.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\PaymentController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T21:18:49.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAEUBAAAAAAAAAAAQwGYBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T14:59:08.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T14:59:10.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T19:27:15.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
               "Title": "BranchRepository.cs",
               "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Implementations\\BranchRepository.cs",
               "RelativeDocumentMoniker": "Credit Management System\\Repositories\\Implementations\\BranchRepository.cs",
@@ -226,7 +650,673 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 26,
+              "Title": "IMerchantRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\IMerchantRepository.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Repositories\\Interfaces\\IMerchantRepository.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\IMerchantRepository.cs",
+              "RelativeToolTip": "Credit Management System\\Repositories\\Interfaces\\IMerchantRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T20:41:12.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Services\\Interfaces\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeToolTip": "Credit Management System\\Services\\Interfaces\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T20:46:51.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IBranchRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\IBranchRepository.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Repositories\\Interfaces\\IBranchRepository.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\IBranchRepository.cs",
+              "RelativeToolTip": "Credit Management System\\Repositories\\Interfaces\\IBranchRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T20:20:55.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "MerchantService.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Implementations\\MerchantService.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Services\\Implementations\\MerchantService.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Implementations\\MerchantService.cs",
+              "RelativeToolTip": "Credit Management System\\Services\\Implementations\\MerchantService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAA7wDcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T20:20:31.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "IBranchService.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Interfaces\\IBranchService.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Services\\Interfaces\\IBranchService.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Interfaces\\IBranchService.cs",
+              "RelativeToolTip": "Credit Management System\\Services\\Interfaces\\IBranchService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T20:20:29.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "BranchService.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Implementations\\BranchService.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Services\\Implementations\\BranchService.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Implementations\\BranchService.cs",
+              "RelativeToolTip": "Credit Management System\\Services\\Implementations\\BranchService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T20:20:21.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ICategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\ICategoryRepository.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Repositories\\Interfaces\\ICategoryRepository.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\ICategoryRepository.cs",
+              "RelativeToolTip": "Credit Management System\\Repositories\\Interfaces\\ICategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T20:38:57.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "CustomProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Profiles\\CustomProfile.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Profiles\\CustomProfile.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Profiles\\CustomProfile.cs",
+              "RelativeToolTip": "Credit Management System\\Profiles\\CustomProfile.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T19:35:18.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "RelativeToolTip": "Credit Management System\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T20:54:37.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Implementations\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Repositories\\Implementations\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Implementations\\GenericRepository.cs",
+              "RelativeToolTip": "Credit Management System\\Repositories\\Implementations\\GenericRepository.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAkwBIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T20:40:58.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Models\\Category.cs",
+              "RelativeToolTip": "Credit Management System\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T20:52:22.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "IProfileService.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Interfaces\\IProfileService.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Services\\Interfaces\\IProfileService.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Interfaces\\IProfileService.cs",
+              "RelativeToolTip": "Credit Management System\\Services\\Interfaces\\IProfileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T18:44:23.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ProfileService.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Implementations\\ProfileService.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Services\\Implementations\\ProfileService.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Implementations\\ProfileService.cs",
+              "RelativeToolTip": "Credit Management System\\Services\\Implementations\\ProfileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T18:44:30.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ProfileViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewComponents\\ProfileViewComponent.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewComponents\\ProfileViewComponent.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewComponents\\ProfileViewComponent.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewComponents\\ProfileViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:07:47.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Models\\Employee.cs",
+              "RelativeToolTip": "Credit Management System\\Models\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T16:39:49.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "EmployeeProfile.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\Components\\Profile\\EmployeeProfile.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Shared\\Components\\Profile\\EmployeeProfile.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\Components\\Profile\\EmployeeProfile.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Shared\\Components\\Profile\\EmployeeProfile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T17:19:24.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "AdminProfie.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\Components\\Profile\\AdminProfie.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Shared\\Components\\Profile\\AdminProfie.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\Components\\Profile\\AdminProfie.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Shared\\Components\\Profile\\AdminProfie.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T17:18:53.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "UserVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserVM.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserVM.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA3wCYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T18:58:10.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Models\\AppUser.cs",
+              "RelativeToolTip": "Credit Management System\\Models\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T18:57:29.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\User\\Create.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\User\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\User\\Create.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\User\\Create.cshtml",
+              "ViewState": "AgIAADQAAAAAAAAAAAAgwFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T16:38:33.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "BaseProfileVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Profile\\BaseProfileVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewModels\\Profile\\BaseProfileVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Profile\\BaseProfileVM.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewModels\\Profile\\BaseProfileVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:13:13.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Person.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Models\\Common\\Person.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Models\\Common\\Person.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Models\\Common\\Person.cs",
+              "RelativeToolTip": "Credit Management System\\Models\\Common\\Person.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T16:42:47.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "EmployeeProfileVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Profile\\EmployeeProfileVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewModels\\Profile\\EmployeeProfileVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Profile\\EmployeeProfileVM.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewModels\\Profile\\EmployeeProfileVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T16:08:08.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "AdminProfileVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Profile\\AdminProfileVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewModels\\Profile\\AdminProfileVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Profile\\AdminProfileVM.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewModels\\Profile\\AdminProfileVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T16:24:43.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "UserUpdateVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserUpdateVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserUpdateVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserUpdateVM.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserUpdateVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T16:09:53.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "UserDetailVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserDetailVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserDetailVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserDetailVM.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserDetailVM.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T19:53:46.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Profile\\Index.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Profile\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Profile\\Index.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Profile\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALgBAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T14:58:25.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "UserCreateVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserCreateVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserCreateVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserCreateVM.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewModels\\User\\UserCreateVM.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAmwCMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T14:51:58.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\UserController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T19:08:55.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\Components\\Header\\Default.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Shared\\Components\\Header\\Default.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\Components\\Header\\Default.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Shared\\Components\\Header\\Default.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T16:39:28.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "RoleCreateVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Role\\RoleCreateVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewModels\\Role\\RoleCreateVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Role\\RoleCreateVM.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewModels\\Role\\RoleCreateVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T17:10:16.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "RoleVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Role\\RoleVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewModels\\Role\\RoleVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Role\\RoleVM.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewModels\\Role\\RoleVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T17:06:06.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\ProfileController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T14:55:42.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "Settings.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Profile\\Settings.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Profile\\Settings.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Profile\\Settings.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Profile\\Settings.cshtml",
+              "ViewState": "AgIAAM4DAAAAAAAAAAAgwOUDAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T15:03:31.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\User\\Detail.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\User\\Detail.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\User\\Detail.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\User\\Detail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAP4BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T15:01:00.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "HeaderViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewComponents\\HeaderViewComponent.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewComponents\\HeaderViewComponent.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewComponents\\HeaderViewComponent.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewComponents\\HeaderViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T16:37:02.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "AssignRoleVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Role\\AssignRoleVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewModels\\Role\\AssignRoleVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Role\\AssignRoleVM.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewModels\\Role\\AssignRoleVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T17:06:35.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T21:39:06.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "AssignRole.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Role\\AssignRole.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Role\\AssignRole.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Role\\AssignRole.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Role\\AssignRole.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T18:54:53.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T21:36:22.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T19:16:42.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T19:27:12.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\RoleController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T16:35:16.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T14:23:05.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "LoanController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\LoanController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\LoanController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\LoanController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\LoanController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T19:08:46.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T19:08:45.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "BaseAdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\Common\\BaseAdminController.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\Common\\BaseAdminController.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\Common\\BaseAdminController.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\Common\\BaseAdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T21:35:08.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "UserInRoleVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Role\\UserInRoleVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewModels\\Role\\UserInRoleVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Role\\UserInRoleVM.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewModels\\Role\\UserInRoleVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T19:55:12.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Role\\Detail.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Role\\Detail.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Role\\Detail.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Role\\Detail.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAHYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T19:12:52.344Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Role\\Index.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Role\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Role\\Index.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Role\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T17:02:56.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "RoleDetailVM.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Role\\RoleDetailVM.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\ViewModels\\Role\\RoleDetailVM.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\ViewModels\\Role\\RoleDetailVM.cs",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\ViewModels\\Role\\RoleDetailVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T19:54:00.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Role\\Create.cshtml",
+              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Role\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Role\\Create.cshtml",
+              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Role\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T17:09:45.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Enums\\Role.cs",
+              "RelativeDocumentMoniker": "Credit Management System\\Enums\\Role.cs",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Enums\\Role.cs",
+              "RelativeToolTip": "Credit Management System\\Enums\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T17:30:11.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\appsettings.json",
+              "RelativeDocumentMoniker": "Credit Management System\\appsettings.json",
+              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\appsettings.json",
+              "RelativeToolTip": "Credit Management System\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-27T16:32:25.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Repositories\\Implementations\\ProductRepository.cs",
               "RelativeDocumentMoniker": "Credit Management System\\Repositories\\Implementations\\ProductRepository.cs",
@@ -239,20 +1329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Implementations\\CategoryService.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Services\\Implementations\\CategoryService.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Services\\Implementations\\CategoryService.cs",
-              "RelativeToolTip": "Credit Management System\\Services\\Implementations\\CategoryService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T20:33:33.838Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 79,
               "Title": "SubCategoryVM.cs",
               "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\ViewModels\\Category\\SubCategoryVM.cs",
               "RelativeDocumentMoniker": "Credit Management System\\ViewModels\\Category\\SubCategoryVM.cs",
@@ -264,127 +1341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CategoryCreateVM.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\ViewModels\\Category\\CategoryCreateVM.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\ViewModels\\Category\\CategoryCreateVM.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\ViewModels\\Category\\CategoryCreateVM.cs",
-              "RelativeToolTip": "Credit Management System\\ViewModels\\Category\\CategoryCreateVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T19:27:47.105Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Category\\Create.cshtml",
-              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Category\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Category\\Create.cshtml",
-              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Category\\Create.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAHcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-25T19:27:15.948Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Category\\Index.cshtml",
-              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Category\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Category\\Index.cshtml",
-              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Category\\Index.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-25T19:27:15.416Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\User\\Index.cshtml",
-              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\User\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\User\\Index.cshtml",
-              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\User\\Index.cshtml",
-              "ViewState": "AgIAAGsBAAAAAAAAAAAAAGgBAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-25T15:00:31.334Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\CategoryController.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAlwDQAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T14:59:10.116Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-25T14:02:24.573Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Detail.cshtml",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\User\\Detail.cshtml",
-              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\User\\Detail.cshtml",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\User\\Detail.cshtml",
-              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\User\\Detail.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAP4BAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-25T15:01:00.183Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AlertHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Helpers\\AlertHelper.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Helpers\\AlertHelper.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Helpers\\AlertHelper.cs",
-              "RelativeToolTip": "Credit Management System\\Helpers\\AlertHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T15:09:14.139Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\CustomerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T14:59:10.918Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T14:59:08.25Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 80,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Product\\Index.cshtml",
               "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Product\\Index.cshtml",
@@ -396,55 +1353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBkAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T14:23:05.579Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "_Sidebar.cshtml",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\_Sidebar.cshtml",
-              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Shared\\_Sidebar.cshtml",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Shared\\_Sidebar.cshtml",
-              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Shared\\_Sidebar.cshtml",
-              "ViewState": "AgIAALEEAAAAAAAAAAAgwLIEAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-25T14:03:39.661Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "BranchController.cs",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\BranchController.cs",
-              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Controllers\\BranchController.cs",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Controllers\\BranchController.cs",
-              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Controllers\\BranchController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T13:56:51.743Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Branch\\Index.cshtml",
-              "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Branch\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Branch\\Index.cshtml",
-              "RelativeToolTip": "Credit Management System\\Areas\\Admin\\Views\\Branch\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-25T13:56:38.341Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 81,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Elvin\\Desktop\\Credit-Management-System\\Credit Management System\\Areas\\Admin\\Views\\Employee\\Index.cshtml",
               "RelativeDocumentMoniker": "Credit Management System\\Areas\\Admin\\Views\\Employee\\Index.cshtml",

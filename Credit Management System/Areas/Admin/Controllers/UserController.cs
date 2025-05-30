@@ -1,11 +1,7 @@
 ﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
 using Credit_Management_System.Areas.Admin.ViewModels.User;
-using Credit_Management_System.Models;
-using Credit_Management_System.Services.Implementations;
 using Credit_Management_System.Services.Interfaces;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Credit_Management_System.Areas.Admin.Controllers
 {

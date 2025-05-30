@@ -3,7 +3,6 @@ using Credit_Management_System.Models;
 using Credit_Management_System.Repositories.Interfaces;
 using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Product;
-using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace Credit_Management_System.Services.Implementations
 {

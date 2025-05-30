@@ -9,6 +9,6 @@
     public string? ParentCategoryName { get; set; }
 
     public int ProductCount { get; set; }
-    public bool HasChildren { get; set; }  
+    public bool HasChildren { get; set; }
     public ICollection<CategoryVM> SubCategories { get; set; } = new List<CategoryVM>();
 }

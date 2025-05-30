@@ -23,9 +23,9 @@ namespace Credit_Management_System.Repositories.Implementations
         public async Task<Branch> GetBranchWithDetailsByIdAsync(int id)
         {
             return await _context.Set<Branch>()
-                .Include(b => b.Merchant)      
-                .Include(b => b.Employees)     
-                .Include(b => b.Products)      
+                .Include(b => b.Merchant)
+                .Include(b => b.Employees)
+                .Include(b => b.Products)
                 .FirstOrDefaultAsync(b => b.Id == id);
         }
     }

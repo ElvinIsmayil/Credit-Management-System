@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Credit_Management_System.Areas.Admin.ViewModels.User;
 using Credit_Management_System.Models;
-using Credit_Management_System.Repositories.Interfaces;
 using Credit_Management_System.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 
@@ -9,7 +8,7 @@ namespace Credit_Management_System.Services.Implementations
 {
     public class UserService : IUserService
     {
-        
+
         private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
 

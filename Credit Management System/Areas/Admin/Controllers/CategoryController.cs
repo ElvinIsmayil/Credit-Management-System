@@ -1,12 +1,13 @@
 ﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
 using Credit_Management_System.Extensions;
+using Credit_Management_System.Helpers;
 using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Category;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
 namespace Credit_Management_System.Areas.Admin.Controllers
 {
-
     [Area("Admin")]
     public class CategoryController : BaseAdminController
     {
@@ -21,22 +22,26 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            try
-            {
-                var categories = await _categoryService.GetAllAsync();
-                return View(categories);
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = "An error occurred while retrieving categories.";
-                return RedirectToAction("Index", "Home");
-            }
+            var categories = await _categoryService.GetAllAsync();
+            return View(categories);
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            return View(new CategoryCreateVM());
+            try
+            {
+                var model = new CategoryCreateVM
+                {
+                    ParentCategories = await _categoryService.GetTopLevelCategoriesAsync()
+                };
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                TempData[AlertHelper.Error] = "Failed to initialize category form. Please try again.";
+                return RedirectToAction(nameof(Index));
+            }
         }
 
         [HttpPost]
@@ -45,12 +50,12 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
+                await PopulateParentCategories(model.ParentCategoryId);
                 return View(model);
             }
 
             try
             {
-                // Handle image upload
                 if (model.Image != null)
                 {
                     var validationErrors = model.Image.ValidateFileType().ToList();
@@ -58,11 +63,10 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                     {
                         foreach (var error in validationErrors)
                         {
-                            ModelState.AddModelError(nameof(model.Image), error);
+                            ModelState.AddModelError("Image", error);
                         }
                         return View(model);
                     }
-
                     model.ImageUrl = await model.Image.SaveImageAsync(ImageFolder);
                 }
 
@@ -70,15 +74,17 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                 if (result == null)
                 {
                     ModelState.AddModelError(string.Empty, "Failed to create category.");
+                    await PopulateParentCategories(model.ParentCategoryId);
                     return View(model);
                 }
 
-                TempData["SuccessMessage"] = "Category created successfully!";
+                TempData[AlertHelper.Success] = "Category created successfully!";
                 return RedirectToAction(nameof(Index));
             }
-            catch (Exception ex)
+            catch
             {
-                ModelState.AddModelError(string.Empty, "An error occurred while creating the category.");
+                TempData[AlertHelper.Error] = "An error occurred while creating the category.";
+                await PopulateParentCategories(model.ParentCategoryId);
                 return View(model);
             }
         }
@@ -86,31 +92,15 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
-            try
+            var category = await _categoryService.GetUpdateByIdAsync(id);
+            if (category == null)
             {
-                var category = await _categoryService.GetUpdateByIdAsync(id);
-                if (category == null)
-                {
-                    TempData["ErrorMessage"] = "Category not found.";
-                    return RedirectToAction(nameof(Index));
-                }
-
-                var model = new CategoryUpdateVM
-                {
-                    Id = category.Id,
-                    Name = category.Name,
-                    Description = category.Description,
-                    ImageUrl = category.ImageUrl,
-                    ParentCategoryId = category.ParentCategoryId
-                };
-
-                return View(model);
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = "An error occurred while retrieving the category.";
+                TempData[AlertHelper.Success] = "Category not found.";
                 return RedirectToAction(nameof(Index));
             }
+
+            await PopulateParentCategories(category.ParentCategoryId);
+            return View(category);
         }
 
         [HttpPost]
@@ -119,51 +109,44 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
+                await PopulateParentCategories(model.ParentCategoryId);
                 return View(model);
             }
 
             try
             {
-                // Handle image update
                 if (model.Image != null)
                 {
                     var validationErrors = model.Image.ValidateFileType().ToList();
                     if (validationErrors.Any())
                     {
                         foreach (var error in validationErrors)
-                        {
-                            ModelState.AddModelError(nameof(model.Image), error);
-                        }
+                            ModelState.AddModelError("Image", error);
+
                         return View(model);
                     }
 
-                    // Delete old image if it exists and isn't a default image
                     if (!string.IsNullOrEmpty(model.ImageUrl))
-                    {
                         model.ImageUrl.DeleteImageFromLocal();
-                    }
 
                     model.ImageUrl = await model.Image.SaveImageAsync(ImageFolder);
-                }
-                else
-                {
-                    // Keep existing image if no new file was uploaded
-                    model.ImageUrl = model.ImageUrl;
                 }
 
                 var result = await _categoryService.UpdateAsync(model);
                 if (result == null)
                 {
                     ModelState.AddModelError(string.Empty, "Failed to update category.");
+                    await PopulateParentCategories(model.ParentCategoryId);
                     return View(model);
                 }
 
-                TempData["SuccessMessage"] = "Category updated successfully!";
+                TempData[AlertHelper.Success] = "Category updated successfully!";
                 return RedirectToAction(nameof(Index));
             }
-            catch (Exception ex)
+            catch
             {
-                ModelState.AddModelError(string.Empty, "An error occurred while updating the category.");
+                TempData[AlertHelper.Error] = "An error occurred while updating the category.";
+                await PopulateParentCategories(model.ParentCategoryId);
                 return View(model);
             }
         }
@@ -171,21 +154,13 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int id)
         {
-            try
+            var categoryDetail = await _categoryService.GetDetailByIdAsync(id);
+            if (categoryDetail == null)
             {
-                var categoryDetail = await _categoryService.GetDetailByIdAsync(id);
-                if (categoryDetail == null)
-                {
-                    TempData["ErrorMessage"] = "Category not found.";
-                    return RedirectToAction(nameof(Index));
-                }
-                return View(categoryDetail);
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = "An error occurred while retrieving the category details.";
+                TempData[AlertHelper.Error] = "Category not found.";
                 return RedirectToAction(nameof(Index));
             }
+            return View(categoryDetail);
         }
 
         [HttpPost]
@@ -206,20 +181,25 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                 }
 
                 var result = await _categoryService.DeleteAsync(id);
-                if (!result)
+                return Json(new
                 {
-                    return Json(new { success = false, message = "Failed to delete category." });
-                }
-
-                return Json(new { success = true, message = "Category deleted successfully!" });
+                    success = result,
+                    message = result ? "Category deleted successfully!" : "Failed to delete category."
+                });
             }
-            catch (Exception)
+            catch
             {
                 return Json(new { success = false, message = "An error occurred while deleting the category." });
             }
         }
 
-
+        #region Helper Methods
+        private async Task PopulateParentCategories(int? selectedId = null)
+        {
+            var parentCategories = await _categoryService.GetTopLevelCategoriesAsync();
+            ViewBag.ParentCategoryId = new SelectList(parentCategories, "Id", "Name", selectedId);
+        }
+        #endregion
 
     }
 }

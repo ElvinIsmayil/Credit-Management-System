@@ -10,9 +10,15 @@ public class UserVM
 
     [Display(Name = "Last Name")]
     public string LastName { get; set; } = null!;
+    [Display(Name = "Full Name")]
+    public string FullName => $"{FirstName} {LastName}";
 
     [EmailAddress]
     public string Email { get; set; } = null!;
+
+    [Display(Name = "Phone Number")]
+    public string? PhoneNumber { get; set; }
+
 
     [Display(Name = "Email Confirmed")]
     public bool EmailConfirmed { get; set; }
@@ -30,5 +36,5 @@ public class UserVM
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm}", NullDisplayText = "Never logged in")]
     public DateTime? LastLoginDate { get; set; }
 
-    public string? Role { get; set; }
+    public List<string>? Role { get; set; }
 }

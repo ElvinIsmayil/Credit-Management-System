@@ -8,7 +8,6 @@ using Credit_Management_System.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
 
 namespace Credit_Management_System
 {
@@ -39,7 +38,7 @@ namespace Credit_Management_System
                 options.User.RequireUniqueEmail = true;
 
             }).AddEntityFrameworkStores<CreditManagementSystemDbContext>()
-    .          AddDefaultTokenProviders();
+    .AddDefaultTokenProviders();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(options =>

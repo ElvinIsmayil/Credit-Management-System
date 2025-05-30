@@ -29,7 +29,7 @@ namespace Credit_Management_System.Configurations
                 .HasForeignKey(l => l.CustomerId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            
+
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
-using Credit_Management_System.Models;
-using Credit_Management_System.Services.Implementations;
 using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Branch;
 using Microsoft.AspNetCore.Mvc;
@@ -68,7 +66,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                 if (!ModelState.IsValid)
                     return View(branchCreateVM);
 
-                
+
                 var data = await _branchService.AddAsync(branchCreateVM);
 
                 if (data == null)
@@ -89,7 +87,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
-            
+
             var branchUpdateVM = await _branchService.GetUpdateByIdAsync(id);
             if (branchUpdateVM == null)
                 return NotFound();
@@ -120,7 +118,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                 if (!ModelState.IsValid)
                     return View(branchUpdateVM);
 
-               
+
                 var data = await _branchService.UpdateAsync(branchUpdateVM);
 
                 if (data == null)

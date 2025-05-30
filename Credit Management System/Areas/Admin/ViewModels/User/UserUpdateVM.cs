@@ -1,6 +1,5 @@
 ﻿namespace Credit_Management_System.Areas.Admin.ViewModels.User
 {
-    using System;
     using System.ComponentModel.DataAnnotations;
 
     public class UserUpdateVM

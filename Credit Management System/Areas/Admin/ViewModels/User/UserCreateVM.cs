@@ -18,6 +18,14 @@ namespace Credit_Management_System.Areas.Admin.ViewModels.User
         [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         public string Email { get; set; } = null!;
 
+        [Display(Name = "Phone Number")]
+        [Phone(ErrorMessage = "Please enter a valid phone number.")]
+        public string? PhoneNumber { get; set; }
+
+        [Display(Name = "User Role")]
+        [Required(ErrorMessage = "User role is required.")]
+        public string Role { get; set; } = null!;
+
         [Required(ErrorMessage = "Password is required.")]
         [DataType(DataType.Password)]
         [StringLength(100, MinimumLength = 6, ErrorMessage = "Password must be at least 6 characters.")]
@@ -30,6 +38,8 @@ namespace Credit_Management_System.Areas.Admin.ViewModels.User
 
         [Display(Name = "Profile Image")]
         public string? ImageUrl { get; set; }
+
+
     }
 
 }

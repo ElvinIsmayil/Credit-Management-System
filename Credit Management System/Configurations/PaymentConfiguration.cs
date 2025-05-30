@@ -9,7 +9,7 @@ namespace Credit_Management_System.Configurations
         public void Configure(EntityTypeBuilder<Payment> builder)
         {
             builder.HasKey(p => p.Id);
-            
+
             builder.Property(p => p.Amount)
                 .IsRequired()
                 .HasColumnType("decimal(18,2)");

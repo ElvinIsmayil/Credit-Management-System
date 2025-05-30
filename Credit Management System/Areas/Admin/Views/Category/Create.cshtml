@@ -1,119 +1,103 @@
 ﻿@model CategoryCreateVM
-
 @{
     ViewData["Title"] = "Create Category";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    // Safely get parent categories or empty list
+    var parentCategories = Model?.ParentCategories ?? new List<CategoryVM>();
 }
 
-<!-- Card Wrapper -->
-<div class="card card-flush shadow-sm">
-    <div class="card-header">
-        <h3 class="card-title text-dark fw-bold">@ViewData["Title"]</h3>
-    </div>
-
-    <div class="card-body pt-0">
-        <form asp-action="Create" enctype="multipart/form-data" method="post" class="form" novalidate>
-            <div asp-validation-summary="All" class="alert alert-danger"></div>
-
-            <!-- Category Name -->
-            <div class="fv-row mb-7">
-                <label asp-for="Name" class="required fw-semibold fs-6 mb-2">Category Name</label>
-                <input asp-for="Name" class="form-control form-control-solid" />
-                <span asp-validation-for="Name" class="text-danger small"></span>
-            </div>
-
-            <!-- Description -->
-            <div class="fv-row mb-7">
-                <label asp-for="Description" class="fw-semibold fs-6 mb-2">Description</label>
-                <textarea asp-for="Description" rows="3" class="form-control form-control-solid"></textarea>
-                <span asp-validation-for="Description" class="text-danger small"></span>
-            </div>
-
-            <!-- Image Upload -->
-            <div class="fv-row mb-7">
-                <label asp-for="Image" class="fw-semibold fs-6 mb-2">Category Image</label>
-                <input asp-for="Image" type="file" class="form-control form-control-solid" />
-                <span asp-validation-for="Image" class="text-danger small"></span>
-            </div>
-
-            <!-- Parent Category Dropdown -->
-            <div class="fv-row mb-7">
-                <label asp-for="ParentCategoryId" class="fw-semibold fs-6 mb-2">Parent Category</label>
-                <select asp-for="ParentCategoryId" class="form-select form-select-solid">
-                    <option value="">-- Select Parent Category --</option>
-                    @foreach (var category in Model.ParentCategories)
-                    {
-                        <option value="@category.Id">@category.Name</option>
-                    }
-                </select>
-                <span asp-validation-for="ParentCategoryId" class="text-danger small"></span>
-            </div>
-
-            <!-- Subcategories -->
-            <div class="card card-flush border mb-7">
-                <div class="card-header">
-                    <h4 class="card-title fw-bold text-gray-700">Subcategories</h4>
-                </div>
-                <div class="card-body">
-                    <div class="subcategoriesContainer">
-                        @for (int i = 0; i < Model.SubCategories.Count; i++)
-                        {
-                            <div class="d-flex gap-4 align-items-center mb-4 subcategoryRow">
-                                <input type="text" name="SubCategories[@i].Name" placeholder="Subcategory Name"
-                                       value="@Model.SubCategories[i].Name"
-                                       class="form-control form-control-solid flex-grow-1" />
-                                <button type="button" class="btn btn-danger removeSubCategoryBtn">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        }
-                    </div>
-
-                    <button type="button" id="addSubCategoryBtn" class="btn btn-light-primary">
-                        <i class="bi bi-plus-lg me-2"></i>Add Subcategory
-                    </button>
-                </div>
-            </div>
-
-            <!-- Submit -->
-            <div class="text-end">
-                <button type="submit" class="btn btn-primary">
-                    <i class="bi bi-check-lg me-2"></i>Create Category
-                </button>
-            </div>
-        </form>
+<!--begin::Toolbar-->
+<div class="toolbar mb-5 mb-lg-7" id="kt_toolbar">
+    <div class="page-title d-flex flex-column me-3">
+        <h1 class="d-flex text-dark fw-bold my-1 fs-3">@ViewData["Title"]</h1>
+        <ul class="breadcrumb breadcrumb-dot fw-semibold text-gray-600 fs-7 my-1">
+            <li class="breadcrumb-item text-gray-600">
+                <a href="/Admin/Dashboard" class="text-gray-600 text-hover-primary">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item text-gray-600">
+                <a href="@Url.Action("Index")" class="text-gray-600 text-hover-primary">Categories</a>
+            </li>
+            <li class="breadcrumb-item text-gray-600">Create</li>
+        </ul>
     </div>
 </div>
+<!--end::Toolbar-->
+<!--begin::Card-->
+<div class="card">
+    <!--begin::Card header-->
+    <div class="card-header border-0 pt-6">
+        <div class="card-title">
+            <h3 class="card-label">Create New Category</h3>
+        </div>
+    </div>
+    <!--end::Card header-->
+    <!--begin::Card body-->
+    <div class="card-body pt-0">
+        @if (Model == null)
+        {
+            <div class="alert alert-danger">
+                Failed to initialize the category form. Please try again.
+            </div>
+        }
+        else
+        {
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-<!-- Scripts -->
+                <!-- Name -->
+                <div class="fv-row mb-7">
+                    <label asp-for="Name" class="fs-6 fw-bold mb-2"></label>
+                    <input asp-for="Name" class="form-control form-control-solid" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <!-- Description -->
+                <div class="fv-row mb-7">
+                    <label asp-for="Description" class="fs-6 fw-bold mb-2"></label>
+                    <textarea asp-for="Description" class="form-control form-control-solid" rows="3"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <!-- Parent Category -->
+                <div class="fv-row mb-7">
+                    <label asp-for="ParentCategoryId" class="fs-6 fw-bold mb-2"></label>
+                    <select asp-for="ParentCategoryId" class="form-select form-select-solid">
+                        <option value="">-- Select Parent Category --</option>
+                        @foreach (var category in parentCategories)
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="ParentCategoryId" class="text-danger"></span>
+                </div>
+
+                <!-- Image -->
+                <div class="fv-row mb-7">
+                    <label asp-for="Image" class="fs-6 fw-bold mb-2"></label>
+                    <input asp-for="Image" type="file" class="form-control form-control-solid" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                </div>
+
+                <!-- Actions -->
+                <div class="text-center pt-10">
+                    <button type="submit" class="btn btn-primary">
+                        <span class="indicator-label">Create</span>
+                        <span class="indicator-progress">
+                            Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                        </span>
+                    </button>
+                    <a href="@Url.Action("Index")" class="btn btn-light me-3">Cancel</a>
+                </div>
+            </form>
+        }
+    </div>
+    <!--end::Card body-->
+</div>
+<!--end::Card-->
 @section Scripts {
-    <script>
-        let subcategoryIndex = @Model.SubCategories.Count;
-
-        document.getElementById('addSubCategoryBtn').addEventListener('click', function () {
-            var container = document.querySelector('.subcategoriesContainer');
-            var newSubCategory = document.createElement('div');
-            newSubCategory.classList.add('d-flex', 'gap-4', 'align-items-center', 'mb-4', 'subcategoryRow');
-
-            var subCategoryInput = document.createElement('input');
-            subCategoryInput.type = 'text';
-            subCategoryInput.name = `SubCategories[${subcategoryIndex}].Name`;
-            subCategoryInput.placeholder = 'Subcategory Name';
-            subCategoryInput.classList.add('form-control', 'form-control-solid', 'flex-grow-1');
-
-            var removeButton = document.createElement('button');
-            removeButton.type = 'button';
-            removeButton.classList.add('btn', 'btn-danger', 'removeSubCategoryBtn');
-            removeButton.innerHTML = '<i class="bi bi-trash-fill"></i>';
-
-            removeButton.addEventListener('click', function () {
-                newSubCategory.remove();
-            });
-
-            newSubCategory.appendChild(subCategoryInput);
-            newSubCategory.appendChild(removeButton);
-            container.appendChild(newSubCategory);
-
-            subcategoryIndex++;
-        });
-    </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

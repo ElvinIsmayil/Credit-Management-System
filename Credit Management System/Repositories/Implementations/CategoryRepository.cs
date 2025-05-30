@@ -1,8 +1,6 @@
 ﻿using Credit_Management_System.Models;
 using Credit_Management_System.Repositories.Interfaces;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
 
 namespace Credit_Management_System.Repositories.Implementations
 {
@@ -10,12 +8,21 @@ namespace Credit_Management_System.Repositories.Implementations
     {
         public CategoryRepository(CreditManagementSystemDbContext context) : base(context) { }
 
+        public async Task<Category> GetCategoryDetailByIdAsync(int id)
+        {
+            var category = await _context.Categories
+                .AsNoTracking()
+                .Include(c => c.ParentCategory)
+                .Include(c => c.SubCategories)
+                .FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted);
+            return category;
+        }
 
         public async Task<IEnumerable<Category>> GetTopLevelCategoriesAsync()
         {
             var categories = await _context.Categories
+                .AsNoTracking()
                 .Where(c => c.ParentCategoryId == null && !c.IsDeleted)
-                .Include(c => c.SubCategories)
                 .ToListAsync();
             return categories;
         }
@@ -23,14 +30,11 @@ namespace Credit_Management_System.Repositories.Implementations
         public async Task<IEnumerable<Category>> GetSubCategoriesAsync(int parentCategoryId)
         {
             var subCategories = await _context.Categories
-                .Include(c=> c.SubCategories)
+                .AsNoTracking()
                 .Where(c => c.ParentCategoryId == parentCategoryId && !c.IsDeleted)
                 .ToListAsync();
             return subCategories;
         }
-
-
-
 
 
     }

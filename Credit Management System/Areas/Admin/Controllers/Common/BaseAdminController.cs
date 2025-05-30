@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Credit_Management_System.Areas.Admin.Controllers.Common;
 
-[Authorize (Roles = "admin")]
+[Authorize(Roles = "SuperAdmin, Admin")]
 public class BaseAdminController : Controller
 {
-    
+
 }

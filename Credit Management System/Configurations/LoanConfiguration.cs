@@ -1,5 +1,4 @@
 ﻿using Credit_Management_System.Models;
-using Credit_Management_System.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

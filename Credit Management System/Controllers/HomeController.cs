@@ -1,5 +1,3 @@
-using System.Diagnostics;
-using Credit_Management_System.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Credit_Management_System.Controllers
@@ -11,6 +9,6 @@ namespace Credit_Management_System.Controllers
             return View();
         }
 
-        
+
     }
 }

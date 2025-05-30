@@ -367,6 +367,7 @@
 											<!-- Delete -->
 											<!-- Delete -->
 											<div class="menu-item px-3">
+												@Html.AntiForgeryToken()
 												<a href="javascript:;"
 												   class="menu-link px-3 delete-btn"
 												   data-id="@user.Id"

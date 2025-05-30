@@ -2,7 +2,7 @@
 
 namespace Credit_Management_System.Services.Interfaces
 {
-    public interface IProductService 
+    public interface IProductService
     {
         Task<IEnumerable<ProductVM>> GetAllAsync();
         Task<ProductVM> GetByIdAsync(int id);

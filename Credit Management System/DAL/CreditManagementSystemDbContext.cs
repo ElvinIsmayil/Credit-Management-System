@@ -1,11 +1,10 @@
 ﻿using Credit_Management_System.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 public class CreditManagementSystemDbContext : IdentityDbContext<AppUser>
 {
-    public CreditManagementSystemDbContext(DbContextOptions<CreditManagementSystemDbContext> options): base(options) { }
+    public CreditManagementSystemDbContext(DbContextOptions<CreditManagementSystemDbContext> options) : base(options) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

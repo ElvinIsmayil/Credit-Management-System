@@ -15,7 +15,7 @@ namespace Credit_Management_System.ViewModels.Category
 
         public int? ParentCategoryId { get; set; }
 
-        public List<SubCategoryVM> SubCategories { get; set; } = new List<SubCategoryVM>();  
+        public List<SubCategoryVM> SubCategories { get; set; } = new List<SubCategoryVM>();
 
         public IEnumerable<CategoryVM> ParentCategories { get; set; } = new List<CategoryVM>();
     }

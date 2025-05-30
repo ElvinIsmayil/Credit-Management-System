@@ -251,6 +251,7 @@
 												<a asp-action="Update" asp-route-id="@merchant.Id" class="menu-link px-3">Edit</a>
 											</div>
 											<div class="menu-item px-3">
+												@Html.AntiForgeryToken()
 												<a href="javascript:;"
 												   class="menu-link px-3 delete-btn"
 												   data-id="@merchant.Id"

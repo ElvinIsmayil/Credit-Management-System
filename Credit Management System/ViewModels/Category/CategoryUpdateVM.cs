@@ -5,7 +5,7 @@ namespace Credit_Management_System.ViewModels.Category
     public class CategoryUpdateVM
     {
         [Required]
-        public int Id { get; set; }  
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Name is required.")]
         [StringLength(150, ErrorMessage = "Name cannot exceed 150 characters.")]
@@ -22,6 +22,6 @@ namespace Credit_Management_System.ViewModels.Category
 
         public int? ParentCategoryId { get; set; }
 
-        public List<CategoryVM> ParentCategories { get; set; }
+        public List<CategoryVM> ParentCategories { get; set; } = new List<CategoryVM>();
     }
 }

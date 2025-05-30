@@ -1,10 +1,8 @@
-﻿using Credit_Management_System.Models;
-using Credit_Management_System.Services.Implementations;
-using Credit_Management_System.ViewModels.Category;
+﻿using Credit_Management_System.ViewModels.Category;
 
 namespace Credit_Management_System.Services.Interfaces
 {
-    public interface ICategoryService 
+    public interface ICategoryService
     {
         Task<CategoryVM> AddAsync(CategoryCreateVM viewModel);
         Task<CategoryVM> UpdateAsync(CategoryUpdateVM viewModel);
@@ -13,7 +11,10 @@ namespace Credit_Management_System.Services.Interfaces
         Task<IEnumerable<CategoryVM>> GetAllAsync();
         Task<CategoryDetailVM> GetDetailByIdAsync(int id);
         Task<CategoryUpdateVM> GetUpdateByIdAsync(int id);
+        Task<IEnumerable<CategoryVM>> GetSubCategoriesAsync(int parentCategoryId);
+        Task<IEnumerable<CategoryVM>> GetTopLevelCategoriesAsync();
 
-    
+
+
     }
 }

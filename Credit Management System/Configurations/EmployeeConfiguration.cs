@@ -1,8 +1,7 @@
-﻿using Credit_Management_System.Models;
-using Credit_Management_System.Enums;
+﻿using Credit_Management_System.Configurations.Common;
+using Credit_Management_System.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Credit_Management_System.Configurations.Common;
 
 namespace Credit_Management_System.Configurations
 {

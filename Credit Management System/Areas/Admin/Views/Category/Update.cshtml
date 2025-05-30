@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Edit Category";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -40,52 +41,83 @@
     <div class="post d-flex flex-column-fluid" id="kt_post">
         <div class="container-xxl">
             <div class="card shadow-sm">
+                <div class="card-header">
+                    <h3 class="card-title fw-bold">Category Details</h3>
+                </div>
                 <div class="card-body p-10">
-                    <form asp-action="Update" method="post" enctype="multipart/form-data">
+                    <form asp-action="Update" method="post" enctype="multipart/form-data" id="category-form">
                         @Html.AntiForgeryToken()
                         <input type="hidden" asp-for="Id" />
 
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="row mb-6">
-                                    <div class="col-lg-6 mb-6">
-                                        <label asp-for="Name" class="form-label fw-bold fs-6 text-dark"></label>
-                                        <input asp-for="Name" class="form-control form-control-lg form-control-solid" />
-                                        <span asp-validation-for="Name" class="text-danger"></span>
-                                    </div>
-                                    <div class="col-lg-6 mb-6">
-                                        <label asp-for="ImageUrl" class="form-label fw-bold fs-6 text-dark"></label>
-                                        <input asp-for="ImageUrl" class="form-control form-control-lg form-control-solid" />
-                                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                        <div class="row g-10">
+                            <!-- Name -->
+                            <div class="col-md-6">
+                                <div class="mb-10">
+                                    <label asp-for="Name" class="form-label required fw-bold fs-6">Category Name</label>
+                                    <input asp-for="Name" class="form-control form-control-solid" placeholder="Enter category name" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Parent Category -->
+                            <div class="col-md-6">
+                                <div class="mb-10">
+                                    <label asp-for="ParentCategoryId" class="form-label fw-bold fs-6">Parent Category</label>
+                                    <select asp-for="ParentCategoryId" asp-items="@(new SelectList(Model.ParentCategories, "Id", "Name"))" class="form-select form-select-solid">
+                                        <option value="">-- No Parent Category --</option>
+                                    </select>
+                                    <span asp-validation-for="ParentCategoryId" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="col-12">
+                                <div class="mb-10">
+                                    <label asp-for="Description" class="form-label fw-bold fs-6">Description</label>
+                                    <textarea asp-for="Description" rows="3" class="form-control form-control-solid" placeholder="Enter category description"></textarea>
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Image URL -->
+                          
+
+                            <!-- Image Upload -->
+                            <div class="col-md-6">
+                                <div class="mb-10">
+                                    <label asp-for="Image" class="form-label fw-bold fs-6">Upload New Image</label>
+                                    <input asp-for="Image" type="file" class="form-control form-control-solid" accept=".jpg,.jpeg,.png,.gif" />
+                                    <span asp-validation-for="Image" class="text-danger"></span>
+                                    <div class="form-text">Allowed file types: JPG, JPEG, PNG, GIF. Max size: 5MB</div>
+                                </div>
+                            </div>
+
+                            <!-- Image Preview -->
+                            <div class="col-12">
+                                <div class="mb-10">
+                                    <label class="form-label fw-bold fs-6">Current Image</label>
+                                    <div class="image-preview-container">
+                                        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                                        {
+                                            <img id="current-image" src="@Model.ImageUrl" class="img-thumbnail" style="max-height: 200px;" />
+                                        }
+                                        else
+                                        {
+                                            <div class="text-muted">No image available</div>
+                                        }
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="row mb-6">
-                                    <div class="col-lg-6 mb-6">
-                                        <label asp-for="Description" class="form-label fw-bold fs-6 text-dark"></label>
-                                        <textarea asp-for="Description" rows="3" class="form-control form-control-lg form-control-solid"></textarea>
-                                        <span asp-validation-for="Description" class="text-danger"></span>
-                                    </div>
-                                    <div class="col-lg-6 mb-6">
-                                        <label asp-for="Image" class="form-label fw-bold fs-6 text-dark">Upload Image</label>
-                                        <input asp-for="Image" type="file" class="form-control form-control-lg form-control-solid" />
-                                        <span asp-validation-for="Image" class="text-danger"></span>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-6">
-                                    <div class="col-lg-6 mb-6">
-                                        <label asp-for="ParentCategoryId" class="form-label fw-bold fs-6 text-dark">Parent Category</label>
-                                        <select asp-for="ParentCategoryId" asp-items="@(new SelectList(Model.ParentCategories, "Id", "Name"))" class="form-select form-select-solid">
-                                            <option value="">-- No Parent --</option>
-                                        </select>
-                                        <span asp-validation-for="ParentCategoryId" class="text-danger"></span>
-                                    </div>
-                                </div>
-
-                                <div class="mt-10 text-end">
-                                    <button type="submit" class="btn btn-lg btn-primary fw-bold px-6">
-                                        <i class="ki-outline ki-save fs-4 me-2"></i> Save Changes
+                            <!-- Form Actions -->
+                            <div class="col-12">
+                                <div class="d-flex justify-content-end gap-5">
+                                    <a asp-action="Index" class="btn btn-light btn-lg me-3">Cancel</a>
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <span class="indicator-label">Save Changes</span>
+                                        <span class="indicator-progress">
+                                            Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                        </span>
                                     </button>
                                 </div>
                             </div>
@@ -100,4 +132,49 @@
 
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+        $(document).ready(function() {
+            // Image preview for file upload
+            $('#Image').change(function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#current-image').attr('src', e.target.result).show();
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Form submission handling
+            $('#category-form').submit(function() {
+                // Show loading indicator on submit button
+                $(this).find('[type="submit"]').attr('data-kt-indicator', 'on');
+            });
+
+            // Initialize select2 if needed
+            $('.form-select').select2({
+                placeholder: "Select parent category",
+                width: '100%'
+            });
+        });
+    </script>
+
+    <style>
+        .image-preview-container {
+            border: 1px dashed #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-label.required:after {
+            content: " *";
+            color: #f1416c;
+        }
+    </style>
 }

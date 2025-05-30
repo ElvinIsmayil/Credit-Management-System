@@ -3,7 +3,6 @@ using Credit_Management_System.Models;
 using Credit_Management_System.Repositories.Interfaces;
 using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Branch;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Credit_Management_System.Services.Implementations
 {
@@ -43,7 +42,7 @@ namespace Credit_Management_System.Services.Implementations
         {
             var branches = await _branchRepository.GetBranchesWithMerchantsAsync();
             var branchVMs = _mapper.Map<List<BranchVM>>(branches);
-            return branchVMs; 
+            return branchVMs;
         }
 
         public async Task<BranchDetailVM> GetBranchDetailByIdAsync(int id)
@@ -58,7 +57,7 @@ namespace Credit_Management_System.Services.Implementations
 
         public async Task<BranchVM> GetByIdAsync(int id)
         {
-            var branch = await  _branchRepository.GetByIdAsync(id);
+            var branch = await _branchRepository.GetByIdAsync(id);
             if (branch is null) return null;
 
             var branchVM = _mapper.Map<BranchVM>(branch);

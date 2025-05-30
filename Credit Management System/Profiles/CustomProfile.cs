@@ -35,8 +35,8 @@ namespace Credit_Management_System.Profiles
 
             CreateMap<Category, ParentCategoryVM>();
 
-            CreateMap<Category, CategoryVM>()
-                .ForMember(dest => dest.SubCategories, opt => opt.MapFrom(src => src.SubCategories));
+            CreateMap<Category, CategoryVM>().ReverseMap();
+
 
             CreateMap<Category, CategoryCreateVM>().ReverseMap();
             CreateMap<Category, CategoryUpdateVM>().ReverseMap();
