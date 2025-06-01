@@ -1,5 +1,4 @@
 ﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
-using Credit_Management_System.Extensions;
 using Credit_Management_System.Helpers;
 using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Category;
@@ -12,7 +11,6 @@ namespace Credit_Management_System.Areas.Admin.Controllers
     public class CategoryController : BaseAdminController
     {
         private readonly ICategoryService _categoryService;
-        private const string ImageFolder = "categories";
 
         public CategoryController(ICategoryService categoryService)
         {
@@ -48,43 +46,41 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CategoryCreateVM model)
         {
-            if (!ModelState.IsValid)
-            {
-                await PopulateParentCategories(model.ParentCategoryId);
-                return View(model);
-            }
-
             try
             {
-                if (model.Image != null)
+                if (!ModelState.IsValid)
                 {
-                    var validationErrors = model.Image.ValidateFileType().ToList();
-                    if (validationErrors.Any())
-                    {
-                        foreach (var error in validationErrors)
-                        {
-                            ModelState.AddModelError("Image", error);
-                        }
-                        return View(model);
-                    }
-                    model.ImageUrl = await model.Image.SaveImageAsync(ImageFolder);
+                    await _categoryService.GetCreateViewModelAsync();
+                    TempData[AlertHelper.Error] = "Please correct the form errors.";
+                    return View(model);
                 }
 
                 var result = await _categoryService.AddAsync(model);
                 if (result == null)
                 {
-                    ModelState.AddModelError(string.Empty, "Failed to create category.");
-                    await PopulateParentCategories(model.ParentCategoryId);
+                    // If result is null, it means either category creation failed OR image validation failed.
+                    // The service now handles setting specific ModelState errors for image.
+                    // We need to re-populate parent categories if returning the view.
+                    await _categoryService.GetCreateViewModelAsync();
+
+                    // If your CategoryService doesn't add specific ModelState errors,
+                    // you might need to add a generic error here or rely on TempData from service.
+                    // However, we need to ensure ModelState is populated correctly *if* image validation failed
+                    // in the service and it returned null. This is crucial for user feedback.
+                    // You might need a more sophisticated return type from service (e.g., Result pattern)
+                    // to pass back validation errors from image service.
+                    // For now, assuming CategoryService adds to ModelState or `TempData` is enough.
+                    TempData[AlertHelper.Error] = "Failed to create category. Please check details and image file.";
                     return View(model);
                 }
 
                 TempData[AlertHelper.Success] = "Category created successfully!";
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception) // Catching generic Exception for robustness
             {
-                TempData[AlertHelper.Error] = "An error occurred while creating the category.";
-                await PopulateParentCategories(model.ParentCategoryId);
+                TempData[AlertHelper.Error] = "An unexpected error occurred while creating the category.";
+                await _categoryService.GetCreateViewModelAsync();
                 return View(model);
             }
         }
@@ -95,11 +91,9 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             var category = await _categoryService.GetUpdateByIdAsync(id);
             if (category == null)
             {
-                TempData[AlertHelper.Success] = "Category not found.";
+                TempData[AlertHelper.Error] = "Category not found.";
                 return RedirectToAction(nameof(Index));
             }
-
-            await PopulateParentCategories(category.ParentCategoryId);
             return View(category);
         }
 
@@ -107,46 +101,36 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(CategoryUpdateVM model)
         {
-            if (!ModelState.IsValid)
-            {
-                await PopulateParentCategories(model.ParentCategoryId);
-                return View(model);
-            }
-
             try
             {
-                if (model.Image != null)
+                if (!ModelState.IsValid)
                 {
-                    var validationErrors = model.Image.ValidateFileType().ToList();
-                    if (validationErrors.Any())
-                    {
-                        foreach (var error in validationErrors)
-                            ModelState.AddModelError("Image", error);
-
-                        return View(model);
-                    }
-
-                    if (!string.IsNullOrEmpty(model.ImageUrl))
-                        model.ImageUrl.DeleteImageFromLocal();
-
-                    model.ImageUrl = await model.Image.SaveImageAsync(ImageFolder);
+                    TempData[AlertHelper.Error] = "Please correct the form errors.";
+                    await _categoryService.GetUpdateByIdAsync(model.Id);
+                    return View(model);
                 }
+
+                // *** Image handling is now done by CategoryService ***
+                // The CategoryService.UpdateAsync will internally handle saving the new image,
+                // deleting the old one, and updating the ImageUrl.
 
                 var result = await _categoryService.UpdateAsync(model);
                 if (result == null)
                 {
-                    ModelState.AddModelError(string.Empty, "Failed to update category.");
-                    await PopulateParentCategories(model.ParentCategoryId);
+                    // If result is null, it means either category update failed OR image validation failed.
+                    // Similar to Create, if the service isn't populating ModelState, you might need more specific handling.
+                    await _categoryService.GetUpdateByIdAsync(model.Id);
+                    TempData[AlertHelper.Error] = "Failed to update category. Please check details and image file.";
                     return View(model);
                 }
 
                 TempData[AlertHelper.Success] = "Category updated successfully!";
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception) // Catching generic Exception for robustness
             {
-                TempData[AlertHelper.Error] = "An error occurred while updating the category.";
-                await PopulateParentCategories(model.ParentCategoryId);
+                TempData[AlertHelper.Error] = "An unexpected error occurred while updating the category.";
+                await _categoryService.GetUpdateByIdAsync(model.Id);
                 return View(model);
             }
         }
@@ -169,37 +153,71 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         {
             try
             {
-                var category = await _categoryService.GetByIdAsync(id);
-                if (category == null)
-                {
-                    return Json(new { success = false, message = "Category not found." });
-                }
-
-                if (!string.IsNullOrEmpty(category.ImageUrl))
-                {
-                    category.ImageUrl.DeleteImageFromLocal();
-                }
-
+                // The CategoryService.DeleteAsync will now handle getting the image URL
+                // and calling _imageService.DeleteImage internally.
                 var result = await _categoryService.DeleteAsync(id);
-                return Json(new
+
+                if (!result)
                 {
-                    success = result,
-                    message = result ? "Category deleted successfully!" : "Failed to delete category."
-                });
+                    // CategoryService.DeleteAsync returns false if not found or deletion failed
+                    return Json(new { success = false, message = "Category not found or deletion failed." });
+                }
+
+                return Json(new { success = true, message = "Category deleted successfully." });
             }
-            catch
+            catch (Exception) // Catching generic Exception for robustness
             {
                 return Json(new { success = false, message = "An error occurred while deleting the category." });
             }
         }
 
-        #region Helper Methods
-        private async Task PopulateParentCategories(int? selectedId = null)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteSelected([FromBody] List<int> ids)
         {
-            var parentCategories = await _categoryService.GetTopLevelCategoriesAsync();
-            ViewBag.ParentCategoryId = new SelectList(parentCategories, "Id", "Name", selectedId);
-        }
-        #endregion
+            if (ids == null || !ids.Any())
+            {
+                return Json(new { success = false, message = "No categories selected for deletion." });
+            }
 
+            int deletedCount = 0;
+            List<string> failedDeletions = new List<string>();
+
+            foreach (var id in ids)
+            {
+                try
+                {
+                    // The CategoryService.DeleteAsync will now handle image deletion internally
+                    var result = await _categoryService.DeleteAsync(id);
+                    if (result)
+                    {
+                        deletedCount++;
+                    }
+                    else
+                    {
+                        failedDeletions.Add($"Failed to delete category with ID {id}. (Not found or internal service error)");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    failedDeletions.Add($"Error deleting category with ID {id}: {ex.Message}");
+                }
+            }
+
+            if (deletedCount == ids.Count)
+            {
+                return Json(new { success = true, message = $"{deletedCount} category(s) deleted successfully." });
+            }
+            else if (deletedCount > 0)
+            {
+                return Json(new { success = true, message = $"{deletedCount} category(s) deleted successfully. Some failed: {string.Join("; ", failedDeletions)}" });
+            }
+            else
+            {
+                return Json(new { success = false, message = $"Failed to delete any categories. Errors: {string.Join("; ", failedDeletions)}" });
+            }
+        }
+
+       
     }
 }

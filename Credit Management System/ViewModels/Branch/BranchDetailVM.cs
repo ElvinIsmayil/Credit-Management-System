@@ -15,7 +15,7 @@
         public string MerchantName { get; set; }  // for displaying related Merchant info
 
         // Optional collections summaries (just counts or basic info)
-        public int EmployeeCount { get; set; }
-        public int ProductCount { get; set; }
+        public int? EmployeeCount { get; set; }
+        public int? ProductCount { get; set; }
     }
 }

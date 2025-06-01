@@ -1,19 +1,21 @@
 ﻿using Credit_Management_System.Infrastructure.Interfaces;
+using System.Runtime.Intrinsics.Arm;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Credit_Management_System.Infrastructure.Implementations
 {
     public class ImageService : IImageService
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly string[] _allowedImageExtensions = { ".jpg", ".jpeg", ".png", ".gif" };
-        private const long MaxFileSize = 5 * 1024 * 1024; // 5 MB
+        private readonly string[] _allowedImageExtensions = { ".jpg", ".jpeg", ".png"};
+        private const long MaxFileSize = 5 * 1024 * 1024; 
 
         public ImageService(IWebHostEnvironment webHostEnvironment)
         {
             _webHostEnvironment = webHostEnvironment;
         }
 
-        public async Task<(string imageUrl, List<string> validationErrors)> SaveImageAsync(IFormFile imageFile, string folderName, string oldImageUrl = null)
+        public async Task<(string? imageUrl, List<string> validationErrors)> SaveImageAsync(IFormFile? imageFile, string folderName, string? oldImageUrl = null)
         {
             var validationErrors = ValidateFileType(imageFile);
             if (validationErrors.Any())
@@ -21,13 +23,7 @@ namespace Credit_Management_System.Infrastructure.Implementations
                 return (null, validationErrors);
             }
 
-            if (imageFile.Length > MaxFileSize)
-            {
-                validationErrors.Add($"File size exceeds the limit of {MaxFileSize / (1024 * 1024)} MB.");
-                return (null, validationErrors);
-            }
 
-            // Delete old image if provided and exists
             if (!string.IsNullOrEmpty(oldImageUrl))
             {
                 DeleteImage(oldImageUrl);
@@ -36,27 +32,40 @@ namespace Credit_Management_System.Infrastructure.Implementations
             string wwwRootPath = _webHostEnvironment.WebRootPath;
             string uploadPath = Path.Combine(wwwRootPath, "uploads", folderName);
 
-            // Ensure the directory exists
-            if (!Directory.Exists(uploadPath))
+            try
             {
-                Directory.CreateDirectory(uploadPath);
+                if (!Directory.Exists(uploadPath))
+                {
+                    Directory.CreateDirectory(uploadPath);
+                }
             }
-
-            // Generate a unique file name
-            string fileName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName);
+            catch (Exception)
+            {
+                validationErrors.Add("Server error: Could not create upload directory.");
+                return (null, validationErrors);
+            }
+            
+            string fileName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile?.FileName);
             string filePath = Path.Combine(uploadPath, fileName);
+
+            try
+            {
 
             using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
-                await imageFile.CopyToAsync(fileStream);
+                await imageFile!.CopyToAsync(fileStream);
+            }
+            }catch (Exception)
+            {
+                validationErrors.Add("Server error: Could not save image file.");
+                return (null, validationErrors);
             }
 
-            // Return the relative URL
-            string imageUrl = $"/uploads/{folderName}/{fileName}";
-            return (imageUrl, null); // No errors, return null for errors list
+            string newImageUrl = $"/uploads/{folderName}/{fileName}";
+            return (newImageUrl, new List<string>()); 
         }
 
-        public void DeleteImage(string imageUrl)
+        public void DeleteImage(string? imageUrl)
         {
             if (string.IsNullOrEmpty(imageUrl)) return;
 
@@ -71,14 +80,12 @@ namespace Credit_Management_System.Infrastructure.Implementations
                 }
                 catch (IOException ex)
                 {
-                    // Log the exception (e.g., file in use)
-                    // You might want to use ILogger here
                     Console.WriteLine($"Error deleting image: {ex.Message}");
                 }
             }
         }
 
-        public List<string> ValidateFileType(IFormFile imageFile)
+        public List<string> ValidateFileType(IFormFile? imageFile)
         {
             var errors = new List<string>();
 
@@ -88,8 +95,19 @@ namespace Credit_Management_System.Infrastructure.Implementations
                 return errors;
             }
 
-            var fileExtension = Path.GetExtension(imageFile.FileName).ToLowerInvariant();
-            if (!_allowedImageExtensions.Contains(fileExtension))
+            if (imageFile.Length == 0)
+            {
+                errors.Add("The uploaded file is empty.");
+                return errors;
+            }
+
+            if (imageFile.Length > MaxFileSize)
+            {
+                errors.Add($"File size exceeds the limit of {MaxFileSize / (1024 * 1024)} MB.");
+            }
+
+            var fileExtension = Path.GetExtension(imageFile.FileName)?.ToLowerInvariant();
+            if (string.IsNullOrEmpty(fileExtension) || !_allowedImageExtensions.Contains(fileExtension))
             {
                 errors.Add($"Invalid file type. Only {string.Join(", ", _allowedImageExtensions)} are allowed.");
             }

@@ -21,7 +21,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var branches = await _branchService.GetAllBranchesAsync();
+            var branches = await _branchService.GetAllWithMerchantsAsync();
             return View(branches);
         }
 

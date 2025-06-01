@@ -24,11 +24,8 @@
         const warning = document.getElementById("TempDataWarning")?.value; // Get warning message
         const type = document.getElementById("AlertType")?.value?.toLowerCase();
 
-        if (type === "toastr") {
-            if (success) toastr.success(success);
-            if (error) toastr.error(error);
-            if (warning) toastr.warning(warning); // Display warning with toastr
-        } else { // default to SweetAlert2
+        // If 'type' is explicitly "swal", use SweetAlert2; otherwise, default to toastr
+        if (type === "swal") {
             if (success) {
                 Swal.fire({
                     icon: 'success',
@@ -62,6 +59,10 @@
                     }
                 });
             }
+        } else { // Default to toastr if 'type' is not "swal"
+            if (success) toastr.success(success);
+            if (error) toastr.error(error);
+            if (warning) toastr.warning(warning); // Display warning with toastr
         }
     });
 </script>

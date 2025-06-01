@@ -1,4 +1,6 @@
 ﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
+using Credit_Management_System.Infrastructure.Interfaces;
+using Credit_Management_System.Services.Implementations;
 using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Product;
 using Microsoft.AspNetCore.Mvc;
@@ -9,11 +11,13 @@ namespace Credit_Management_System.Areas.Admin.Controllers
     public class ProductController : BaseAdminController
     {
         private readonly IProductService _productService;
-        public ProductController(IProductService productService)
+        private readonly IImageService _imageService;
+        private const string ImageFolder = "products";
+        public ProductController(IProductService productService, IImageService imageService)
         {
             _productService = productService;
+            _imageService = imageService;
         }
-
 
         [HttpGet]
         public IActionResult Index()
@@ -27,29 +31,30 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(ProductCreateVM productCreateVM)
+        public IActionResult Create(ProductCreateVM model)
         {
             try
             {
                 if (!ModelState.IsValid)
-                    return View(productCreateVM);
+                    return View(model);
 
-                var data = _productService.AddAsync(productCreateVM);
+                var data = _productService.AddAsync(model);
                 if (data == null)
                 {
                     ModelState.AddModelError(string.Empty, "Failed to create product.");
-                    return View(productCreateVM);
+                    return View(model);
                 }
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty, ex.Message);
-                return View(productCreateVM);
+                return View(model);
             }
         }
 
@@ -64,24 +69,24 @@ namespace Credit_Management_System.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(ProductUpdateVM productUpdateVM)
+        public async Task<IActionResult> Update(ProductUpdateVM model)
         {
             try
             {
                 if (!ModelState.IsValid)
-                    return View(productUpdateVM);
-                var data = await _productService.UpdateAsync(productUpdateVM);
+                    return View(model);
+                var data = await _productService.UpdateAsync(model);
                 if (data == null)
                 {
                     ModelState.AddModelError(string.Empty, "Failed to update product.");
-                    return View(productUpdateVM);
+                    return View(model);
                 }
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty, ex.Message);
-                return View(productUpdateVM);
+                return View(model);
             }
         }
 
@@ -100,18 +105,27 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         {
             try
             {
+                var product = await _productService.GetByIdAsync(id);
+                if (product == null)
+                {
+                    return Json(new { success = false, message = "Product not found." });
+                }
+
+                if (!string.IsNullOrEmpty(product.ImageUrl))
+                {
+                    _imageService.DeleteImage(product.ImageUrl);
+                }
+
                 var result = await _productService.DeleteAsync(id);
 
                 if (!result)
-                {
                     return Json(new { success = false, message = "Delete failed. Item not found or already deleted." });
-                }
 
-                return Json(new { success = true, message = "Item deleted successfully." });
+                return Json(new { success = true, message = "Product deleted successfully." });
             }
-            catch
+            catch (Exception ex)
             {
-                return Json(new { success = false, message = "An error occurred while deleting the item." });
+                return Json(new { success = false, message = "An error occurred while deleting the product: " + ex.Message });
             }
         }
 

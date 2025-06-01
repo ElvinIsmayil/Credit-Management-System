@@ -12,7 +12,6 @@ namespace Credit_Management_System.Services.Interfaces
 
         Task<BranchDetailVM> GetDetailByIdAsync(int id);
         Task<BranchUpdateVM> GetUpdateByIdAsync(int id);
-
         Task<List<BranchVM>> GetAllWithMerchantsAsync();
 
 

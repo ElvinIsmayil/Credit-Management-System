@@ -124,7 +124,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                 return View(signUpVM);
             }
 
-            // Generate email confirmation token and URL-encode it
+         
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
             var encodedToken = HttpUtility.UrlEncode(token);
 

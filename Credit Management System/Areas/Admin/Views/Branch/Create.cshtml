@@ -4,46 +4,88 @@
     ViewData["Title"] = "Create Branch";
 }
 
-<div class="card">
-    <div class="card-header">
-        <h3 class="card-title">Create New Branch</h3>
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <div class="toolbar" id="kt_toolbar">
+        <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+            <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Create Branch</h1>
+                <span class="h-20px border-gray-200 border-start mx-4"></span>
+                <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+                    <li class="breadcrumb-item text-muted">
+                        <a asp-controller="Dashboard" asp-action="Index" class="text-muted text-hover-primary">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-200 w-5px h-2px"></span>
+                    </li>
+                    <li class="breadcrumb-item text-muted">Branches</li>
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-200 w-5px h-2px"></span>
+                    </li>
+                    <li class="breadcrumb-item text-dark">Create Branch</li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <a asp-action="Index" class="btn btn-sm btn-light-primary fw-bold px-6">
+                    <i class="ki-outline ki-arrow-left fs-4 me-2"></i> Back to List
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="card-body">
-        <form asp-area="Admin" asp-controller="Branch" asp-action="Create" method="post" enctype="multipart/form-data">
-            <div class="mb-10">
-                <label asp-for="Name" class="form-label fw-bold">Branch Name</label>
-                <input asp-for="Name" class="form-control form-control-solid" placeholder="Enter branch name" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+    <div class="post d-flex flex-column-fluid" id="kt_post">
+        <div id="kt_content_container" class="container-xxl">
+            <div class="card">
+                <div class="card-header border-0 pt-6">
+                    <div class="card-title">
+                        <h3 class="card-label">Fill in Branch Details</h3>
+                    </div>
+                </div>
+                <div class="card-body pt-0">
+                    <form asp-area="Admin" asp-controller="Branch" asp-action="Create" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken() @* Add Anti-Forgery Token *@
+                        <div class="mb-10">
+                            <label asp-for="Name" class="form-label fw-bold">Branch Name</label>
+                            <input asp-for="Name" class="form-control form-control-solid" placeholder="Enter branch name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
 
-            <div class="mb-10">
-                <label asp-for="Address" class="form-label fw-bold">Address</label>
-                <textarea asp-for="Address" class="form-control form-control-solid" rows="3" placeholder="Enter address"></textarea>
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
+                        <div class="mb-10">
+                            <label asp-for="Address" class="form-label fw-bold">Address</label>
+                            <textarea asp-for="Address" class="form-control form-control-solid" rows="3" placeholder="Enter address"></textarea>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
 
-            <div class="mb-10">
-                <label asp-for="PhoneNumber" class="form-label fw-bold">Phone Number</label>
-                <input asp-for="PhoneNumber" class="form-control form-control-solid" placeholder="Enter phone number" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
+                        <div class="mb-10">
+                            <label asp-for="PhoneNumber" class="form-label fw-bold">Phone Number</label>
+                            <input asp-for="PhoneNumber" class="form-control form-control-solid" placeholder="Enter phone number" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
 
-            <div class="form-group">
-                <label asp-for="MerchantId" class="form-label fw-bold">Select Merchant</label>
-                <select asp-for="MerchantId" asp-items="Model.Merchants" class="form-select form-select-solid">
-                    <option value="">Select Merchant</option>
-                </select>
-                <span asp-validation-for="MerchantId" class="text-danger"></span>
-            </div>
+                        <div class="mb-10">
+                            @* Changed from form-group to mb-10 for consistency *@
+                            <label asp-for="MerchantId" class="form-label fw-bold">Select Merchant</label>
+                            <select asp-for="MerchantId" asp-items="Model.Merchants" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Merchant">
+                                <option value="">Select Merchant</option>
+                            </select>
+                            <span asp-validation-for="MerchantId" class="text-danger"></span>
+                        </div>
 
-            <div class="text-end">
-                <button type="submit" class="btn btn-primary">Create Branch</button>
-                <a asp-action="Index" class="btn btn-light">Cancel</a>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Create Branch</button>
+                            <a asp-action="Index" class="btn btn-light">Cancel</a>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function() {
+            // Initialize Select2 for the Merchant dropdown
+            $('[data-control="select2"]').select2();
+        });
+    </script>
 }

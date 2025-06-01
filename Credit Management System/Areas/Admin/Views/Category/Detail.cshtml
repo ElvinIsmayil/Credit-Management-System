@@ -1,7 +1,8 @@
-﻿@model Credit_Management_System.ViewModels.Category.CategoryDetailVM
+﻿@using Credit_Management_System.ViewModels.Category; @* Make sure to include this namespace *@
+
+@model CategoryDetailVM
 
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-    <!-- Toolbar -->
     <div class="toolbar mb-5" id="kt_toolbar">
         <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
             <div class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
@@ -25,23 +26,38 @@
             </div>
 
             <div class="d-flex align-items-center gap-3">
-                <a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-lg btn-primary fw-bold px-6">
+                <a asp-action="Update" asp-controller="Category" asp-route-id="@Model.Id" class="btn btn-lg btn-primary fw-bold px-6">
+                    @* Link to edit this category *@
                     <i class="ki-outline ki-pencil fs-4 me-2"></i> Edit Category
                 </a>
-                <a asp-action="Index" class="btn btn-lg btn-light fw-bold px-6">
+                <a asp-action="Index" asp-controller="Category" class="btn btn-lg btn-light fw-bold px-6">
+                    @* Back to list link *@
                     <i class="ki-outline ki-arrow-left fs-4 me-2"></i> Back to List
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Content -->
     <div class="post d-flex flex-column-fluid" id="kt_post">
         <div class="container-xxl">
             <div class="card shadow-sm">
                 <div class="card-body p-10">
                     <div class="row align-items-center">
-                        <div class="col-md-12">
+                        <div class="col-md-3 text-center mb-10 mb-md-0">
+                            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                            {
+                                <div class="symbol symbol-150px symbol-lg-160px symbol-fixed position-relative mx-auto">
+                                    <img src="@Model.ImageUrl" alt="Category Image" class="rounded shadow-sm" style="object-fit: cover;" />
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="symbol symbol-150px symbol-lg-160px symbol-fixed bg-light mx-auto d-flex align-items-center justify-content-center">
+                                    <span class="text-muted fw-bold">No Image</span>
+                                </div>
+                            }
+                        </div>
+                        <div class="col-md-9">
                             <div class="row mb-5">
                                 <div class="col-sm-4 text-muted fw-bold fs-6">Category Name:</div>
                                 <div class="col-sm-8 text-dark fs-6 fw-semibold">@Model.Name</div>
@@ -49,19 +65,14 @@
 
                             <div class="row mb-5">
                                 <div class="col-sm-4 text-muted fw-bold fs-6">Description:</div>
-                                <div class="col-sm-8 text-dark fs-6">@Model.Description</div>
-                            </div>
-
-                            <div class="row mb-5">
-                                <div class="col-sm-4 text-muted fw-bold fs-6">Image:</div>
-                                <div class="col-sm-8">
-                                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                                <div class="col-sm-8 text-dark fs-6">
+                                    @if (!string.IsNullOrEmpty(Model.Description))
                                     {
-                                        <img src="@Model.ImageUrl" alt="Category Image" class="img-fluid rounded" style="max-height: 150px;" />
+                                        @Model.Description
                                     }
                                     else
                                     {
-                                        <span class="text-muted">No image available</span>
+                                        <span class="text-muted">No description provided</span>
                                     }
                                 </div>
                             </div>
@@ -71,7 +82,8 @@
                                 <div class="col-sm-8 text-dark fs-6">
                                     @if (Model.ParentCategoryNames?.Any() == true)
                                     {
-                                        <ul class="mb-0">
+                                        <ul class="mb-0 ps-3">
+                                            @* Added padding for list style *@
                                             @foreach (var parentName in Model.ParentCategoryNames)
                                             {
                                                 <li>@parentName</li>
@@ -84,49 +96,90 @@
                                     }
                                 </div>
                             </div>
-
-                            <div class="row mb-5">
-                                <div class="col-sm-4 text-muted fw-bold fs-6">Subcategories:</div>
-                                <div class="col-sm-8 text-dark fs-6">
-                                    @if (Model.SubCategories.Any())
-                                    {
-                                        <ul class="mb-0">
-                                            @foreach (var sub in Model.SubCategories)
-                                            {
-                                                <li>@sub.Name</li>
-                                            }
-                                        </ul>
-                                    }
-                                    else
-                                    {
-                                        <span class="text-muted">No subcategories</span>
-                                    }
-                                </div>
-                            </div>
-
-                            <div class="row mb-5">
-                                <div class="col-sm-4 text-muted fw-bold fs-6">Products:</div>
-                                <div class="col-sm-8 text-dark fs-6">
-                                    @if (Model.Products.Any())
-                                    {
-                                        <ul class="mb-0">
-                                            @foreach (var product in Model.Products)
-                                            {
-                                                <li>@product.Name</li>
-                                            }
-                                        </ul>
-                                    }
-                                    else
-                                    {
-                                        <span class="text-muted">No products in this category</span>
-                                    }
-                                </div>
-                            </div>
-
                         </div>
-                    </div>
+                        <div class="card mt-10 w-100">
+                            @* Added w-100 to make it full width *@
+                            <div class="card-header">
+                                <h3 class="card-title fw-bold text-gray-800">Subcategories</h3>
+                            </div>
+                            <div class="card-body pt-0">
+                                @if (Model.SubCategories.Any())
+                                {
+                                    <div class="table-responsive">
+                                        <table class="table align-middle table-row-dashed fs-6 gy-4">
+                                            <thead>
+                                                <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
+                                                    <th class="min-w-150px">Subcategory Name</th>
+                                                    @* Add more headers if SubCategoryVM has more properties to display *@
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-gray-700 fw-semibold">
+                                                @foreach (var sub in Model.SubCategories)
+                                                {
+                                                    <tr>
+                                                        <td>@sub.Name</td>
+                                                        @* Display more sub.properties here *@
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="alert alert-info d-flex align-items-center p-5 mt-5">
+                                        <i class="ki-outline ki-information-5 fs-2hx text-info me-4"></i>
+                                        <div class="d-flex flex-column">
+                                            <h4 class="mb-1 text-info">No Subcategories Found</h4>
+                                            <span>This category does not have any direct subcategories.</span>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="card mt-10 w-100">
+                            @* Added w-100 to make it full width *@
+                            <div class="card-header">
+                                <h3 class="card-title fw-bold text-gray-800">Products in this Category</h3>
+                            </div>
+                            <div class="card-body pt-0">
+                                @if (Model.Products.Any())
+                                {
+                                    <div class="table-responsive">
+                                        <table class="table align-middle table-row-dashed fs-6 gy-4">
+                                            <thead>
+                                                <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
+                                                    <th class="min-w-150px">Product Name</th>
+                                                    @* Add more headers if ProductVM has more properties to display *@
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-gray-700 fw-semibold">
+                                                @foreach (var product in Model.Products)
+                                                {
+                                                    <tr>
+                                                        <td>@product.Name</td>
+                                                        @* Display more product.properties here *@
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="alert alert-info d-flex align-items-center p-5 mt-5">
+                                        <i class="ki-outline ki-information-5 fs-2hx text-info me-4"></i>
+                                        <div class="d-flex flex-column">
+                                            <h4 class="mb-1 text-info">No Products Found</h4>
+                                            <span>There are no products directly associated with this category.</span>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div> @* End of row align-items-center *@
                 </div>
             </div>
         </div>
-    </div> <!-- end Content -->
+    </div>
 </div>

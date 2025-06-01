@@ -23,6 +23,7 @@ namespace Credit_Management_System
             services.AddScoped<IMerchantRepository, MerchantRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IBranchRepository, BranchRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
 
             services.AddScoped<ICategoryService, CategoryService>();

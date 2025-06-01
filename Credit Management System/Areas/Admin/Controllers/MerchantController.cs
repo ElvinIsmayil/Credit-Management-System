@@ -1,10 +1,10 @@
 ﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
 using Credit_Management_System.Helpers;
 using Credit_Management_System.Infrastructure.Interfaces;
-using Credit_Management_System.Services.Interfaces; // Assuming IImageService is here or in a new Infrastructure.Services.Interfaces
+using Credit_Management_System.Services.Implementations;
+using Credit_Management_System.Services.Interfaces;
 using Credit_Management_System.ViewModels.Merchant;
 using Microsoft.AspNetCore.Mvc;
-using System; // Added for Exception
 
 namespace Credit_Management_System.Areas.Admin.Controllers
 {
@@ -12,12 +12,13 @@ namespace Credit_Management_System.Areas.Admin.Controllers
     public class MerchantController : BaseAdminController
     {
         private readonly IMerchantService _merchantService;
-        private readonly IImageService _imageService; // Inject the new image service
+        private readonly IImageService _imageService;
+        private const string ImageFolder = "merchants";
 
         public MerchantController(IMerchantService merchantService, IImageService imageService)
         {
             _merchantService = merchantService;
-            _imageService = imageService; // Initialize the image service
+            _imageService = imageService; 
         }
 
         [HttpGet]
@@ -41,21 +42,19 @@ namespace Credit_Management_System.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(MerchantCreateVM merchantCreateVM)
+        public async Task<IActionResult> Create(MerchantCreateVM model)
         {
             try
             {
                 if (!ModelState.IsValid)
                 {
                     TempData[AlertHelper.Error] = "Please correct the form errors.";
-                    TempData["AlertType"] = "toastr";
-                    return View(merchantCreateVM);
+                    return View(model);
                 }
 
-                if (merchantCreateVM.Image != null)
+                if (model.Image != null)
                 {
-                    // Use the ImageService for validation and saving
-                    var (imageUrl, validationErrors) = await _imageService.SaveImageAsync(merchantCreateVM.Image, "merchants");
+                    var (imageUrl, validationErrors) = await _imageService.SaveImageAsync(model.Image, ImageFolder);
 
                     if (validationErrors != null && validationErrors.Any())
                     {
@@ -64,32 +63,28 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                             ModelState.AddModelError("Image", error);
                         }
                         TempData[AlertHelper.Error] = "Invalid image file type. Please upload a valid image (e.g., JPG, PNG).";
-                        TempData["AlertType"] = "toastr";
-                        return View(merchantCreateVM);
+                        return View(model);
                     }
-                    merchantCreateVM.ImageUrl = imageUrl;
+                    model.ImageUrl = imageUrl;
                 }
 
-                var data = await _merchantService.AddAsync(merchantCreateVM);
+                var result = await _merchantService.AddAsync(model);
 
-                if (data == null)
+                if (result == null)
                 {
                     ModelState.AddModelError(string.Empty, "Failed to create merchant.");
                     TempData[AlertHelper.Error] = "Failed to create merchant. Please try again.";
-                    TempData["AlertType"] = "toastr";
-                    return View(merchantCreateVM);
+                    return View(model);
                 }
 
                 TempData[AlertHelper.Success] = "Merchant created successfully!";
-                TempData["AlertType"] = "toastr";
                 return RedirectToAction(nameof(Index));
             }
-            catch (Exception ex) // Catch specific exceptions or log them
+            catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty, "An error occurred while creating the merchant: " + ex.Message);
                 TempData[AlertHelper.Error] = "An unexpected error occurred while creating the merchant. Please try again later.";
-                TempData["AlertType"] = "toastr";
-                return View(merchantCreateVM);
+                return View(model);
             }
         }
 
@@ -100,39 +95,35 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             if (merchant == null)
             {
                 TempData[AlertHelper.Error] = "Merchant not found.";
-                TempData["AlertType"] = "toastr";
-                return NotFound();
+                return RedirectToAction(nameof(Index));
             }
             return View(merchant);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(MerchantUpdateVM merchantUpdateVM)
+        public async Task<IActionResult> Update(MerchantUpdateVM model)
         {
             try
             {
                 if (!ModelState.IsValid)
                 {
                     TempData[AlertHelper.Error] = "Please correct the form errors.";
-                    TempData["AlertType"] = "toastr";
-                    return View(merchantUpdateVM);
+                    return View(model);
                 }
 
-                var existingMerchant = await _merchantService.GetByIdAsync(merchantUpdateVM.Id);
+                var existingMerchant = await _merchantService.GetByIdAsync(model.Id);
                 if (existingMerchant == null)
                 {
                     TempData[AlertHelper.Error] = "Merchant not found for update.";
-                    TempData["AlertType"] = "toastr";
                     return NotFound();
                 }
 
                 string currentImageUrl = existingMerchant.ImageUrl;
 
-                if (merchantUpdateVM.Image != null)
+                if (model.Image != null)
                 {
-                    // Use the ImageService for validation, deletion of old, and saving new
-                    var (newImageUrl, validationErrors) = await _imageService.SaveImageAsync(merchantUpdateVM.Image, "merchants", currentImageUrl);
+                    var (newImageUrl, validationErrors) = await _imageService.SaveImageAsync(model.Image, ImageFolder, currentImageUrl);
 
                     if (validationErrors != null && validationErrors.Any())
                     {
@@ -140,28 +131,28 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                             ModelState.AddModelError("Image", error);
 
                         TempData[AlertHelper.Error] = "Invalid image file type. Please upload a valid image (e.g., JPG, PNG).";
-                        TempData["AlertType"] = "toastr";
-                        return View(merchantUpdateVM);
+                        return View(model);
                     }
-                    merchantUpdateVM.ImageUrl = newImageUrl;
+                    model.ImageUrl = newImageUrl;
                 }
                 else
                 {
-                    // If no new image is provided, retain the existing one
-                    merchantUpdateVM.ImageUrl = currentImageUrl;
+                    model.ImageUrl = currentImageUrl;
                 }
-
-                await _merchantService.UpdateAsync(merchantUpdateVM);
+                var result = await _merchantService.UpdateAsync(model);
+                if (result == null)
+                {
+                    ModelState.AddModelError(string.Empty, "Failed to update merchant.");
+                    return View(model);
+                }
                 TempData[AlertHelper.Success] = "Merchant updated successfully!";
-                TempData["AlertType"] = "toastr";
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty, "An error occurred while updating the merchant: " + ex.Message);
                 TempData[AlertHelper.Error] = "An unexpected error occurred while updating the merchant. Please try again later.";
-                TempData["AlertType"] = "toastr";
-                return View(merchantUpdateVM);
+                return View(model);
             }
         }
 
@@ -177,7 +168,6 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                     return Json(new { success = false, message = "Merchant not found." });
                 }
 
-                // Use the ImageService to delete the image
                 if (!string.IsNullOrEmpty(merchant.ImageUrl))
                 {
                     _imageService.DeleteImage(merchant.ImageUrl);
@@ -190,7 +180,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
 
                 return Json(new { success = true, message = "Merchant deleted successfully." });
             }
-            catch (Exception ex) // Catch specific exceptions or log them
+            catch (Exception ex) 
             {
                 return Json(new { success = false, message = "An error occurred while deleting the merchant: " + ex.Message });
             }
@@ -199,14 +189,13 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int id)
         {
-            var merchant = await _merchantService.GetDetailByIdAsync(id);
-            if (merchant == null)
+            var merchantDetail = await _merchantService.GetDetailByIdAsync(id);
+            if (merchantDetail == null)
             {
                 TempData[AlertHelper.Error] = "Merchant details not found.";
-                TempData["AlertType"] = "toastr";
                 return NotFound();
             }
-            return View(merchant);
+            return View(merchantDetail);
         }
 
         [HttpPost]
@@ -249,7 +238,6 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                 }
                 catch (Exception ex)
                 {
-                    // Log the exception for each failed deletion
                     failedDeletions.Add($"Error deleting merchant with ID {id}: {ex.Message}");
                 }
             }

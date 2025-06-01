@@ -6,119 +6,102 @@
 }
 
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-    <!--begin::Toolbar-->
-    <div class="toolbar mb-5" id="kt_toolbar">
+    <div class="toolbar" id="kt_toolbar">
         <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
-            <div class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+            <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Edit Category</h1>
-                <span class="h-20px border-gray-300 border-start mx-4"></span>
+                <span class="h-20px border-gray-200 border-start mx-4"></span>
                 <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
                     <li class="breadcrumb-item text-muted">
                         <a asp-controller="Dashboard" asp-action="Index" class="text-muted text-hover-primary">Home</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <span class="bullet bg-gray-300 w-5px h-2px"></span>
+                        <span class="bullet bg-gray-200 w-5px h-2px"></span>
                     </li>
                     <li class="breadcrumb-item text-muted">
                         <a asp-controller="Category" asp-action="Index" class="text-muted text-hover-primary">Categories</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <span class="bullet bg-gray-300 w-5px h-2px"></span>
+                        <span class="bullet bg-gray-200 w-5px h-2px"></span>
                     </li>
                     <li class="breadcrumb-item text-dark">Edit</li>
                 </ul>
             </div>
 
             <div class="d-flex align-items-center gap-3">
-                <a asp-action="Index" class="btn btn-lg btn-light fw-bold px-6">
+                <a asp-action="Index" class="btn btn-sm btn-light-primary fw-bold px-6">
                     <i class="ki-outline ki-arrow-left fs-4 me-2"></i> Back to List
                 </a>
             </div>
         </div>
     </div>
-    <!--end::Toolbar-->
-    <!--begin::Post-->
     <div class="post d-flex flex-column-fluid" id="kt_post">
-        <div class="container-xxl">
-            <div class="card shadow-sm">
-                <div class="card-header">
-                    <h3 class="card-title fw-bold">Category Details</h3>
+        <div id="kt_content_container" class="container-xxl">
+            <div class="card">
+                <div class="card-header border-0 pt-6">
+                    <div class="card-title">
+                        <h3 class="card-label">Update Category Details</h3>
+                    </div>
                 </div>
-                <div class="card-body p-10">
+                <div class="card-body pt-0">
                     <form asp-action="Update" method="post" enctype="multipart/form-data" id="category-form">
                         @Html.AntiForgeryToken()
                         <input type="hidden" asp-for="Id" />
+                        @* Keep existing image URL if not updated, assuming your ViewModel has this property. *@
+                        @* <input type="hidden" asp-for="ImageUrl" /> *@ 
 
-                        <div class="row g-10">
-                            <!-- Name -->
-                            <div class="col-md-6">
-                                <div class="mb-10">
-                                    <label asp-for="Name" class="form-label required fw-bold fs-6">Category Name</label>
-                                    <input asp-for="Name" class="form-control form-control-solid" placeholder="Enter category name" />
-                                    <span asp-validation-for="Name" class="text-danger"></span>
-                                </div>
-                            </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-10">
+                                <div class="card bg-light border-0 shadow-sm h-100 d-flex flex-column align-items-center justify-content-center p-10">
+                                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                                    {
+                                        <div class="symbol symbol-150px symbol-lg-180px mb-4">
+                                            <img id="current-image-preview" src="@Model.ImageUrl" class="rounded shadow" style="object-fit: cover;" alt="Category Image" />
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="symbol symbol-150px symbol-lg-180px bg-secondary d-flex align-items-center justify-content-center text-white fs-3 fw-bold rounded mb-4">
+                                            No Image
+                                        </div>
+                                        <img id="current-image-preview" src="" class="rounded shadow d-none" style="object-fit: cover; max-height: 180px;" alt="Category Image" />
+                                    }
 
-                            <!-- Parent Category -->
-                            <div class="col-md-6">
-                                <div class="mb-10">
-                                    <label asp-for="ParentCategoryId" class="form-label fw-bold fs-6">Parent Category</label>
-                                    <select asp-for="ParentCategoryId" asp-items="@(new SelectList(Model.ParentCategories, "Id", "Name"))" class="form-select form-select-solid">
-                                        <option value="">-- No Parent Category --</option>
-                                    </select>
-                                    <span asp-validation-for="ParentCategoryId" class="text-danger"></span>
-                                </div>
-                            </div>
-
-                            <!-- Description -->
-                            <div class="col-12">
-                                <div class="mb-10">
-                                    <label asp-for="Description" class="form-label fw-bold fs-6">Description</label>
-                                    <textarea asp-for="Description" rows="3" class="form-control form-control-solid" placeholder="Enter category description"></textarea>
-                                    <span asp-validation-for="Description" class="text-danger"></span>
-                                </div>
-                            </div>
-
-                            <!-- Image URL -->
-                          
-
-                            <!-- Image Upload -->
-                            <div class="col-md-6">
-                                <div class="mb-10">
-                                    <label asp-for="Image" class="form-label fw-bold fs-6">Upload New Image</label>
+                                    <label asp-for="Image" class="form-label fw-bold">Update Category Image</label>
                                     <input asp-for="Image" type="file" class="form-control form-control-solid" accept=".jpg,.jpeg,.png,.gif" />
                                     <span asp-validation-for="Image" class="text-danger"></span>
                                     <div class="form-text">Allowed file types: JPG, JPEG, PNG, GIF. Max size: 5MB</div>
                                 </div>
                             </div>
-
-                            <!-- Image Preview -->
-                            <div class="col-12">
+                            <div class="col-lg-8">
                                 <div class="mb-10">
-                                    <label class="form-label fw-bold fs-6">Current Image</label>
-                                    <div class="image-preview-container">
-                                        @if (!string.IsNullOrEmpty(Model.ImageUrl))
-                                        {
-                                            <img id="current-image" src="@Model.ImageUrl" class="img-thumbnail" style="max-height: 200px;" />
-                                        }
-                                        else
-                                        {
-                                            <div class="text-muted">No image available</div>
-                                        }
-                                    </div>
+                                    <label asp-for="Name" class="form-label required fw-bold">Name</label>
+                                    <input asp-for="Name" class="form-control form-control-solid" placeholder="Enter category name" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
                                 </div>
-                            </div>
 
-                            <!-- Form Actions -->
-                            <div class="col-12">
-                                <div class="d-flex justify-content-end gap-5">
-                                    <a asp-action="Index" class="btn btn-light btn-lg me-3">Cancel</a>
-                                    <button type="submit" class="btn btn-primary btn-lg">
+                                <div class="mb-10">
+                                    <label asp-for="Description" class="form-label fw-bold">Description</label>
+                                    <textarea asp-for="Description" class="form-control form-control-solid" rows="3" placeholder="Enter category description"></textarea>
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+
+                                <div class="mb-10">
+                                    <label asp-for="ParentCategoryId" class="form-label fw-bold">Parent Category</label>
+                                    <select asp-for="ParentCategoryId" asp-items="@(new SelectList(Model.ParentCategories, "Id", "Name"))" class="form-select form-select-solid" data-control="select2" data-placeholder="Select parent category" data-hide-search="false">
+                                        <option value="">-- No Parent Category --</option>
+                                    </select>
+                                    <span asp-validation-for="ParentCategoryId" class="text-danger"></span>
+                                </div>
+
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-primary" data-kt-indicator="off">
                                         <span class="indicator-label">Save Changes</span>
                                         <span class="indicator-progress">
                                             Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                         </span>
                                     </button>
+                                    <a asp-action="Index" class="btn btn-light">Cancel</a>
                                 </div>
                             </div>
                         </div>
@@ -127,11 +110,12 @@
             </div>
         </div>
     </div>
-    <!--end::Post-->
 </div>
 
 @section Scripts {
-    @await Html.PartialAsync("_ValidationScriptsPartial")
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 
     <script>
         $(document).ready(function() {
@@ -141,9 +125,20 @@
                 if (file) {
                     const reader = new FileReader();
                     reader.onload = function(e) {
-                        $('#current-image').attr('src', e.target.result).show();
+                        $('#current-image-preview').attr('src', e.target.result).removeClass('d-none');
+                        // Hide "No Image" text if it was visible
+                        $('#current-image-preview').closest('.card').find('.bg-secondary').addClass('d-none');
                     }
                     reader.readAsDataURL(file);
+                } else {
+                    // If no file is selected, show "No Image" or existing image if present
+                    if ('@Model.ImageUrl' === '') {
+                        $('#current-image-preview').addClass('d-none');
+                        $('#current-image-preview').closest('.card').find('.bg-secondary').removeClass('d-none');
+                    } else {
+                        $('#current-image-preview').attr('src', '@Model.ImageUrl').removeClass('d-none');
+                        $('#current-image-preview').closest('.card').find('.bg-secondary').addClass('d-none');
+                    }
                 }
             });
 
@@ -153,11 +148,8 @@
                 $(this).find('[type="submit"]').attr('data-kt-indicator', 'on');
             });
 
-            // Initialize select2 if needed
-            $('.form-select').select2({
-                placeholder: "Select parent category",
-                width: '100%'
-            });
+            // Initialize select2
+            $('[data-control="select2"]').select2();
         });
     </script>
 
