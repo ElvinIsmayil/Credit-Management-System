@@ -1,38 +1,30 @@
 ﻿using System.Net;
 using System.Net.Mail;
-using IEmailService = Credit_Management_System.Infrastructure.Interfaces.IEmailService;
-
+using Microsoft.Extensions.Options;
+using Credit_Management_System.Infrastructure.Configurations;
+using Credit_Management_System.Infrastructure.Interfaces;
 
 namespace Credit_Management_System.Infrastructure.Implementations
 {
-
     public sealed class EmailService : IEmailService
     {
-        private readonly string _smtpHost;
-        private readonly int _smtpPort;
-        private readonly string _smtpUser;
-        private readonly string _smtpPass;
-        private readonly bool _enableSsl;
+        private readonly SmtpSettings _smtpSettings;
 
-        public EmailService(string smtpHost, int smtpPort, string smtpUser, string smtpPass, bool enableSsl = true)
+        public EmailService(IOptions<SmtpSettings> smtpOptions)
         {
-            _smtpHost = smtpHost ?? throw new ArgumentNullException(nameof(smtpHost));
-            _smtpPort = smtpPort;
-            _smtpUser = smtpUser ?? throw new ArgumentNullException(nameof(smtpUser));
-            _smtpPass = smtpPass ?? throw new ArgumentNullException(nameof(smtpPass));
-            _enableSsl = enableSsl;
+            _smtpSettings = smtpOptions.Value ?? throw new ArgumentNullException(nameof(smtpOptions));
         }
 
         public async Task SendEmailAsync(string email, string subject, string htmlMessage, CancellationToken cancellationToken = default)
         {
-            using var smtp = new SmtpClient(_smtpHost)
+            using var smtp = new SmtpClient(_smtpSettings.Host)
             {
-                Port = _smtpPort,
-                Credentials = new NetworkCredential(_smtpUser, _smtpPass),
-                EnableSsl = _enableSsl
+                Port = _smtpSettings.Port,
+                Credentials = new NetworkCredential(_smtpSettings.Username, _smtpSettings.Password),
+                EnableSsl = _smtpSettings.EnableSsl
             };
 
-            using var mail = new MailMessage(_smtpUser, email, subject, htmlMessage)
+            using var mail = new MailMessage(_smtpSettings.Username, email, subject, htmlMessage)
             {
                 IsBodyHtml = true
             };
@@ -47,5 +39,4 @@ namespace Credit_Management_System.Infrastructure.Implementations
             }
         }
     }
-
 }

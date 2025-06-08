@@ -7944,8 +7944,6 @@ C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Deb
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\bdznrxw8j4-9do24wxf0k.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\gyq9gf45ad-nf554cghln.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\c29kvnsanx-57gb67uyxy.gz
-C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\hsc7270rgd-pw92hvfe01.gz
-C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\4xx52jy1r0-pw92hvfe01.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\staticwebassets.development.json
@@ -8300,10 +8298,6 @@ C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Deb
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\8nd3szg281-wx1zf4il58.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\6u2lpw7vih-ttpkj309m1.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\s3fjc8ls05-3v36erakcb.gz
-C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\pvbgbo1ah7-urq1f236yp.gz
-C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\h0gnw8xosa-scba2m92ps.gz
-C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\ssztj75ajr-b270nszxh3.gz
-C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\dor0c6ntk4-qzg1pdflri.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\xb70u8ujuq-wf51w0wk5v.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\b50y7lpe2s-pxe43dk5be.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\kge3wto80z-oqy1cbcn1v.gz
@@ -8387,7 +8381,6 @@ C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Deb
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\fiigj3umsl-lfbxk8gym4.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\xew8vcmwvh-uwgib5lw1z.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\1g34wfxscz-caks84k95b.gz
-C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\h9ixtn3lqm-e7yunzcv81.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\xx7bn8vvda-8orlxiovgw.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\ghc69lnruc-9c1diub4oz.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\03tx0tdu38-1vu4u42g2z.gz
@@ -8560,8 +8553,6 @@ C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Deb
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\7r7g2q58kp-5rty5v1kud.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\2p7wsa5xen-sg9b554b7v.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\xixcptn3d6-hc98bvwkyv.gz
-C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\d1bats9szo-5mld997jc0.gz
-C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\6lhn9gc56y-h4afvogqsq.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\ttxxmb5c3k-l5sv3cn0g7.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\7b2l3gns20-nwp0t2r89t.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\xyrndtp7uj-c0ngry7zi0.gz
@@ -8761,5 +8752,10 @@ C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Deb
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\qqygyvkygc-inr9tztuh6.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\9esheflacr-bknkv7unnw.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\fylltdpm3s-fgilo319vj.gz
-C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\4j6wky0wr9-j4lm22gbre.gz
 C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\qv3jlyfl9u-lt6qxvgvy9.gz
+C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\hsc7270rgd-0v7njcqne3.gz
+C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\4xx52jy1r0-0v7njcqne3.gz
+C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\h9ixtn3lqm-pu74jq23vv.gz
+C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\1xdm7upqoy-2hyl9nws9b.gz
+C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\4j6wky0wr9-ssdobusonw.gz
+C:\Users\Elvin\Desktop\Credit-Management-System\Credit Management System\obj\Debug\net9.0\compressed\1b2r0bupug-nc4kbkik03.gz

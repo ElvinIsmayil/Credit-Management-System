@@ -1,27 +1,6 @@
 ﻿@model IEnumerable<MerchantVM>
 
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-    <div class="toolbar" id="kt_toolbar">
-        <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
-            <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Merchants List</h1>
-                <span class="h-20px border-gray-200 border-start mx-4"></span>
-                <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
-                    <li class="breadcrumb-item text-muted">
-                        <a asp-controller="Dashboard" asp-action="Index" class="text-muted text-hover-primary">Home</a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        <span class="bullet bg-gray-200 w-5px h-2px"></span>
-                    </li>
-                    <li class="breadcrumb-item text-muted">Merchants</li>
-                    <li class="breadcrumb-item">
-                        <span class="bullet bg-gray-200 w-5px h-2px"></span>
-                    </li>
-                    <li class="breadcrumb-item text-dark">Merchant List</li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <div class="post d-flex flex-column-fluid" id="kt_post">
         <div id="kt_content_container" class="container-xxl">
             <div class="card">
@@ -31,7 +10,7 @@
                             <span class="svg-icon svg-icon-1 position-absolute ms-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
-                                    <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black" />
+                                    <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 14.4667 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black" />
                                 </svg>
                             </span>
                             <form asp-controller="Merchant" asp-action="Index" method="get">
@@ -39,9 +18,9 @@
                                     <i class="ki-outline ki-magnifier fs-3 position-absolute ms-5"></i>
                                     <input type="text"
                                            name="searchTerm"
-                                           value="@ViewData["SearchTerm"]" 
+                                           value="@ViewData["SearchTerm"]"
                                            data-kt-subscription-table-filter="search"
-                                           class="form-control form-control-solid w-250px ps-13" 
+                                           class="form-control form-control-solid w-250px ps-13"
                                            placeholder="Search Merchants" />
                                     <button type="submit" class="btn btn-primary ms-2">Search</button>
                                     <a asp-action="Index" class="btn btn-light-primary ms-2">Clear</a>
@@ -141,7 +120,6 @@
                             }
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>
@@ -150,7 +128,7 @@
 
 @section Scripts {
     <script>
-            document.addEventListener("DOMContentLoaded", function(){
+        document.addEventListener("DOMContentLoaded", function(){
 
             const selectAllCheckbox = document.getElementById('select-all-checkbox');
             const rowCheckboxes = document.querySelectorAll('.row-checkbox');
@@ -168,7 +146,6 @@
                     selectedToolbar.classList.add('d-none');
                 }
 
-                // Update select all checkbox state
                 if (rowCheckboxes.length > 0 && checkedCount === rowCheckboxes.length) {
                     selectAllCheckbox.checked = true;
                 } else {
@@ -176,12 +153,10 @@
                 }
             }
 
-            // Event listener for individual row checkboxes
             rowCheckboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', updateSelectedCount);
             });
 
-            // Event listener for "select all" checkbox
             if (selectAllCheckbox) {
                 selectAllCheckbox.addEventListener('change', function () {
                     rowCheckboxes.forEach(checkbox => {
@@ -191,7 +166,6 @@
                 });
             }
 
-            // Event listener for "Delete Selected" button
             if (deleteSelectedBtn) {
                 deleteSelectedBtn.addEventListener('click', function () {
                     const selectedIds = [];
@@ -223,14 +197,13 @@
                                     'Content-Type': 'application/json',
                                     'RequestVerificationToken': antiForgeryToken
                                 },
-                                body: JSON.stringify(selectedIds) // Send array of IDs as JSON
+                                body: JSON.stringify(selectedIds)
                             })
                                 .then(response => response.json())
                                 .then(data => {
                                     if (data.success) {
                                         toastr.success(data.message);
-                                        // Reload the page or remove rows
-                                        location.reload(); // Simplest way to refresh table after batch delete
+                                        location.reload();
                                     } else {
                                         toastr.error(data.message);
                                     }
@@ -244,11 +217,8 @@
                 });
             }
 
-            // Initial update of selected count when page loads
             updateSelectedCount();
 
-            });
-
-            // --- Batch Delete Logic ---
+        });
     </script>
 }

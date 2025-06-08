@@ -1,7 +1,7 @@
 ﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
 using Credit_Management_System.Areas.Admin.ViewModels.Role;
-using Credit_Management_System.Enums;
 using Credit_Management_System.Models;
+using Credit_Management_System.Utility;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -38,54 +38,60 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create()
-        //{
-
-        //    return RedirectToAction("Index", "Home");
-        //}
-
         [HttpGet]
         public async Task<IActionResult> Detail(string id)
         {
             var role = await _roleManager.Roles.FirstOrDefaultAsync(x => x.Id == id);
             if (role == null)
             {
-                return View();
+                return NotFound();
             }
-            var users = await _userManager.GetUsersInRoleAsync(role.Name);
-            var usersInRoleVM = users.Select(user => new UserInRoleVM
+
+            var usersInRole = await _userManager.GetUsersInRoleAsync(role.Name);
+            var usersInRoleVM = usersInRole.Select(user => new UserInRoleVM
             {
                 Id = user.Id,
                 Email = user.Email,
                 FullName = user.FirstName + " " + user.LastName,
                 JoinedDate = user.CreatedDate,
                 ProfileImageUrl = user.ImageUrl
-            }).ToList();
+            }).OrderBy(u => u.FullName).ToList();
 
-            var RoleDetailVM = new RoleDetailVM()
+            var allUsers = await _userManager.Users.ToListAsync();
+            var availableUsers = allUsers
+                .Where(u => !usersInRole.Any(ur => ur.Id == u.Id))
+                .Select(user => new UserInRoleVM
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    FullName = user.FirstName + " " + user.LastName,
+                    JoinedDate = user.CreatedDate,
+                    ProfileImageUrl = user.ImageUrl
+                })
+                .OrderBy(u => u.FullName)
+                .ToList();
+
+            var model = new RoleDetailVM()
             {
-                UserCount = users.Count,
-                Users = usersInRoleVM,
                 Id = role.Id,
                 Name = role.Name,
+                UserCount = usersInRole.Count,
+                Users = usersInRoleVM, 
+                AvailableUsers = availableUsers 
             };
 
-            return View(RoleDetailVM);
+            return View(model);
         }
 
         public async Task<IActionResult> SeedRoles()
         {
-            var roleNames = Enum.GetNames(typeof(Role));
+            string[] roleNames = { Roles.Admin, Roles.Employee, Roles.Customer, Roles.User };
+
             foreach (string roleName in roleNames)
             {
-                if (!_roleManager.Roles.Any(r => r.Name == roleName))
+                if (!await _roleManager.RoleExistsAsync(roleName))
                 {
-                    IdentityRole role = new()
-                    {
-                        Name = roleName
-                    };
+                    IdentityRole role = new IdentityRole(roleName);
                     await _roleManager.CreateAsync(role);
                 }
             }
@@ -93,75 +99,86 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> AssignRole()
-        {
-            var model = new AssignRoleVM();
-            var users = await _userManager.Users.ToListAsync();
-            foreach (var user in users)
-            {
-                model.Users.Add(new UserVM
-                {
-                    Id = user.Id,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    CreatedDate = DateTime.Now,
-                    Email = user.Email,
-                    EmailConfirmed = user.EmailConfirmed,
-                    ImageUrl = user.ImageUrl,
-                    LastLoginDate = DateTime.Now,
-                });
-            }
-
-            var roles = await _roleManager.Roles.ToListAsync();
-            foreach (var role in roles)
-            {
-                model.Roles.Add(new RoleVM()
-                {
-                    Id = role.Id,
-                    Name = role.Name
-                });
-            }
-
-            return View(model);
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AssignRole(AssignRoleVM model)
+        public async Task<IActionResult> AssignRole(string SelectedUserId, string RoleName, string RoleId)
         {
-            if (!ModelState.IsValid)
+            if (string.IsNullOrEmpty(SelectedUserId))
             {
-                return View(model);
+                TempData["ErrorMessage"] = "Please select a user to assign.";
+                return RedirectToAction("Detail", new { id = RoleId });
             }
 
-            var user = await _userManager.FindByIdAsync(model.UserId);
+            var user = await _userManager.FindByIdAsync(SelectedUserId);
             if (user == null)
             {
-                ModelState.AddModelError("", "User not found");
-                return View(model);
+                TempData["ErrorMessage"] = "User not found.";
+                return RedirectToAction("Detail", new { id = RoleId });
             }
-            var role = await _roleManager.FindByNameAsync(model.RoleName);
+
+            var role = await _roleManager.FindByNameAsync(RoleName);
             if (role == null)
             {
-                ModelState.AddModelError("", "Role not found");
-                return View(model);
+                TempData["ErrorMessage"] = "Role not found.";
+                return RedirectToAction("Detail", new { id = RoleId });
+            }
+
+            if (await _userManager.IsInRoleAsync(user, role.Name))
+            {
+                TempData["ErrorMessage"] = $"User '{user.FirstName} {user.LastName}' is already in the '{role.Name}' role.";
+                return RedirectToAction("Detail", new { id = RoleId });
             }
 
             var result = await _userManager.AddToRoleAsync(user, role.Name);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index");
+                TempData["SuccessMessage"] = $"User '{user.FirstName} {user.LastName}' successfully assigned to '{role.Name}' role.";
+                return RedirectToAction("Detail", new { id = RoleId }); 
             }
             else
             {
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
+                var errors = string.Join(" ", result.Errors.Select(e => e.Description));
+                TempData["ErrorMessage"] = $"Failed to assign user to role: {errors}";
+                return RedirectToAction("Detail", new { id = RoleId });
             }
-            return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RemoveUserFromRole(string UserId, string RoleName, string RoleId)
+        {
+            var user = await _userManager.FindByIdAsync(UserId);
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = "User not found.";
+                return RedirectToAction("Detail", new { id = RoleId });
+            }
+
+            var role = await _roleManager.FindByNameAsync(RoleName);
+            if (role == null)
+            {
+                TempData["ErrorMessage"] = "Role not found.";
+                return RedirectToAction("Detail", new { id = RoleId });
+            }
+
+            if (!await _userManager.IsInRoleAsync(user, RoleName))
+            {
+                TempData["ErrorMessage"] = $"User '{user.FirstName} {user.LastName}' is not in the '{RoleName}' role.";
+                return RedirectToAction("Detail", new { id = RoleId });
+            }
+
+            var result = await _userManager.RemoveFromRoleAsync(user, RoleName);
+            if (result.Succeeded)
+            {
+                TempData["SuccessMessage"] = $"User '{user.FirstName} {user.LastName}' successfully removed from '{RoleName}' role.";
+            }
+            else
+            {
+                var errors = string.Join(" ", result.Errors.Select(e => e.Description));
+                TempData["ErrorMessage"] = $"Failed to remove user from role: {errors}";
+            }
+
+            return RedirectToAction("Detail", new { id = RoleId });
+        }
     }
 }

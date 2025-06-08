@@ -10,6 +10,7 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         private readonly IUserService _userService;
         public IActionResult Index()
         {
+            
             return View();
         }
 

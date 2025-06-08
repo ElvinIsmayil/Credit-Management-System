@@ -10,6 +10,5 @@ namespace Credit_Management_System.Models
         public Branch Branch { get; set; }
 
         public ICollection<Loan> ManagedLoans { get; set; } = new List<Loan>();
-
     }
 }

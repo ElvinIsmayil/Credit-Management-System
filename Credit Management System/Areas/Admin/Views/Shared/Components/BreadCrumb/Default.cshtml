@@ -1,0 +1,24 @@
+﻿@model List<BreadCrumbItem>
+
+<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        var item = Model[i];
+        <li class="breadcrumb-item @(item.IsActive ? "text-dark" : "text-muted")">
+            @if (item.IsActive)
+            {
+                <span>@item.Text</span>
+            }
+            else
+            {
+                <a href="@item.Url" class="text-muted text-hover-primary">@item.Text</a>
+            }
+        </li>
+        @if (i < Model.Count - 1) // Add bullet separator for all but the last item
+        {
+            <li class="breadcrumb-item">
+                <span class="bullet bg-gray-200 w-5px h-2px"></span>
+            </li>
+        }
+    }
+</ul>

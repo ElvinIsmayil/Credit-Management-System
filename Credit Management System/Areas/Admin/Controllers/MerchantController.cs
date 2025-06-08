@@ -1,4 +1,5 @@
 ﻿using Credit_Management_System.Areas.Admin.Controllers.Common;
+using Credit_Management_System.Areas.Admin.ViewModels;
 using Credit_Management_System.Helpers;
 using Credit_Management_System.Infrastructure.Interfaces;
 using Credit_Management_System.Services.Implementations;
@@ -31,6 +32,15 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                 return View(filteredMerchants);
             }
             var merchants = await _merchantService.GetAllAsync();
+            var breadcrumbs = new List<BreadCrumbItem>
+        {
+            new BreadCrumbItem { Text = "Home", Url = Url.Action("Index", "Dashboard", new { area = "Admin" }) }, // Assuming 'Dashboard' is your home
+            new BreadCrumbItem { Text = "Branches", Url = Url.Action("Index", "Branches") },
+            new BreadCrumbItem { Text = "Branch List", IsActive = true } // The current page, active
+        };
+
+            // Pass the breadcrumbs to ViewData
+            ViewData["Breadcrumbs"] = breadcrumbs;
             return View(merchants);
         }
 

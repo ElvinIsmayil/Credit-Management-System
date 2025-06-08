@@ -4,6 +4,7 @@
     {
         public string UserId { get; set; }
         public string RoleName { get; set; }
+        public string RoleId { get; set; } = string.Empty;
         public List<UserVM> Users { get; set; } = new List<UserVM>();
         public List<RoleVM> Roles { get; set; } = new List<RoleVM>();
     }

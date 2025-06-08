@@ -2,6 +2,7 @@
 using Credit_Management_System.Helpers;
 using Credit_Management_System.Infrastructure.Interfaces;
 using Credit_Management_System.Models;
+using Credit_Management_System.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,18 +14,49 @@ namespace Credit_Management_System.Areas.Admin.Controllers
     [Area("Admin")]
     public class AccountController : Controller
     {
-        private readonly UserManager<AppUser> _userManager;
-        private readonly SignInManager<AppUser> _signInManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly IEmailService _emailSender;
+        private readonly IAuthenticationService _authService;
 
-        public AccountController(RoleManager<IdentityRole> roleManager, SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, IEmailService emailSender)
+        public AccountController(IAuthenticationService authenticationService)
         {
-            _roleManager = roleManager;
-            _signInManager = signInManager;
-            _userManager = userManager;
-            _emailSender = emailSender;
+            _authService = authenticationService;
         }
+
+        [HttpGet]
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SignUp(SignUpVM signUpVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                TempData[AlertHelper.Error] = "Please fill out the form correctly.";
+                return View(signUpVM);
+            }
+
+            if (!signUpVM.Toc)
+            {
+                TempData[AlertHelper.Error] = "You must agree to the terms and conditions.";
+                return View(signUpVM);
+            }
+
+            var result = await _authService.RegisterAsync(signUpVM.Email, signUpVM.Password, signUpVM.ConfirmPassword);
+            if (!result)
+            {
+                TempData[AlertHelper.Error] = "Registration failed. Please check your details and try again.";
+                return View(signUpVM);
+            }
+
+            var emailSent = await _authService.SendVerificationEmailAsync(signUpVM.Email, signUpVM.Email);
+            TempData[AlertHelper.Success] = emailSent
+                ? "Registration successful! Please check your email to confirm your account."
+                : "Registration successful, but verification email could not be sent.";
+
+            return RedirectToAction("EmailVerification");
+        }
+
 
         [HttpGet]
         public IActionResult SignIn()
@@ -43,132 +75,34 @@ namespace Credit_Management_System.Areas.Admin.Controllers
                 return View(signInVM);
             }
 
-            var user = await _userManager.FindByEmailAsync(signInVM.Email);
-            if (user == null)
+            var result = await _authService.LoginAsync(signInVM.Email, signInVM.Password);
+            if (!result)
             {
                 TempData[AlertHelper.Error] = "Invalid email or password.";
                 TempData["AlertType"] = "swal";
                 return View(signInVM);
             }
 
-            var result = await _signInManager.PasswordSignInAsync(signInVM.Email, signInVM.Password, true, false);
-            if (result.Succeeded)
-            {
-                TempData[AlertHelper.Success] = "Welcome back!";
-                TempData["AlertType"] = "toastr";
-                return RedirectToAction("Index", "Dashboard");
-            }
-
-            if (result.IsLockedOut)
-            {
-                TempData[AlertHelper.Error] = "Your account is locked out. Please try again later.";
-            }
-            else if (result.IsNotAllowed)
-            {
-                TempData[AlertHelper.Error] = "You are not allowed to sign in.";
-            }
-            else
-            {
-                TempData[AlertHelper.Error] = "Invalid login attempt.";
-            }
-            TempData["AlertType"] = "swal";
-            return View(signInVM);
-        }
-
-        [HttpGet]
-        public IActionResult SignUp()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SignUp(SignUpVM signUpVM)
-        {
-            if (!ModelState.IsValid)
-            {
-                TempData[AlertHelper.Error] = "Please fill out the form correctly.";
-                TempData["AlertType"] = "toastr";
-                return View(signUpVM);
-            }
-
-            if (!signUpVM.Toc)
-            {
-                TempData[AlertHelper.Error] = "You must agree to the terms and conditions.";
-                TempData["AlertType"] = "toastr";
-                return View(signUpVM);
-            }
-
-            var existingUser = await _userManager.FindByEmailAsync(signUpVM.Email);
-            if (existingUser != null)
-            {
-                TempData[AlertHelper.Error] = "This email is already registered.";
-                TempData["AlertType"] = "toastr";
-                return View(signUpVM);
-            }
-
-            var user = new AppUser
-            {
-                UserName = signUpVM.Email,
-                Email = signUpVM.Email,
-                FirstName = signUpVM.FirstName,
-                LastName = signUpVM.LastName
-            };
-
-            var result = await _userManager.CreateAsync(user, signUpVM.Password);
-
-            if (!result.Succeeded)
-            {
-                TempData[AlertHelper.Error] = string.Join(" ", result.Errors.Select(e => e.Description));
-                TempData["AlertType"] = "toastr";
-                return View(signUpVM);
-            }
-
-         
-            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-            var encodedToken = HttpUtility.UrlEncode(token);
-
-            var confirmationLink = Url.Action("ConfirmEmail", "Account",
-                new { userId = user.Id, token = encodedToken }, protocol: HttpContext.Request.Scheme);
-
-            var emailBody = EmailTemplateHelper.GetEmailConfirmationHtml(confirmationLink);
-
-            await _emailSender.SendEmailAsync(user.Email, "Confirm your email", emailBody);
-
-            TempData[AlertHelper.Success] = "Registration successful! Please check your email to confirm your account.";
-            TempData["AlertType"] = "toastr";
-            TempData["Email"] = user.Email;
-            await _userManager.AddToRoleAsync(user, "admin");
-
-
-            return RedirectToAction("EmailVerification");
+            TempData[AlertHelper.Success] = "Welcome back!";
+            return RedirectToAction("Index", "Dashboard");
         }
 
         public async Task<IActionResult> SignOut()
         {
-            await _signInManager.SignOutAsync();
+            await _authService.LogoutAsync();
             return RedirectToAction("SignIn", "Account");
         }
 
         [HttpGet]
         public async Task<IActionResult> ResendEmailConfirmation(string email)
         {
-            var user = await _userManager.FindByEmailAsync(email);
-            if (user == null || await _userManager.IsEmailConfirmedAsync(user))
+            var result = await _authService.SendVerificationEmailAsync(email, email);
+            if (!result)
             {
                 TempData[AlertHelper.Error] = "Invalid or already confirmed email.";
                 TempData["AlertType"] = "toastr";
                 return RedirectToAction("SignIn");
             }
-
-            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-            var encodedToken = HttpUtility.UrlEncode(token);
-
-            var confirmationLink = Url.Action("ConfirmEmail", "Account",
-                new { userId = user.Id, token = encodedToken }, protocol: HttpContext.Request.Scheme);
-
-            var emailBody = $"Click <a href='{confirmationLink}'>here</a> to confirm your email.";
-            await _emailSender.SendEmailAsync(user.Email, "Confirm your email", emailBody);
 
             TempData[AlertHelper.Success] = "Confirmation email resent.";
             TempData["AlertType"] = "toastr";
@@ -181,24 +115,11 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(token))
                 return RedirectToAction("SignIn", "Account");
 
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user == null)
-                return RedirectToAction("SignIn", "Account");
+            var result = await _authService.ConfirmEmailAsync(userId, token);
+            if (!result)
+                return View("Error");
 
-            // URL-decode token before using it
-            token = HttpUtility.UrlDecode(token);
-
-            if (await _userManager.IsEmailConfirmedAsync(user))
-                return RedirectToAction("SignIn", "Account");
-
-            var result = await _userManager.ConfirmEmailAsync(user, token);
-            if (result.Succeeded)
-            {
-                return RedirectToAction("ConfirmEmailConfirmation");
-            }
-
-            ViewBag.Errors = result.Errors;
-            return View("Error");
+            return RedirectToAction("ConfirmEmailConfirmation");
         }
 
         [HttpGet]
@@ -214,8 +135,6 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             return View();
         }
 
-        #region Password
-
         [HttpGet]
         public IActionResult ForgotPassword()
         {
@@ -229,31 +148,17 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             if (!ModelState.IsValid)
             {
                 TempData[AlertHelper.Error] = "Please enter a valid email.";
-                TempData["AlertType"] = "toastr";
                 return View(model);
             }
 
-            var user = await _userManager.FindByEmailAsync(model.Email);
-            if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
+            var result = await _authService.SendResetPasswordEmailAsync(model.Email);
+            if (!result)
             {
                 TempData["Email"] = model.Email;
-                TempData["AlertType"] = "toastr";
-                // Don't reveal user existence
                 return RedirectToAction("ForgotPasswordConfirmation");
             }
 
-            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var resetLink = Url.Action("ResetPassword", "Account", new
-            {
-                email = user.Email,
-                token = token
-            }, Request.Scheme);
-
-            var emailBody = EmailTemplateHelper.GetPasswordResetHtml(resetLink);
-            await _emailSender.SendEmailAsync(user.Email, "Password Reset Request", emailBody);
-
             TempData[AlertHelper.Success] = "Password reset email sent.";
-            TempData["AlertType"] = "toastr";
             TempData["Email"] = model.Email;
             return RedirectToAction("ForgotPasswordConfirmation");
         }
@@ -263,41 +168,6 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         {
             ViewBag.Email = TempData["Email"] as string;
             return View();
-        }
-
-        [HttpPost]
-        [AllowAnonymous]
-        public async Task<IActionResult> ResendPasswordConfirmation(string email)
-        {
-            if (string.IsNullOrEmpty(email))
-            {
-                ModelState.AddModelError(string.Empty, "Please provide your email.");
-                return View();
-            }
-
-            var user = await _userManager.FindByEmailAsync(email);
-            if (user == null)
-            {
-                // Don't reveal that the user does not exist for security reasons
-                return RedirectToAction("ResendPasswordConfirmationConfirmation");
-            }
-
-            if (await _userManager.IsEmailConfirmedAsync(user))
-            {
-                ModelState.AddModelError(string.Empty, "Email is already confirmed.");
-                return View();
-            }
-
-            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-            var encodedToken = HttpUtility.UrlEncode(token);
-
-            var confirmationLink = Url.Action("ConfirmEmail", "Account",
-                new { userId = user.Id, token = encodedToken }, protocol: HttpContext.Request.Scheme);
-
-            await _emailSender.SendEmailAsync(email, "Confirm your email",
-                $"Please confirm your account by clicking this link: <a href='{confirmationLink}'>link</a>");
-
-            return RedirectToAction("ResendPasswordConfirmationConfirmation");
         }
 
         [HttpGet]
@@ -310,33 +180,24 @@ namespace Credit_Management_System.Areas.Admin.Controllers
             return View(model);
         }
 
-        [HttpGet]
-        public IActionResult ResetPasswordConfirmation()
-        {
-            return View();
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ResetPassword(ResetPasswordVM model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            var user = await _userManager.FindByEmailAsync(model.Email);
-            if (user == null)
-                return RedirectToAction("ResetPasswordConfirmation");
+            var result = await _authService.ResetPasswordAsync(model.Email, model.Token, model.Password, model.Password);
+            if (!result)
+                return View(model);
 
-            var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
-            if (result.Succeeded)
-                return RedirectToAction("ResetPasswordConfirmation");
-
-            foreach (var error in result.Errors)
-                ModelState.AddModelError("", error.Description);
-
-            return View(model);
+            return RedirectToAction("ResetPasswordConfirmation");
         }
 
-        #endregion
+        [HttpGet]
+        public IActionResult ResetPasswordConfirmation()
+        {
+            return View();
+        }
 
         [HttpGet]
         public IActionResult AccessDenied()
@@ -347,15 +208,13 @@ namespace Credit_Management_System.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Lockout(string userId)
         {
-            var existUser = await _userManager
-                .Users
-                .Where(u => u.Id == userId)
-                .FirstOrDefaultAsync();
+            var isAuthenticated = await _authService.IsAuthenticatedAsync(userId);
+            if (!isAuthenticated)
+                return RedirectToAction("AccessDenied");
 
-            if (existUser is not null)
-                existUser.LockoutEnabled = true;
-
-            return View(existUser);
+            return View();
         }
+
+
     }
 }
